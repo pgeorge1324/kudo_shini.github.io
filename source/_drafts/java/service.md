@@ -1,0 +1,4 @@
+```
+java -j xxx.jar
+```
+

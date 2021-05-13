@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/bit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/bit/" class="post-title-link" itemprop="url">bit calculate</a>
         </h2>
 
         <div class="post-meta">
@@ -181,16 +181,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:36:57" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 09:55:51" itemprop="dateModified" datetime="2021-01-13T09:55:51+08:00">2021-01-13</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
+            </span>
 
           
 
@@ -203,24 +206,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><em><strong>重构是一种对软件内部结构的改善，目的是在不改变软件的可见行为的情况下，使其更易理解，修改成本更低。</strong></em></p>
-<h3 id="重构的目的：为什么要重构（why）？"><a href="#重构的目的：为什么要重构（why）？" class="headerlink" title="重构的目的：为什么要重构（why）？"></a>重构的目的：为什么要重构（why）？</h3><ul>
-<li><p>重构是避免过度设计的有效手段。</p>
-</li>
-<li><p>重构实际上是对我们学习的经典设计思想、设计原则、设计模式、编程规范的一种应用。</p>
-</li>
-<li><p>重构能力也是衡量一个工程师代码能力的有效手段。</p>
-</li>
-</ul>
-<h3 id="重构的对象：到底重构什么（what）？"><a href="#重构的对象：到底重构什么（what）？" class="headerlink" title="重构的对象：到底重构什么（what）？"></a>重构的对象：到底重构什么（what）？</h3><ul>
-<li>大型重构指的是对顶层代码设计的重构，包括：系统、模块、代码结构、类与类之间的关系等的重构，重构的手段有：分层、模块化、解耦、抽象可复用组件等等。这类重构的工具就是我们学习过的那些设计思想、原则和模式。这类重构涉及的代码改动会比较多，影响面会比较大，所以难度也较大，耗时会比较长，引入 bug 的风险也会相对比较大。</li>
-<li>小型重构指的是对代码细节的重构，主要是针对类、函数、变量等代码级别的重构，比如规范命名、规范注释、消除超大类或函数、提取重复代码等等。小型重构更多的是利用我们能后面要讲到的编码规范。这类重构要修改的地方比较集中，比较简单，可操作性较强，耗时会比较短，引入 bug 的风险相对来说也会比较小。你只需要熟练掌握各种编码规范，就可以做到得心应手。</li>
-</ul>
-<h3 id="重构的时机：什么时候重构（when）？"><a href="#重构的时机：什么时候重构（when）？" class="headerlink" title="重构的时机：什么时候重构（when）？"></a>重构的时机：什么时候重构（when）？</h3><ul>
-<li>提倡的重构策略是持续重构。</li>
-</ul>
-<h3 id="重构的方法：又该如何重构（how）？"><a href="#重构的方法：又该如何重构（how）？" class="headerlink" title="重构的方法：又该如何重构（how）？"></a>重构的方法：又该如何重构（how）？</h3><ul>
-<li>静态代码分析工具（比如 CheckStyle、FindBugs、PMD）</li>
+          <h1 id="bit-calculate"><a href="#bit-calculate" class="headerlink" title="bit calculate"></a>bit calculate</h1><h2 id="异或性质"><a href="#异或性质" class="headerlink" title="异或性质"></a>异或性质</h2><ul>
+<li>x^x=0；</li>
+<li>x ^y=y^x（交换律）；</li>
+<li>(x⊕y)⊕z=x⊕(y⊕z)（结合律）；</li>
+<li>x⊕y⊕y=x（自反性）；</li>
+<li>∀i∈Z，有4i⊕(4i+1)⊕(4i+2)⊕(4i+3)=0。</li>
 </ul>
 
       
@@ -241,7 +232,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/%E4%BC%97%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -255,7 +246,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/%E4%BC%97%E6%95%B0/" class="post-title-link" itemprop="url">众数</a>
         </h2>
 
         <div class="post-meta">
@@ -264,16 +255,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:37:25" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 11:15:20" itemprop="dateModified" datetime="2021-01-20T11:15:20+08:00">2021-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
+            </span>
 
           
 
@@ -286,32 +280,115 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="迭代器模式（Iterator-Design-Pattern）"><a href="#迭代器模式（Iterator-Design-Pattern）" class="headerlink" title="迭代器模式（Iterator Design Pattern）"></a>迭代器模式（Iterator Design Pattern）</h1><p><em><strong>用来遍历集合对象。这里说的“集合对象”也可以叫“容器”“聚合对象”，实际上就是包含一组对象的对象，比如数组、链表、树、图、跳表。迭代器模式将集合对象的遍历操作从集合类中拆分出来，放到迭代器类中，让两者的职责更加单一</strong></em></p>
-<h3 id="迭代器模式的原理和实现"><a href="#迭代器模式的原理和实现" class="headerlink" title="迭代器模式的原理和实现"></a>迭代器模式的原理和实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 接口定义方式一</span><br><span class="line">public interface Iterator&lt;E&gt; &#123;</span><br><span class="line">  boolean hasNext();</span><br><span class="line">  void next();</span><br><span class="line">  E currentItem();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 接口定义方式二</span><br><span class="line">public interface Iterator&lt;E&gt; &#123;</span><br><span class="line">  boolean hasNext();</span><br><span class="line">  E next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface List &#123; Iterator iterator(); //...省略其他接口函数...&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="众数"><a href="#众数" class="headerlink" title="众数"></a>众数</h1><h2 id="Boyer-Moore-投票算法"><a href="#Boyer-Moore-投票算法" class="headerlink" title="Boyer-Moore 投票算法"></a>Boyer-Moore 投票算法</h2><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>如果我们把众数记为 +1+1，把其他数记为 -1−1，将它们全部加起来，显然和大于 0，从结果本身我们可以看出众数比其他数多。</p>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>Boyer-Moore 算法的本质和方法四中的分治十分类似。我们首先给出 Boyer-Moore 算法的详细步骤：</p>
+<p>我们维护一个候选众数 candidate 和它出现的次数 count。初始时 candidate 可以为任意值，count 为 0；</p>
+<p>我们遍历数组 nums 中的所有元素，对于每个元素 x，在判断 x 之前，如果 count 的值为 0，我们先将 x 的值赋予 candidate，随后我们判断 x：</p>
+<p>如果 x 与 candidate 相等，那么计数器 count 的值增加 1；</p>
+<p>如果 x 与 candidate 不等，那么计数器 count 的值减少 1。</p>
+<p>在遍历完成后，candidate 即为整个数组的众数。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>leetcode 169</p>
 
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<h3 id="迭代器模式的优势"><a href="#迭代器模式的优势" class="headerlink" title="迭代器模式的优势"></a>迭代器模式的优势</h3><ul>
-<li>for 循环</li>
-<li>foreach 循环，foreach 循环只是一个语法糖而已，底层是基于迭代器来实现的。</li>
-<li>iterator 迭代器</li>
-<li>对于类似数组和链表这样的数据结构，遍历方式比较简单，直接使用 for 循环来遍历就足够了。但是，对于复杂的数据结构（比如树、图）来说，有各种复杂的遍历方式。比如，树有前中后序、按层遍历，图有深度优先、广度优先遍历等等。如果由客户端代码来实现这些遍历算法，势必增加开发成本，而且容易写错。如果将这部分遍历的逻辑写到容器类中，也会导致容器类代码的复杂性。</li>
-<li>我们可以将遍历操作拆分到迭代器类中。比如，针对图的遍历，我们就可以定义 DFSIterator、BFSIterator 两个迭代器类，让它们分别来实现深度优先遍历和广度优先遍历。</li>
-<li>将游标指向的当前位置等信息，存储在迭代器类中，每个迭代器独享游标信息。这样，我们就可以创建多个不同的迭代器，同时对同一个容器进行遍历而互不影响。</li>
-<li>容器和迭代器都提供了抽象的接口，方便我们在开发的时候，基于接口而非具体的实现编程。当需要切换新的遍历算法的时候，比如，从前往后遍历链表切换成从后往前遍历链表，客户端代码只需要将迭代器类从 LinkedIterator 切换为 ReversedLinkedIterator 即可，其他代码都不需要修改。除此之外，添加新的遍历算法，我们只需要扩展新的迭代器类，也更符合开闭原则。</li>
-</ul>
-<h3 id="在遍历的同时增删集合元素会发生什么？"><a href="#在遍历的同时增删集合元素会发生什么？" class="headerlink" title="在遍历的同时增删集合元素会发生什么？"></a>在遍历的同时增删集合元素会发生什么？</h3><ul>
-<li>在通过迭代器来遍历集合元素的同时，增加或者删除集合中的元素，有可能会导致某个元素被重复遍历或遍历不到。</li>
-</ul>
-<h3 id="如何实现一个支持“快照”功能的迭代器模式？"><a href="#如何实现一个支持“快照”功能的迭代器模式？" class="headerlink" title="如何实现一个支持“快照”功能的迭代器模式？"></a>如何实现一个支持“快照”功能的迭代器模式？</h3><ul>
-<li>所谓“快照”，指我们为容器创建迭代器的时候，相当于给容器拍了一张快照（Snapshot）。之后即便我们增删容器中的元素，快照中的元素并不会做相应的改动。而迭代器遍历的对象是快照而非容器，这样就避免了在使用迭代器遍历的过程中，增删容器中的元素，导致的不可预期的结果或者报错。</li>
-<li>解决方案一：每当创建迭代器的时候，都拷贝一份容器中的元素到快照中，后续的遍历操作都基于这个迭代器自己持有的快照来进行。</li>
-<li>解决方案二：我们可以在容器中，为每个元素保存两个时间戳，一个是添加时间戳 addTimestamp，一个是删除时间戳 delTimestamp。当元素被加入到集合中的时候，我们将 addTimestamp 设置为当前时间，将 delTimestamp 设置成最大长整型值（Long.MAX_VALUE）。当元素被删除时，我们将 delTimestamp 更新为当前时间，表示已经被删除。<ul>
-<li>注意，这里只是标记删除，而非真正将它从容器中删除。同时，每个迭代器也保存一个迭代器创建时间戳 snapshotTimestamp，也就是迭代器对应的快照的创建时间戳。当使用迭代器来遍历容器的时候，只有满足 addTimestamp&lt;snapshotTimestamp&lt;delTimestamp 的元素，才是属于这个迭代器的快照。</li>
-<li>如果元素的 addTimestamp&gt;snapshotTimestamp，说明元素在创建了迭代器之后才加入的，不属于这个迭代器的快照；如果元素的 delTimestamp&lt;snapshotTimestamp，说明元素在创建迭代器之前就被删除掉了，也不属于这个迭代器的快照。</li>
-<li>上面的解决方案相当于解决了一个问题，又引入了另外一个问题。ArrayList 底层依赖数组这种数据结构，原本可以支持快速的随机访问，在 O(1) 时间复杂度内获取下标为 i 的元素，但现在，删除数据并非真正的删除，只是通过时间戳来标记删除，这就导致无法支持按照下标快速随机访问了。</li>
-<li>我们可以在 ArrayList 中存储两个数组。一个支持标记删除的，用来实现快照遍历功能；一个不支持标记删除的（也就是将要删除的数据直接从数组中移除），用来支持随机访问。对应的代码我这里就不给出了，感兴趣的话你可以自己实现一下。</li>
-</ul>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CGEnglish/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CGEnglish/" class="post-title-link" itemprop="url">CGEnglish</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:39:48" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/opengl/" itemprop="url" rel="index"><span itemprop="name">opengl</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CGEnglish"><a href="#CGEnglish" class="headerlink" title="CGEnglish"></a>CGEnglish</h1><ul>
+<li><p>PBR（Physical basic rendering）</p>
+</li>
+<li><p>NPR:非真实感绘制(Non-photorealistic rendering)</p>
+</li>
+<li><p>Radiance：（L）点辐射在某方向上单位立体角单位面积内传送的辐射通量</p>
+</li>
+<li><p>Irradiance: （E）radiance在面积上的积分，点辐射在某单位面积内传送的辐射通量</p>
+</li>
+<li><p>scattering coefficient：（σs）散射系数</p>
+</li>
+<li><p>scalar: 标量</p>
+</li>
+<li><p>coordinate：坐标</p>
+</li>
+<li><p>a unary operator on a two-dimensional vector: (⊥) 在二维向量上的一元运算符</p>
+</li>
+<li><p>perpendicular: 垂直的，正交的</p>
+</li>
+<li><p>determinant：行列式，矩阵的行列式det(M)</p>
+</li>
+<li><p>frustum：平截头体，视锥(a truncated缩短 pyramid金字塔 with a rectangleular base)</p>
+</li>
+<li><p>Punctual Lights：点光源，拉丁语（punctus meaning point）</p>
+</li>
+<li><p>Moir´e fringes： 摩尔纹</p>
+</li>
+<li><p>volume light：体积光</p>
+</li>
+<li><p>umbra:  本影</p>
+</li>
+<li><p>penuumbra: 半影</p>
+</li>
+<li><p>Venetian blinds effect：活动百叶窗效应</p>
 </li>
 </ul>
 
@@ -333,7 +410,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CGMath/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -347,7 +424,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CGMath/" class="post-title-link" itemprop="url">CGMath</a>
         </h2>
 
         <div class="post-meta">
@@ -356,16 +433,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：18:24:44" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 13:38:29" itemprop="dateModified" datetime="2021-01-20T13:38:29+08:00">2021-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/opengl/" itemprop="url" rel="index"><span itemprop="name">opengl</span></a>
+                </span>
+            </span>
 
           
 
@@ -378,251 +458,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="访问者模式（Visitor-Design-Pattern）"><a href="#访问者模式（Visitor-Design-Pattern）" class="headerlink" title="访问者模式（Visitor Design Pattern）"></a>访问者模式（Visitor Design Pattern）</h1><p><em><strong>多态是一种动态绑定，可以在运行时获取对象的实际类型，来运行实际类型对应的方法。而函数重载是一种静态绑定，在编译时并不能获取对象的实际类型，而是根据声明类型执行声明类型对应的方法。</strong></em></p>
-<p><em><strong>允许一个或者多个操作应用到一组对象上，解耦操作和对象本身</strong></em></p>
-<h3 id="访问者模式的原理和实现"><a href="#访问者模式的原理和实现" class="headerlink" title="访问者模式的原理和实现"></a>访问者模式的原理和实现</h3><ul>
-<li><p>对于访问者模式，学习的主要难点在代码实现。而代码实现比较复杂的主要原因是，函数重载在大部分面向对象编程语言中是静态绑定的。也就是说，调用类的哪个重载函数，是在编译期间，由参数的声明类型决定的，而非运行时，根据参数的实际类型决定的。</p>
+          <h1 id="CGMath"><a href="#CGMath" class="headerlink" title="CGMath"></a>CGMath</h1><ul>
+<li><p>【norm】:范数</p>
 </li>
-<li><p>访问者模式针对的是一组类型不同的对象（PdfFile、PPTFile、WordFile）。不过，尽管这组对象的类型是不同的，但是，它们继承相同的父类（ResourceFile）或者实现相同的接口。在不同的应用场景下，我们需要对这组对象进行一系列不相关的业务操作（抽取文本、压缩等），但为了避免不断添加功能导致类（PdfFile、PPTFile、WordFile）不断膨胀，职责越来越不单一，以及避免频繁地添加功能导致的频繁代码修改，我们使用访问者模式，将对象与操作解耦，将这些业务操作抽离出来，定义在独立细分的访问者类（Extractor、Compressor）中。</p>
+<li><p>【atan2】:反正切</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、atan（x）表示求的是x的反正切，其返回值为[-pi/2,+pi/2]之间的一个数。</span><br><span class="line"></span><br><span class="line">2、atan2（y，x）求的是y/x的反正切，其返回值为[-pi,+pi]之间的一个数。</span><br><span class="line"></span><br><span class="line">atan2返回值解释：</span><br><span class="line"></span><br><span class="line">在三角函数中，两个参数的函数atan2是正切函数的一个变种。对于任意不同时等于0的实参数x和y，atan2(y,x)所表达的意思是坐标原点为起点，指向(y,x)的射线在坐标平面上与x轴正方向之间的角的角度度。当y&gt;0时，射线与x轴正方向的所得的角的角度指的是x轴正方向绕逆时针方向到达射线旋转的角的角度；而当y&lt;0时，射线与x轴正方向所得的角的角度指的是x轴正方向绕顺时针方向达到射线旋转的角的角度。</span><br><span class="line"></span><br><span class="line">atan2函数最初在计算机编程语言中被引入，但是现在它的应用在科学和工程等其他多个领域十分常见。他的出现最早可以追溯到FORTRAN语言[1]，并且可以在C语言的数学标准库的math.h文件中找到，此外在Java数学库、.NET的System.Math（可应用于C#、VB.NET等语言）、Python的数学模块以及其他地方都可以找到atan2的身影。许多脚本语言，比如Perl，也包含了C语言风格的atan2函数。</span><br></pre></td></tr></table></figure></li>
+<li><p>【reflect】:反射函数 </p>
 </li>
-</ul>
-<h3 id="为什么支持双分派的语言不需要访问者模式？"><a href="#为什么支持双分派的语言不需要访问者模式？" class="headerlink" title="为什么支持双分派的语言不需要访问者模式？"></a>为什么支持双分派的语言不需要访问者模式？</h3><ul>
-<li>既然有 Double Dispatch，对应的就有 Single Dispatch。</li>
-<li> Single Dispatch，指的是执行哪个对象的方法，根据对象的运行时类型来决定；执行对象的哪个方法，根据方法参数的编译时类型来决定。Single Dispatch 之所以称为“Single”，是因为执行哪个对象的哪个方法，只跟“对象”的运行时类型有关。</li>
-<li> Double Dispatch，指的是执行哪个对象的方法，根据对象的运行时类型来决定；执行对象的哪个方法，根据方法参数的运行时类型来决定。Double Dispatch 之所以称为“Double”，是因为执行哪个对象的哪个方法，跟“对象”和“方法参数”两者的运行时类型有关。</li>
-<li>具体到编程语言的语法机制，Single Dispatch 和 Double Dispatch 跟多态和函数重载直接相关。当前主流的面向对象编程语言（比如，Java、C++、C#）都只支持 Single Dispatch，不支持 Double Dispatch。</li>
-</ul>
-<h3 id="简单替代"><a href="#简单替代" class="headerlink" title="简单替代"></a>简单替代</h3><ul>
-<li>工厂模式</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 15:36:11" itemprop="dateModified" datetime="2021-01-20T15:36:11+08:00">2021-01-20</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="解释器模式（-Interpreter-Design-Pattern）"><a href="#解释器模式（-Interpreter-Design-Pattern）" class="headerlink" title="解释器模式（ Interpreter Design Pattern）"></a>解释器模式（ Interpreter Design Pattern）</h1><p><em><strong>解释器模式为某个语言定义它的语法（或者叫文法）表示，并定义一个解释器用来处理这个语法</strong></em></p>
-<p><em><strong>解释器模式只在一些特定的领域会被用到，比如编译器、规则引擎、正则表达式</strong></em></p>
-<h3 id="解释器模式的原理和实现"><a href="#解释器模式的原理和实现" class="headerlink" title="解释器模式的原理和实现"></a>解释器模式的原理和实现</h3><ul>
-<li>解释器模式为某个语言定义它的语法（或者叫文法）表示，并定义一个解释器用来处理这个语法。实际上，这里的“语言”不仅仅指我们平时说的中、英、日、法等各种语言。从广义上来讲，只要是能承载信息的载体，我们都可以称之为“语言”，比如，古代的结绳记事、盲文、哑语、摩斯密码等。</li>
-<li>解释器模式的代码实现比较灵活，没有固定的模板。我们前面说过，应用设计模式主要是应对代码的复杂性，解释器模式也不例外。它的代码实现的核心思想，就是将语法解析的工作拆分到各个小类中，以此来避免大而全的解析类。一般的做法是，将语法规则拆分一些小的独立的单元，然后对每个单元进行解析，最终合并为对整个语法规则的解析。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 13:49:50" itemprop="dateModified" datetime="2021-01-19T13:49:50+08:00">2021-01-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="观察者模式（Observer-Design-Pattern）"><a href="#观察者模式（Observer-Design-Pattern）" class="headerlink" title="观察者模式（Observer Design Pattern）"></a>观察者模式（Observer Design Pattern）</h1><p><em><strong>观察者模式（Observer Design Pattern）也被称为发布订阅模式（Publish-Subscribe Design Pattern）</strong></em></p>
-<p><em><strong>在对象之间定义一个一对多的依赖，当一个对象状态改变的时候，所有依赖的对象都会自动收到通知。</strong></em></p>
-<h3 id="原理及应用场景剖析"><a href="#原理及应用场景剖析" class="headerlink" title="原理及应用场景剖析"></a>原理及应用场景剖析</h3><ul>
-<li>被依赖的对象叫作被观察者（Observable），依赖的对象叫作观察者（Observer）。</li>
-<li><strong>设计模式要干的事情就是解耦。创建型模式是将创建和使用代码解耦，结构型模式是将不同功能代码解耦，行为型模式是将不同的行为代码解耦，具体到观察者模式，它是将观察者和被观察者代码解耦。</strong></li>
-</ul>
-<h3 id="基于不同应用场景的不同实现方式"><a href="#基于不同应用场景的不同实现方式" class="headerlink" title="基于不同应用场景的不同实现方式"></a>基于不同应用场景的不同实现方式</h3><ul>
-<li>同步阻塞的实现方式</li>
-<li>异步非阻塞的实现方式<ul>
-<li>简单一点的做法是，在每个 handleRegSuccess() 函数中，创建一个新的线程执行代码。</li>
-<li>基于 EventBus 来实现</li>
-</ul>
-</li>
-<li>进程内的实现方式</li>
-<li>跨进程的实现方式<ul>
-<li>如果用户注册成功之后，我们需要发送用户信息给大数据征信系统，而大数据征信系统是一个独立的系统，跟它之间的交互是跨不同进程的，那如何实现一个跨进程的观察者模式呢？如果大数据征信系统提供了发送用户注册信息的 RPC 接口，我们仍然可以沿用之前的实现思路，在 handleRegSuccess() 函数中调用 RPC 接口来发送数据。但是，我们还有更加优雅、更加常用的一种实现方式，那就是基于消息队列（Message Queue，比如 ActiveMQ）来实现。</li>
-<li>而基于消息队列的实现方式，被观察者和观察者解耦更加彻底，两部分的耦合更小。被观察者完全不感知观察者，同理，观察者也完全不感知被观察者。被观察者只管发送消息到消息队列，观察者只管从消息队列中读取消息来执行相应的逻辑。</li>
-</ul>
+<li><p>【mix】:线性插值</p>
+<ul>
+<li><pre><code>mix(a,b,c) === c*a+(1-c)*b
+</code></pre>
 </li>
 </ul>
-<h3 id="异步非阻塞观察者模式的简易实现"><a href="#异步非阻塞观察者模式的简易实现" class="headerlink" title="异步非阻塞观察者模式的简易实现"></a>异步非阻塞观察者模式的简易实现</h3><ul>
-<li>框架的作用有：隐藏实现细节，降低开发难度，做到代码复用，解耦业务与非业务代码，让程序员聚焦业务开发。</li>
-</ul>
-<h3 id="EventBus-框架功能需求介绍"><a href="#EventBus-框架功能需求介绍" class="headerlink" title="EventBus 框架功能需求介绍"></a>EventBus 框架功能需求介绍</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 17:38:51" itemprop="dateModified" datetime="2021-01-19T17:38:51+08:00">2021-01-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="职责链模式（Chain-Of-Responsibility-Design-Pattern）"><a href="#职责链模式（Chain-Of-Responsibility-Design-Pattern）" class="headerlink" title="职责链模式（Chain Of Responsibility Design Pattern）"></a>职责链模式（Chain Of Responsibility Design Pattern）</h1><p><em><strong>模板模式、策略模式，职责链模式具有相同的作用：复用和扩展</strong></em></p>
-<p><em><strong>将请求的发送和接收解耦，让多个接收对象都有机会处理这个请求。将这些接收对象串成一条链，并沿着这条链传递这个请求，直到链上的某个接收对象能够处理它为止。</strong></em></p>
-<p><em><strong>职责链模式常用在框架的开发中，为框架提供扩展点，让框架的使用者在不修改框架源码的情况下，基于扩展点添加新的功能。实际上，更具体点来说，职责链模式最常用来开发框架的过滤器和拦截器。</strong></em></p>
-<h3 id="职责链模式的原理和实现"><a href="#职责链模式的原理和实现" class="headerlink" title="职责链模式的原理和实现"></a>职责链模式的原理和实现</h3><ul>
-<li>在职责链模式中，多个处理器依次处理同一个请求。一个请求先经过 A 处理器处理，然后再把请求传递给 B 处理器，B 处理器处理完后再传递给 C 处理器，以此类推，形成一个链条。链条上的每个处理器各自承担各自的处理职责，所以叫作职责链模式。</li>
-<li>在 GoF 的定义中，一旦某个处理器能处理这个请求，就不会继续将请求传递给后续的处理器了。当然，在实际的开发中，也存在对这个模式的变体，那就是请求不会中途终止传递，而是会被所有的处理器都处理一遍。</li>
-<li>职责链模式有两种常用的实现。一种是使用链表来存储处理器，另一种是使用数组来存储处理器，后面一种实现方式更加简单。</li>
+</li>
+<li><p>【normalize】:规范为单位向量</p>
+</li>
 </ul>
 
       
@@ -643,7 +494,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/lighting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -657,7 +508,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/lighting/" class="post-title-link" itemprop="url">Lighting</a>
         </h2>
 
         <div class="post-meta">
@@ -666,16 +517,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:38:58" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 15:55:17" itemprop="dateModified" datetime="2021-01-19T15:55:17+08:00">2021-01-19</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/opengl/" itemprop="url" rel="index"><span itemprop="name">opengl</span></a>
+                </span>
+            </span>
 
           
 
@@ -688,100 +542,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="策略模式（Strategy-Design-Pattern）"><a href="#策略模式（Strategy-Design-Pattern）" class="headerlink" title="策略模式（Strategy Design Pattern）"></a>策略模式（Strategy Design Pattern）</h1><p><em><strong>定义一族算法类，将每个算法分别封装起来，让它们可以互相替换。策略模式可以使算法的变化独立于使用它们的客户端（这里的客户端代指使用算法的代码）。</strong></em></p>
-<h3 id="工厂模式是解耦对象的创建和使用，观察者模式是解耦观察者和被观察者。策略模式跟两者类似，也能起到解耦的作用，不过，它解耦的是策略的定义、创建、使用这三部分。"><a href="#工厂模式是解耦对象的创建和使用，观察者模式是解耦观察者和被观察者。策略模式跟两者类似，也能起到解耦的作用，不过，它解耦的是策略的定义、创建、使用这三部分。" class="headerlink" title="工厂模式是解耦对象的创建和使用，观察者模式是解耦观察者和被观察者。策略模式跟两者类似，也能起到解耦的作用，不过，它解耦的是策略的定义、创建、使用这三部分。"></a><em><strong>工厂模式是解耦对象的创建和使用，观察者模式是解耦观察者和被观察者。策略模式跟两者类似，也能起到解耦的作用，不过，它解耦的是策略的定义、创建、使用这三部分。</strong></em></h3><h3 id="策略的定义"><a href="#策略的定义" class="headerlink" title="策略的定义"></a>策略的定义</h3><ul>
-<li>策略类的定义比较简单，包含一个策略接口和一组实现这个接口的策略类。</li>
+          <h1 id="Lighting"><a href="#Lighting" class="headerlink" title="Lighting"></a>Lighting</h1><ul>
+<li><h3 id="Point-Omni-Light"><a href="#Point-Omni-Light" class="headerlink" title="Point/Omni Light"></a>Point/Omni Light</h3><ul>
+<li><h5 id="平方反比衰减光源-light-light0-pow-r0-r-2"><a href="#平方反比衰减光源-light-light0-pow-r0-r-2" class="headerlink" title="平方反比衰减光源 light = light0*pow(r0/r,2);"></a>平方反比衰减光源 light = light0*pow(r0/r,2);</h5><ol>
+<li>问题：当距离太近时出现过曝；<ul>
+<li>解决1： light = light0*pow(r0,2)/(pow(r,2)+e);  ue4使用e=1cm;    </li>
+<li>解决2： light = light0*pow(r0,2)/pow(max(r,rmin),2);</li>
 </ul>
-<h3 id="策略的创建"><a href="#策略的创建" class="headerlink" title="策略的创建"></a>策略的创建</h3><ul>
-<li>因为策略模式会包含一组策略，在使用它们的时候，一般会通过类型（type）来判断创建哪个策略来使用。为了封装创建逻辑，我们需要对客户端代码屏蔽创建细节。我们可以把根据 type 创建策略的逻辑抽离出来，放到工厂类中。</li>
-</ul>
-<h3 id="策略的使用"><a href="#策略的使用" class="headerlink" title="策略的使用"></a>策略的使用</h3><ul>
-<li>运行时动态确定使用哪种策略</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>一提到策略模式，有人就觉得，它的作用是避免 if-else 分支判断逻辑。实际上，这种认识是很片面的。策略模式主要的作用还是解耦策略的定义、创建和使用，控制代码的复杂度，让每个部分都不至于过于复杂、代码量过多。除此之外，对于复杂代码来说，策略模式还能让其满足开闭原则，添加新策略的时候，最小化、集中化代码改动，减少引入 bug 的风险。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 14:41:18" itemprop="dateModified" datetime="2021-01-19T14:41:18+08:00">2021-01-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="模板模式（Template-Method-Design-Pattern）"><a href="#模板模式（Template-Method-Design-Pattern）" class="headerlink" title="模板模式（Template Method Design Pattern）"></a>模板模式（Template Method Design Pattern）</h1><p><em><strong>模板模式主要是用来解决复用和扩展两个问题</strong></em></p>
-<p><em><strong>模板方法模式在一个方法中定义一个算法骨架，并将某些步骤推迟到子类中实现。模板方法模式可以让子类在不改变算法整体结构的情况下，重新定义算法中的某些步骤。</strong></em></p>
-<h3 id="模板模式作用一：复用"><a href="#模板模式作用一：复用" class="headerlink" title="模板模式作用一：复用"></a>模板模式作用一：复用</h3><h3 id="模板模式作用二：扩展"><a href="#模板模式作用二：扩展" class="headerlink" title="模板模式作用二：扩展"></a>模板模式作用二：扩展</h3><ul>
-<li>模板模式常用在框架的开发中，让框架用户可以在不修改框架源码的情况下，定制化框架的功能。</li>
-</ul>
-<h3 id="回调的原理解析"><a href="#回调的原理解析" class="headerlink" title="回调的原理解析"></a>回调的原理解析</h3><ul>
-<li>C 语言可以使用函数指针</li>
-<li>A 类事先注册某个函数 F 到 B 类，A 类在调用 B 类的 P 函数的时候，B 类反过来调用 A 类注册给它的 F 函数。这里的 F 函数就是“回调函数”。A 调用 B，B 反过来又调用 A，这种调用机制就叫作“回调”。</li>
-<li>回调可以分为同步回调和异步回调（或者延迟回调）。同步回调指在函数返回之前执行回调函数；异步回调指的是在函数返回之后执行回调函数。</li>
-</ul>
-<h3 id="模板模式-VS-回调"><a href="#模板模式-VS-回调" class="headerlink" title="模板模式 VS 回调"></a>模板模式 VS 回调</h3><ul>
-<li>从应用场景上来看，同步回调跟模板模式几乎一致。它们都是在一个大的算法骨架中，自由替换其中的某个步骤，起到代码复用和扩展的目的。而异步回调跟模板模式有较大差别，更像是观察者模式。</li>
-<li>从代码实现上来看，回调和模板模式完全不同。回调基于组合关系来实现，把一个对象传递给另一个对象，是一种对象之间的关系；模板模式基于继承关系来实现，子类重写父类的抽象方法，是一种类之间的关系。前面我们也讲到，组合优于继承。</li>
-<li>实际上，这里也不例外。在代码实现上，回调相对于模板模式会更加灵活，主要体现在下面几点。<ul>
-<li>像 Java 这种只支持单继承的语言，基于模板模式编写的子类，已经继承了一个父类，不再具有继承的能力。</li>
-<li>回调可以使用匿名类来创建回调对象，可以不用事先定义类；而模板模式针对不同的实现都要定义不同的子类。</li>
-<li>如果某个类中定义了多个模板方法，每个方法都有对应的抽象方法，那即便我们只用到其中的一个模板方法，子类也必须实现所有的抽象方法。而回调就更加灵活，我们只需要往用到的模板方法中注入回调对象即可。</li>
+</li>
+<li>问题：当距离太远时光照影响几乎没有，但计算影响性能</li>
+</ol>
+</li>
 </ul>
 </li>
 </ul>
@@ -804,7 +575,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/opengl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -818,7 +589,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/opengl/" class="post-title-link" itemprop="url">OpenGL</a>
         </h2>
 
         <div class="post-meta">
@@ -827,16 +598,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:40:01" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 15:30:56" itemprop="dateModified" datetime="2021-01-20T15:30:56+08:00">2021-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/opengl/" itemprop="url" rel="index"><span itemprop="name">opengl</span></a>
+                </span>
+            </span>
 
           
 
@@ -849,14 +623,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="状态模式（State-Design-Pattern）"><a href="#状态模式（State-Design-Pattern）" class="headerlink" title="状态模式（State Design Pattern）"></a>状态模式（State Design Pattern）</h1><p><em><strong>状态模式一般用来实现状态机，而状态机常用在游戏、工作流引擎等系统开发中。不过，状态机的实现方式有多种，除了状态模式，比较常用的还有分支逻辑法和查表法。</strong></em></p>
-<h3 id="什么是有限状态机？"><a href="#什么是有限状态机？" class="headerlink" title="什么是有限状态机？"></a>什么是有限状态机？</h3><ul>
-<li>有限状态机，英文翻译是 Finite State Machine，缩写为 FSM，简称为状态机。</li>
-<li>状态机有 3 个组成部分：状态（State）、事件（Event）、动作（Action）。</li>
-<li>状态机实现方式一：<strong>分支逻辑法</strong></li>
-<li>状态机实现方式二：<strong>查表法</strong></li>
-<li>状态机实现方式三：<strong>状态模式</strong></li>
-<li>像游戏这种比较复杂的状态机，包含的状态比较多，我优先推荐使用查表法，而状态模式会引入非常多的状态类，会导致代码比较难维护。相反，像电商下单、外卖下单这种类型的状态机，它们的状态并不多，状态转移也比较简单，但事件触发执行的动作包含的业务逻辑可能会比较复杂，所以，更加推荐使用状态模式来实现。</li>
+          <h1 id="OpenGL"><a href="#OpenGL" class="headerlink" title="OpenGL"></a>OpenGL</h1><ul>
+<li>在OpenGL中，任何事物都在3D空间中，而屏幕和窗口却是2D像素数组，这导致OpenGL的大部分工作都是关于把3D坐标转变为适应你屏幕的2D像素。3D坐标转为2D坐标的处理过程是由OpenGL的图形渲染管线（Graphics Pipeline，大多译为管线，实际上指的是一堆原始图形数据途经一个输送管道，期间经过各种变化处理最终出现在屏幕的过程）管理的。</li>
 </ul>
 
       
@@ -877,7 +645,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%89%E8%A7%92%E5%BD%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -891,7 +659,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%89%E8%A7%92%E5%BD%A2/" class="post-title-link" itemprop="url">你好，三角形</a>
         </h2>
 
         <div class="post-meta">
@@ -900,16 +668,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:38:28" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 14:06:39" itemprop="dateModified" datetime="2021-01-20T14:06:39+08:00">2021-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/opengl/" itemprop="url" rel="index"><span itemprop="name">opengl</span></a>
+                </span>
+            </span>
 
           
 
@@ -922,14 +693,392 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="备忘录模式（-Memento-Design-Pattern）"><a href="#备忘录模式（-Memento-Design-Pattern）" class="headerlink" title="备忘录模式（ Memento Design Pattern）"></a>备忘录模式（ Memento Design Pattern）</h1><p><em><strong>在不违背封装原则的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，以便之后恢复对象为先前的状态</strong></em></p>
-<h3 id="备忘录模式的原理与实现"><a href="#备忘录模式的原理与实现" class="headerlink" title="备忘录模式的原理与实现"></a>备忘录模式的原理与实现</h3><ul>
-<li><p>备忘录模式也叫快照模式，具体来说，就是在不违背封装原则的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，以便之后恢复对象为先前的状态。这个模式的定义表达了两部分内容：一部分是，存储副本以便后期恢复；另一部分是，要在不违背封装原则的前提下，进行对象的备份和恢复。</p>
+          <h1 id="你好，三角形"><a href="#你好，三角形" class="headerlink" title="你好，三角形"></a>你好，三角形</h1><ul>
+<li><h2 id="创建顶点数组（标准化设备坐标）"><a href="#创建顶点数组（标准化设备坐标）" class="headerlink" title="创建顶点数组（标准化设备坐标）"></a>创建顶点数组（标准化设备坐标）</h2></li>
+<li><h2 id="数据发送给顶点着色器"><a href="#数据发送给顶点着色器" class="headerlink" title="数据发送给顶点着色器"></a>数据发送给顶点着色器</h2></li>
+<li><h2 id="顶点着色器"><a href="#顶点着色器" class="headerlink" title="顶点着色器"></a>顶点着色器</h2><ul>
+<li><p>GPU上创建内存储存顶点数据（通过顶点缓冲对象【VBO】管理内存）</p>
 </li>
-<li><p>备忘录模式的应用场景也比较明确和有限，主要是用来防丢失、撤销、恢复等。它跟平时我们常说的“备份”很相似。两者的主要区别在于，备忘录模式更侧重于代码的设计和实现，备份更侧重架构设计或产品设计。</p>
+<li><p>配置OpenGL如何解释内存</p>
 </li>
-<li><p>对于大对象的备份来说，备份占用的存储空间会比较大，备份和恢复的耗时会比较长。针对这个问题，不同的业务场景有不同的处理方式。比如，只备份必要的恢复信息，结合最新的数据来恢复；再比如，全量备份和增量备份相结合，低频全量备份，高频增量备份，两者结合来做恢复。</p>
+<li><p>指定发送给显卡的方式</p>
 </li>
+<li><p>VBO优点：在GPU内存/显存中储存大量顶点。通过VBO可以一次性发送大量数据到显卡上，从CPU发送到显卡比较慢，显卡访问显存比较快</p>
+</li>
+<li><pre><code>// 顶点着色器源码
+const char *vertexShaderSource = &quot;#version 330 core\n&quot;
+                                 &quot;layout (location = 0) in vec3 aPos;\n&quot;
+                                 &quot;void main()\n&quot;
+                                 &quot;&#123;\n&quot;
+                                 &quot;   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n&quot;
+                                 &quot;&#125;\0&quot;;
+// 创建顶点着色器
+unsigned int vertexShader;
+vertexShader = glCreateShader(GL_VERTEX_SHADER);
+// 源码附着到顶点着色器对象上
+glShaderSource(vertexShader, 1, &amp;vertexShaderSource, NULL);
+// 编译源码
+glCompileShader(vertexShader);
+
+// 获取编译情况，并输出编译log
+int  success;
+char infoLog[512];
+glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &amp;success);
+if(!success)
+&#123;
+    glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+    std::cout &lt;&lt; &quot;ERROR::SHADER::VERTEX::COMPILATION_FAILED\n&quot; &lt;&lt; infoLog &lt;&lt; std::endl;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><h2 id="片段着色器"><a href="#片段着色器" class="headerlink" title="片段着色器"></a>片段着色器</h2><ul>
+<li>计算像素最后的颜色输出</li>
+</ul>
+</li>
+<li><h2 id="链接着色器到用于渲染的着色器程序（Shader-Program）中"><a href="#链接着色器到用于渲染的着色器程序（Shader-Program）中" class="headerlink" title="链接着色器到用于渲染的着色器程序（Shader Program）中"></a>链接着色器到用于渲染的着色器程序（Shader Program）中</h2></li>
+<li><h2 id="使用着色器程序"><a href="#使用着色器程序" class="headerlink" title="使用着色器程序"></a>使用着色器程序</h2></li>
+<li><h2 id="清除着色器对象"><a href="#清除着色器对象" class="headerlink" title="清除着色器对象"></a>清除着色器对象</h2></li>
+<li><h2 id="链接顶点属性"><a href="#链接顶点属性" class="headerlink" title="链接顶点属性"></a>链接顶点属性</h2></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/public/Doxygen%E6%B3%A8%E9%87%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/public/Doxygen%E6%B3%A8%E9%87%8A/" class="post-title-link" itemprop="url">Doxygen注释</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:40:42" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/public/" itemprop="url" rel="index"><span itemprop="name">public</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Doxygen注释"><a href="#Doxygen注释" class="headerlink" title="Doxygen注释"></a>Doxygen注释</h1><hr>
+<h4 id="Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C-、Java、Objective-C和IDL语言，部分支持PHP、C-。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。"><a href="#Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C-、Java、Objective-C和IDL语言，部分支持PHP、C-。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。" class="headerlink" title="Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C++、Java、Objective-C和IDL语言，部分支持PHP、C#。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。"></a>Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C++、Java、Objective-C和IDL语言，部分支持PHP、C#。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。</h4><hr>
+<p>@exception <exception-object> {exception description} 对一个异常对象进行注释。</p>
+<p>@warning {warning message } 一些需要注意的事情</p>
+<p>@todo { things to be done } 对将要做的事情进行注释，链接到所有TODO 汇总的TODO 列表</p>
+<p>@bug 缺陷，链接到所有缺陷汇总的缺陷列表</p>
+<p>@see {comment with reference to other items } 一段包含其他部分引用的注释，中间包含对其他代码项的名称，自动产生对其的引用链接。</p>
+<p>@relates <name> 通常用做把非成员函数的注释文档包含在类的说明文档中。</p>
+<p>@since {text} 通常用来说明从什么版本、时间写此部分代码。</p>
+<p>@deprecated</p>
+<p>@pre { description of the precondition } 用来说明代码项的前提条件。</p>
+<p>@post { description of the postcondition } 用来说明代码项之后的使用条件。</p>
+<p>@code 在注释中开始说明一段代码，直到@endcode命令。</p>
+<p>@endcode 注释中代码段的结束。</p>
+<p>@code .. @endcode 包含一段代码</p>
+<p>@addtogroup 添加到一个组。</p>
+<p>@brief 概要信息</p>
+<p>@deprecated 已废弃函数</p>
+<p>@details  详细描述</p>
+<p>@note 开始一个段落，用来描述一些注意事项</p>
+<p>@par 开始一个段落，段落名称描述由你自己指定</p>
+<p>@param 标记一个参数的意义</p>
+<p>@fn 函数说明</p>
+<p>@ingroup 加入到一个组</p>
+<p>@return 描述返回意义</p>
+<p>@retval 描述返回值意义</p>
+<p>@include 包含文件</p>
+<p>@var、@enum、@struct、@class 对变量、美剧、结构体、类等进行标注@exception <exception-object> {exception description} 对一个异常对象进行注释。</p>
+<p>@warning {warning message } 一些需要注意的事情</p>
+<p>@todo { things to be done } 对将要做的事情进行注释，链接到所有TODO 汇总的TODO 列表</p>
+<p>@bug 缺陷，链接到所有缺陷汇总的缺陷列表</p>
+<p>@see {comment with reference to other items } 一段包含其他部分引用的注释，中间包含对其他代码项的名称，自动产生对其的引用链接。</p>
+<p>@relates <name> 通常用做把非成员函数的注释文档包含在类的说明文档中。</p>
+<p>@since {text} 通常用来说明从什么版本、时间写此部分代码。</p>
+<p>@deprecated</p>
+<p>@pre { description of the precondition } 用来说明代码项的前提条件。</p>
+<p>@post { description of the postcondition } 用来说明代码项之后的使用条件。</p>
+<p>@code 在注释中开始说明一段代码，直到@endcode命令。</p>
+<p>@endcode 注释中代码段的结束。</p>
+<p>@code .. @endcode 包含一段代码</p>
+<p>@addtogroup 添加到一个组。</p>
+<p>@brief 概要信息</p>
+<p>@deprecated 已废弃函数</p>
+<p>@details  详细描述</p>
+<p>@note 开始一个段落，用来描述一些注意事项</p>
+<p>@par 开始一个段落，段落名称描述由你自己指定</p>
+<p>@param 标记一个参数的意义</p>
+<p>@fn 函数说明</p>
+<p>@ingroup 加入到一个组</p>
+<p>@return 描述返回意义</p>
+<p>@retval 描述返回值意义</p>
+<p>@include 包含文件</p>
+<p>@var、@enum、@struct、@class 对变量、美剧、结构体、类等进行标注</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/OOP&OOD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/OOP&OOD/" class="post-title-link" itemprop="url">OOP&OOD</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:43" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="OOP面向对象编程"><a href="#OOP面向对象编程" class="headerlink" title="OOP面向对象编程"></a>OOP面向对象编程</h1><h2 id="组合（Compostion）has-a"><a href="#组合（Compostion）has-a" class="headerlink" title="组合（Compostion）has-a"></a>组合（Compostion）has-a</h2><ul>
+<li><h3 id="组合关系下的构造和析构函数"><a href="#组合关系下的构造和析构函数" class="headerlink" title="组合关系下的构造和析构函数"></a>组合关系下的构造和析构函数</h3><ul>
+<li><h5 id="构造函数（由内而外）"><a href="#构造函数（由内而外）" class="headerlink" title="构造函数（由内而外）"></a>构造函数（由内而外）</h5><ul>
+<li>container调用component的构造函数,然后执行自己的构造函数</li>
+<li>默认使用component的默认构造函数，定制需在container的函数内部调用</li>
+</ul>
+</li>
+<li><h5 id="析构函数（由外而内）"><a href="#析构函数（由外而内）" class="headerlink" title="析构函数（由外而内）"></a>析构函数（由外而内）</h5><ul>
+<li>container先调用自己的析构函数，然后调用component的析构函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="委托（Delegation）composition-by-reference"><a href="#委托（Delegation）composition-by-reference" class="headerlink" title="委托（Delegation）composition by reference"></a>委托（Delegation）composition by reference</h2><ul>
+<li>只有在需要component的时候才会去创建component</li>
+<li><img src="E:\github\notebook\c++\assets\接口.png" alt="image-20210222143212049"></li>
+<li>（编译防火墙）写时复制</li>
+</ul>
+<h2 id="继承（Inheritance）is-a"><a href="#继承（Inheritance）is-a" class="headerlink" title="继承（Inheritance）is-a"></a>继承（Inheritance）is-a</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> :</span><span class="keyword">public</span> bar&#123; <span class="comment">//通常</span></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> :</span><span class="keyword">private</span> bar&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> :</span><span class="keyword">protected</span> bar&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="继承关系下的构造和析构函数（base父类-amp-amp-derived派生类）"><a href="#继承关系下的构造和析构函数（base父类-amp-amp-derived派生类）" class="headerlink" title="继承关系下的构造和析构函数（base父类 &amp;&amp; derived派生类）"></a>继承关系下的构造和析构函数（base父类 &amp;&amp; derived派生类）</h3><ul>
+<li><h5 id="构造函数（由内而外）-1"><a href="#构造函数（由内而外）-1" class="headerlink" title="构造函数（由内而外）"></a>构造函数（由内而外）</h5><ul>
+<li>derived调用base的构造函数,然后执行自己的构造函数</li>
+</ul>
+</li>
+<li><h5 id="析构函数（由外而内）-1"><a href="#析构函数（由外而内）-1" class="headerlink" title="析构函数（由外而内）"></a>析构函数（由外而内）</h5><ul>
+<li>derived先调用自己的析构函数，然后调用base 的析构函数</li>
+<li>base类的析构函数必须是virtual否则会出现undefined behavior</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h3><ul>
+<li><p>使用虚函数完成  模板模式</p>
+</li>
+<li><h5 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h5><ul>
+<li>不希望派生类override(重写)</li>
+</ul>
+</li>
+<li><h5 id="虚函数-virtual"><a href="#虚函数-virtual" class="headerlink" title="虚函数 virtual"></a>虚函数 virtual</h5><ul>
+<li>希望派生类override,有默认定义</li>
+<li>virtual function();</li>
+</ul>
+</li>
+<li><h5 id="纯虚函数-pure-virtual"><a href="#纯虚函数-pure-virtual" class="headerlink" title="纯虚函数 pure virtual"></a>纯虚函数 pure virtual</h5><ul>
+<li>派生类必须override</li>
+<li>virtual function() = 0;</li>
+<li>纯虚函数和空函数有区别</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="继承和组合嵌套使用的情况下的顺序？"><a href="#继承和组合嵌套使用的情况下的顺序？" class="headerlink" title="继承和组合嵌套使用的情况下的顺序？"></a>继承和组合嵌套使用的情况下的顺序？</h3></li>
+<li><h3 id="委托加继承用于观察者模式"><a href="#委托加继承用于观察者模式" class="headerlink" title="委托加继承用于观察者模式"></a>委托加继承用于观察者模式</h3><p><img src="E:\github\notebook\c++\assets\观察者模式.png" alt="image-20210222154953285"></p>
+</li>
+</ul>
+<h1 id="OOD面向对象设计"><a href="#OOD面向对象设计" class="headerlink" title="OOD面向对象设计"></a>OOD面向对象设计</h1><h3 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h3><p>比如文件系统：primitive表示文件，composite表示文件夹 </p>
+<p><img src="E:\github\notebook\c++\assets\组合模式.png" alt="image-20210222162154579"></p>
+<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><p> <img src="E:\github\notebook\c++\assets\原型模式.png" alt="image-20210222162726046"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/conversion-function%20explicit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/conversion-function%20explicit/" class="post-title-link" itemprop="url">conversion function转换函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:26" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="conversion-function转换函数"><a href="#conversion-function转换函数" class="headerlink" title="conversion function转换函数"></a>conversion function转换函数</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Fraction</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;&#125;</span><br><span class="line">    <span class="comment">// 必须加const</span></span><br><span class="line">    <span class="comment">// 返回类型为double</span></span><br><span class="line">    <span class="comment">// 函数参数this</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">double</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">double</span>) (<span class="built_in"><span class="keyword">double</span></span>(m_son) / <span class="built_in"><span class="keyword">double</span></span>(m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Fraction <span class="title">f</span> <span class="params">(<span class="number">3</span>,<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// 若没有转换函数，此语句报错 有转换函数，编译器调用转换函数将f转换为double</span></span><br><span class="line"><span class="comment">// 然后编译器继续使用operator(double,int)完成此语句	</span></span><br><span class="line"><span class="keyword">double</span> b = f + <span class="number">4</span>; </span><br></pre></td></tr></table></figure>
+
+<h1 id="explicit-显式关键字"><a href="#explicit-显式关键字" class="headerlink" title="explicit 显式关键字"></a>explicit 显式关键字</h1><h2 id="without-explicit"><a href="#without-explicit" class="headerlink" title="without explicit"></a>without explicit</h2><h5 id="不使用explicit时，当operator-操作符查询到只有（const-FractionExplicit-amp-f）重载类型时，会自动调用单实参构造函数来进行隐式转换"><a href="#不使用explicit时，当operator-操作符查询到只有（const-FractionExplicit-amp-f）重载类型时，会自动调用单实参构造函数来进行隐式转换" class="headerlink" title="不使用explicit时，当operator+操作符查询到只有（const FractionExplicit&amp;f）重载类型时，会自动调用单实参构造函数来进行隐式转换"></a>不使用explicit时，当operator+操作符查询到只有（const FractionExplicit&amp;f）重载类型时，会自动调用单实参构造函数来进行隐式转换</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FractionExplicit</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * non-explicit-one-argument ctor 非显性单实参构造函数</span></span><br><span class="line"><span class="comment">     * two parameter one argument</span></span><br><span class="line"><span class="comment">     * FractionExplicit d2 = f + 4; // call non-explicit ctor 将4转为 FractionNonExplicit(4,1)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">     <span class="built_in">FractionExplicit</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    FractionExplicit <span class="keyword">operator</span>+(<span class="keyword">const</span> FractionExplicit &amp;f) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">FractionExplicit</span>(f.m_son * m_mom + f.m_mom * m_son, f.m_mom * m_mom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">son</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_son;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mom</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_mom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">FractionExplicit <span class="title">f</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// call non-explicit ctor 将4转为 FractionNonExplicit(4,1)</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>; </span><br></pre></td></tr></table></figure>
+
+<h2 id="with-explicit"><a href="#with-explicit" class="headerlink" title="with explicit"></a>with explicit</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FractionExplicit</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * explicit function</span></span><br><span class="line"><span class="comment">     * 加上explicit，编译器不会自动转换</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">FractionExplicit</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>)</span> : m_son(num), m_mom(den) &#123;</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    FractionExplicit <span class="keyword">operator</span>+(<span class="keyword">const</span> FractionExplicit &amp;f) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">FractionExplicit</span>(f.m_son * m_mom + f.m_mom * m_son, f.m_mom * m_mom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">son</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_son;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mom</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_mom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">FractionExplicit <span class="title">f</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// 报错：Invalid operands to binary expression (&#x27;FractionExplicit&#x27; and &#x27;int&#x27;)</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>; </span><br><span class="line"><span class="comment">// 对整型进行显式转换</span></span><br><span class="line">FractionExplicit d2 = f + <span class="built_in">FractionExplicit</span>(<span class="number">4</span>); </span><br></pre></td></tr></table></figure>
+
+<h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><h2 id="隐式转换和非显式构造函数导致产生二义性"><a href="#隐式转换和非显式构造函数导致产生二义性" class="headerlink" title="隐式转换和非显式构造函数导致产生二义性"></a>隐式转换和非显式构造函数导致产生二义性</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FractionExplicit</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * non-explicit-one-argument ctor 非显性单实参构造函数</span></span><br><span class="line"><span class="comment">     * two parameter one argument</span></span><br><span class="line"><span class="comment">     * FractionExplicit d2 = f + 4; // call non-explicit ctor 将4转为 FractionNonExplicit(4,1)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">     <span class="built_in">FractionExplicit</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 必须加const</span></span><br><span class="line">    <span class="comment">// 返回类型为double</span></span><br><span class="line">    <span class="comment">// 函数参数this</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">double</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">double</span>) (<span class="built_in"><span class="keyword">double</span></span>(m_son) / <span class="built_in"><span class="keyword">double</span></span>(m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    FractionExplicit <span class="keyword">operator</span>+(<span class="keyword">const</span> FractionExplicit &amp;f) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">FractionExplicit</span>(f.m_son * m_mom + f.m_mom * m_son, f.m_mom * m_mom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">son</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_son;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mom</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_mom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">FractionExplicit <span class="title">f</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// 报错：Use of overloaded operator &#x27;+&#x27; is ambiguous (with operand types &#x27;FractionExplicit&#x27; and &#x27;int&#x27;)</span></span><br><span class="line"><span class="comment">// 因为操作符重载operator+(const FractionExplicit &amp;f),所以编译器可以执行FractionExplicit(4),再执行加法</span></span><br><span class="line"><span class="comment">// 同时因为该类包含一个隐式转换函数，所以operator+也可以先double(f)然后重载为operator+(double,int)</span></span><br><span class="line"><span class="comment">// 因此编译器会报错，此处产生二义性</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>;</span><br><span class="line"><span class="comment">// explicit FractionExplicit(int num, int den = 1) : m_son(num), m_mom(den) &#123;&#125;</span></span><br><span class="line"><span class="comment">// 此时仍然报错，此时编译器选择operator+(double,int),返回类型为double,不符合</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>;</span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line">FractionExplicit d2 = f + <span class="built_in">FractionExplicit</span>(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="多隐式转换造成的二义性"><a href="#多隐式转换造成的二义性" class="headerlink" title="多隐式转换造成的二义性"></a>多隐式转换造成的二义性</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Fraction</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 必须加const</span></span><br><span class="line">    <span class="comment">// 返回类型为double</span></span><br><span class="line">    <span class="comment">// 函数参数this</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">double</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">double</span>) (<span class="built_in"><span class="keyword">double</span></span>(m_son) / <span class="built_in"><span class="keyword">double</span></span>(m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">float</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">float</span>) (<span class="built_in"><span class="keyword">float</span></span> (m_son) / <span class="built_in"><span class="keyword">float</span></span> (m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">Fraction <span class="title">f</span><span class="params">(<span class="number">3</span>,<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">//  不能写成下面这种情形，因为有多个转换函数double() float()，而operator+对float double都有相应的操作符重载 所以需要显示转换f</span></span><br><span class="line"><span class="comment">// 报错：Use of overloaded operator &#x27;+&#x27; is ambiguous</span></span><br><span class="line"><span class="keyword">float</span> a = <span class="number">4</span> + f;</span><br><span class="line"><span class="comment">// 4.6f</span></span><br><span class="line"><span class="keyword">float</span> a = <span class="number">4</span> + <span class="built_in"><span class="keyword">double</span></span> (f);</span><br><span class="line"><span class="comment">// 4.6f</span></span><br><span class="line"><span class="keyword">float</span> b = <span class="number">4</span> + <span class="built_in"><span class="keyword">float</span></span> (f);</span><br><span class="line"><span class="comment">// double 4.5999999999999996</span></span><br><span class="line"><span class="keyword">double</span> c = <span class="number">4</span> + <span class="built_in"><span class="keyword">double</span></span> (f);</span><br><span class="line"><span class="comment">// float(f)时会丢失部分精度，导致4.6 = 4.5999999999999996 d = 4.5999999046325684</span></span><br><span class="line"><span class="keyword">double</span> d = <span class="number">4</span> + <span class="built_in"><span class="keyword">float</span></span> (f);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="https://github.com/pgeorge1324/c/tree/master/learnCpp/course2">:bookmark_tabs: github</a></li>
 </ul>
 
       
@@ -1017,20 +1166,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

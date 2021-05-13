@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/stdlib/rotate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/stdlib/rotate/" class="post-title-link" itemprop="url">rotate</a>
         </h2>
 
         <div class="post-meta">
@@ -181,16 +181,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：16:57:31" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 11:40:09" itemprop="dateModified" datetime="2021-01-18T11:40:09+08:00">2021-01-18</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/stdlib/" itemprop="url" rel="index"><span itemprop="name">stdlib</span></a>
+                </span>
+            </span>
 
           
 
@@ -203,17 +210,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="工厂模式（Factory-Design-Pattern）"><a href="#工厂模式（Factory-Design-Pattern）" class="headerlink" title="工厂模式（Factory Design Pattern）"></a>工厂模式（Factory Design Pattern）</h1><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
-<li><h2 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h2></li>
-<li>工厂方法<ul>
-<li>工厂方法模式比起简单工厂模式更加符合开闭原则。</li>
-</ul>
-</li>
-<li>抽象工厂</li>
-</ul>
-<h3 id="依赖注入框架，或者叫依赖注入容器（Dependency-Injection-Container），简称-DI-容器"><a href="#依赖注入框架，或者叫依赖注入容器（Dependency-Injection-Container），简称-DI-容器" class="headerlink" title="依赖注入框架，或者叫依赖注入容器（Dependency Injection Container），简称 DI 容器"></a>依赖注入框架，或者叫依赖注入容器（Dependency Injection Container），简称 DI 容器</h3><ul>
-<li>DI 容器底层最基本的设计思路就是基于工厂模式的。DI 容器相当于一个大的工厂类，负责在程序启动的时候，根据配置（要创建哪些类对象，每个类对象的创建需要依赖哪些其他类对象）事先创建好对象。当应用程序需要使用某个类对象的时候，直接从容器中获取即可。正是因为它持有一堆对象，所以这个框架才被称为“容器”。</li>
-</ul>
+          <h1 id="rotate"><a href="#rotate" class="headerlink" title="rotate"></a>rotate</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">ForwardIterator</span>&gt;</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">rotate</span> <span class="params">(ForwardIterator first, ForwardIterator middle,</span></span></span><br><span class="line"><span class="params"><span class="function">               ForwardIterator last)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  ForwardIterator next = middle;</span><br><span class="line">    <span class="comment">// 递归的交换</span></span><br><span class="line">  <span class="keyword">while</span> (first!=next)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">swap</span> (*first++,*next++);</span><br><span class="line">    <span class="keyword">if</span> (next==last) next=middle;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (first==middle) middle=next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -233,7 +231,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/stdlib/sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -247,7 +245,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/stdlib/sort/" class="post-title-link" itemprop="url">sort</a>
         </h2>
 
         <div class="post-meta">
@@ -256,16 +254,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：16:58:04" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 13:41:10" itemprop="dateModified" datetime="2021-01-18T13:41:10+08:00">2021-01-18</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/stdlib/" itemprop="url" rel="index"><span itemprop="name">stdlib</span></a>
+                </span>
+            </span>
 
           
 
@@ -278,13 +283,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="什么是原型模式？"><a href="#什么是原型模式？" class="headerlink" title="什么是原型模式？"></a>什么是原型模式？</h3><ul>
-<li><h5 id="如果对象的创建成本比较大，而同一个类的不同对象之间差别不大（大部分字段都相同），在这种情况下，我们可以利用对已有对象（原型）进行复制（或者叫拷贝）的方式，来创建新对象，以达到节省创建时间的目的。这种基于原型来创建对象的方式就叫作原型设计模式，简称原型模式。"><a href="#如果对象的创建成本比较大，而同一个类的不同对象之间差别不大（大部分字段都相同），在这种情况下，我们可以利用对已有对象（原型）进行复制（或者叫拷贝）的方式，来创建新对象，以达到节省创建时间的目的。这种基于原型来创建对象的方式就叫作原型设计模式，简称原型模式。" class="headerlink" title="如果对象的创建成本比较大，而同一个类的不同对象之间差别不大（大部分字段都相同），在这种情况下，我们可以利用对已有对象（原型）进行复制（或者叫拷贝）的方式，来创建新对象，以达到节省创建时间的目的。这种基于原型来创建对象的方式就叫作原型设计模式，简称原型模式。"></a>如果对象的创建成本比较大，而同一个类的不同对象之间差别不大（大部分字段都相同），在这种情况下，我们可以利用对已有对象（原型）进行复制（或者叫拷贝）的方式，来创建新对象，以达到节省创建时间的目的。这种基于原型来创建对象的方式就叫作原型设计模式，简称原型模式。</h5></li>
-</ul>
-<h3 id="原型模式的两种实现方法"><a href="#原型模式的两种实现方法" class="headerlink" title="原型模式的两种实现方法"></a>原型模式的两种实现方法</h3><ul>
-<li>原型模式有两种实现方法，深拷贝和浅拷贝。浅拷贝只会复制对象中基本数据类型数据和引用对象的内存地址，不会递归地复制引用对象，以及引用对象的引用对象……而深拷贝得到的是一份完完全全独立的对象。所以，深拷贝比起浅拷贝来说，更加耗时，更加耗内存空间。</li>
-<li>如果要拷贝的对象是不可变对象，浅拷贝共享不可变对象是没问题的，但对于可变对象来说，浅拷贝得到的对象和原始对象会共享部分数据，就有可能出现数据被修改的风险，也就变得复杂多了。除非像我们今天实战中举的那个例子，需要从数据库中加载 10 万条数据并构建散列表索引，操作非常耗时，这种情况下比较推荐使用浅拷贝，否则，没有充分的理由，不要为了一点点的性能提升而使用浅拷贝。</li>
-</ul>
+          <h1 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span> <span class="class"><span class="keyword">struct</span> <span class="title">greater</span> :</span> binary_function &lt;T,T,<span class="keyword">bool</span>&gt; &#123;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y)</span> <span class="keyword">const</span> </span>&#123;<span class="keyword">return</span> x&gt;y;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="built_in">sort</span> (arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), std::less&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span> <span class="class"><span class="keyword">struct</span> <span class="title">less</span> :</span> binary_function &lt;T,T,<span class="keyword">bool</span>&gt; &#123;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y)</span> <span class="keyword">const</span> </span>&#123;<span class="keyword">return</span> x&lt;y;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -304,7 +306,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/trick/%E5%B9%B3%E5%9D%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -318,7 +320,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/trick/%E5%B9%B3%E5%9D%87/" class="post-title-link" itemprop="url">对象遍历</a>
         </h2>
 
         <div class="post-meta">
@@ -327,16 +329,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:05:29" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 10:32:21" itemprop="dateModified" datetime="2021-01-18T10:32:21+08:00">2021-01-18</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/trick/" itemprop="url" rel="index"><span itemprop="name">trick</span></a>
+                </span>
+            </span>
 
           
 
@@ -349,472 +358,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="单例设计模式（Singleton-Design-Pattern）"><a href="#单例设计模式（Singleton-Design-Pattern）" class="headerlink" title="单例设计模式（Singleton Design Pattern）"></a>单例设计模式（Singleton Design Pattern）</h1><h3 id="单例的定义？"><a href="#单例的定义？" class="headerlink" title="单例的定义？"></a>单例的定义？</h3><ul>
-<li>单例设计模式（Singleton Design Pattern）理解起来非常简单。一个类只允许创建一个对象（或者叫实例），那这个类就是一个单例类，这种设计模式就叫作单例设计模式，简称单例模式。</li>
-</ul>
-<h3 id="单例的用处？"><a href="#单例的用处？" class="headerlink" title="单例的用处？"></a>单例的用处？</h3><ul>
-<li>从业务概念上，有些数据在系统中只应该保存一份，就比较适合设计为单例类。比如，系统的配置信息类。除此之外，我们还可以使用单例解决资源访问冲突的问题。</li>
-</ul>
-<h3 id="单例存在哪些问题"><a href="#单例存在哪些问题" class="headerlink" title="单例存在哪些问题?"></a>单例存在哪些问题?</h3><ul>
-<li><h5 id="反模式（anti-pattern）"><a href="#反模式（anti-pattern）" class="headerlink" title="反模式（anti-pattern）"></a>反模式（anti-pattern）</h5></li>
-<li><h5 id="单例对-OOP-特性的支持不友好"><a href="#单例对-OOP-特性的支持不友好" class="headerlink" title="单例对 OOP 特性的支持不友好"></a>单例对 OOP 特性的支持不友好</h5></li>
-<li><h5 id="单例会隐藏类之间的依赖关系"><a href="#单例会隐藏类之间的依赖关系" class="headerlink" title="单例会隐藏类之间的依赖关系"></a>单例会隐藏类之间的依赖关系</h5><ul>
-<li>通过构造函数、参数传递等方式声明的类之间的依赖关系，我们通过查看函数的定义，就能很容易识别出来。但是，单例类不需要显示创建、不需要依赖参数传递，在函数中直接调用就可以了。如果代码比较复杂，这种调用关系就会非常隐蔽。在阅读代码的时候，我们就需要仔细查看每个函数的代码实现，才能知道这个类到底依赖了哪些单例类。</li>
-</ul>
-</li>
-<li><h5 id="单例对代码的扩展性不友好"><a href="#单例对代码的扩展性不友好" class="headerlink" title="单例对代码的扩展性不友好"></a>单例对代码的扩展性不友好</h5></li>
-<li><h5 id="单例对代码的可测试性不友好"><a href="#单例对代码的可测试性不友好" class="headerlink" title="单例对代码的可测试性不友好"></a>单例对代码的可测试性不友好</h5></li>
-<li><h5 id="单例不支持有参数的构造函数"><a href="#单例不支持有参数的构造函数" class="headerlink" title="单例不支持有参数的构造函数"></a>单例不支持有参数的构造函数</h5><ul>
-<li>第一种解决思路是：创建完实例之后，再调用 init() 函数传递参数。需要注意的是，我们在使用这个单例类的时候，要先调用 init() 方法，然后才能调用 getInstance() 方法，否则代码会抛出异常。</li>
-<li></li>
-</ul>
-</li>
-</ul>
-<h3 id="单例与静态类的区别？"><a href="#单例与静态类的区别？" class="headerlink" title="单例与静态类的区别？"></a>单例与静态类的区别？</h3><h3 id="有何替代的解决方案？"><a href="#有何替代的解决方案？" class="headerlink" title="有何替代的解决方案？"></a>有何替代的解决方案？</h3><ul>
-<li><h5 id="为了保证全局唯一，除了使用单例，我们还可以用静态方法来实现。这也是项目开发中经常用到的一种实现思路。"><a href="#为了保证全局唯一，除了使用单例，我们还可以用静态方法来实现。这也是项目开发中经常用到的一种实现思路。" class="headerlink" title="为了保证全局唯一，除了使用单例，我们还可以用静态方法来实现。这也是项目开发中经常用到的一种实现思路。"></a>为了保证全局唯一，除了使用单例，我们还可以用静态方法来实现。这也是项目开发中经常用到的一种实现思路。</h5><ul>
-<li>静态方法无法支持延迟加载。</li>
-<li>通过工厂模式、IOC 容器（比如 Spring IOC 容器）来保证，由程序员自己来保证。</li>
-</ul>
-</li>
-</ul>
-<h3 id="如何实现一个单例？"><a href="#如何实现一个单例？" class="headerlink" title="如何实现一个单例？"></a>如何实现一个单例？</h3><ul>
-<li><h5 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h5><ul>
-<li>不支持延迟加载，如果实例占用资源多（比如占用内存多）或初始化耗时长（比如需要加载各种配置文件），提前初始化实例是一种浪费资源的行为。</li>
-<li>如果初始化耗时长，那我们最好不要等到真正要用它的时候，才去执行这个耗时长的初始化过程，这会影响到系统的性能（比如，在响应客户端接口请求的时候，做这个初始化操作，会导致此请求的响应时间变长，甚至超时）。采用饿汉式实现方式，将耗时的初始化操作，提前到程序启动的时候完成，这样就能避免在程序运行的时候，再去初始化导致的性能问题。</li>
-</ul>
-</li>
-<li><h5 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h5><ul>
-<li>给 getInstance() 这个方法加了一把大锁（synchronzed），导致这个函数的并发度很低。量化一下的话，并发度是 1，也就相当于串行操作了。而这个函数是在单例使用期间，一直会被调用。如果这个单例类偶尔会被用到，那这种实现方式还可以接受。但是，如果频繁地用到，那频繁加锁、释放锁及并发度低等问题，会导致性能瓶颈，这种实现方式就不可取了。</li>
-</ul>
-</li>
-<li><h5 id="双重检测"><a href="#双重检测" class="headerlink" title="双重检测"></a>双重检测</h5><ul>
-<li>既支持延迟加载、又支持高并发的单例实现方式</li>
-</ul>
-</li>
-<li><h5 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h5></li>
-<li><h5 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h5></li>
-</ul>
-<h3 id="如何实现线程唯一单例？"><a href="#如何实现线程唯一单例？" class="headerlink" title="如何实现线程唯一单例？"></a>如何实现线程唯一单例？</h3><ul>
-<li>通过一个 HashMap 来存储对象，其中 key 是线程 ID，value 是对象。这样我们就可以做到，不同的线程对应不同的对象，同一个线程只能对应一个对象。</li>
-</ul>
-<h3 id="如何实现集群环境下的单例？"><a href="#如何实现集群环境下的单例？" class="headerlink" title="如何实现集群环境下的单例？"></a>如何实现集群环境下的单例？</h3><ul>
-<li>我们需要把这个单例对象序列化并存储到外部共享存储区（比如文件）。进程在使用这个单例对象的时候，需要先从外部共享存储区中将它读取到内存，并反序列化成对象，然后再使用，使用完成之后还需要再存储回外部共享存储区。</li>
-<li>为了保证任何时刻，在进程间都只有一份对象存在，一个进程在获取到对象之后，需要对对象加锁，避免其他进程再将其获取。在进程使用完这个对象之后，还需要显式地将对象从内存中删除，并且释放对对象的加锁。</li>
-</ul>
-<h3 id="如何实现一个多例模式？"><a href="#如何实现一个多例模式？" class="headerlink" title="如何实现一个多例模式？"></a>如何实现一个多例模式？</h3><ul>
-<li>“单例”指的是一个类只能创建一个对象。对应地，“多例”指的就是一个类可以创建多个对象，但是个数是有限制的，比如只能创建 3 个对象。多例的实现也比较简单，通过一个 Map 来存储对象类型和对象之间的对应关系，来控制对象的个数。</li>
-<li>这种多例模式的理解方式有点类似工厂模式。它跟工厂模式的不同之处是，多例模式创建的对象都是同一个类的对象，而工厂模式创建的是不同子类的对象，关于这一点，下一节课中就会讲到。实际上，它还有点类似享元模式，两者的区别等到我们讲到享元模式的时候再来分析。除此之外，实际上，枚举类型也相当于多例模式，一个类型只能对应一个对象，一个类可以创建多个对象。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/S/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/S/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 11:34:30" itemprop="dateModified" datetime="2021-01-11T11:34:30+08:00">2021-01-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/YANGI%E5%8E%9F%E5%88%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/YANGI%E5%8E%9F%E5%88%99/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 14:18:48" itemprop="dateModified" datetime="2021-01-11T14:18:48+08:00">2021-01-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="YAGNI-原则"><a href="#YAGNI-原则" class="headerlink" title="YAGNI 原则"></a>YAGNI 原则</h1><p><em>You Ain’t Gonna Need It.</em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/O/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/O/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 11:34:59" itemprop="dateModified" datetime="2021-01-11T11:34:59+08:00">2021-01-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/LOD%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/LOD%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 18:07:27" itemprop="dateModified" datetime="2021-01-13T18:07:27+08:00">2021-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="迪米特法则（LOD-Law-of-Demeter）"><a href="#迪米特法则（LOD-Law-of-Demeter）" class="headerlink" title="迪米特法则（LOD Law of Demeter）"></a>迪米特法则（LOD Law of Demeter）</h1><ul>
-<li><h3 id="高内聚、松耦合"><a href="#高内聚、松耦合" class="headerlink" title="高内聚、松耦合"></a>高内聚、松耦合</h3><ul>
-<li>“高内聚、松耦合”是一个非常重要的设计思想，能够有效提高代码的可读性和可维护性，缩小功能改动导致的代码改动范围。“高内聚”用来指导类本身的设计，“松耦合”用来指导类与类之间依赖关系的设计。</li>
-<li>所谓高内聚，就是指相近的功能应该放到同一个类中，不相近的功能不要放到同一类中。相近的功能往往会被同时修改，放到同一个类中，修改会比较集中。所谓松耦合指的是，在代码中，类与类之间的依赖关系简单清晰。即使两个类有依赖关系，一个类的代码改动也不会或者很少导致依赖类的代码改动。</li>
-</ul>
-</li>
-<li><h3 id="（最小知识原则，英文翻译为：The-Least-Knowledge-Principle）"><a href="#（最小知识原则，英文翻译为：The-Least-Knowledge-Principle）" class="headerlink" title="（最小知识原则，英文翻译为：The Least Knowledge Principle）"></a>（最小知识原则，英文翻译为：The Least Knowledge Principle）</h3><ul>
-<li><em>Each unit should have only limited knowledge about other units: only units “closely” related to the current unit. Or: Each unit should only talk to its friends; Don’t talk to strangers.</em></li>
-<li>每个模块（unit）只应该了解那些与它关系密切的模块（units: only units “closely” related to the current unit）的有限知识（knowledge）。或者说，每个模块只和自己的朋友“说话”（talk），不和陌生人“说话”（talk）。</li>
-<li>不该有直接依赖关系的类之间，不要有依赖；有依赖关系的类之间，尽量只依赖必要的接口（也就是定义中的“有限知识”）。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/L/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/L/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 11:45:04" itemprop="dateModified" datetime="2021-01-11T11:45:04+08:00">2021-01-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="里式替换原则（LSP）"><a href="#里式替换原则（LSP）" class="headerlink" title="里式替换原则（LSP）"></a>里式替换原则（LSP）</h1><ul>
-<li><h4 id="子类对象（object-of-subtype-derived-class）能够替换程序（program）中父类对象（object-of-base-parent-class）出现的任何地方，并且保证原来程序的逻辑行为（behavior）不变及正确性不被破坏。"><a href="#子类对象（object-of-subtype-derived-class）能够替换程序（program）中父类对象（object-of-base-parent-class）出现的任何地方，并且保证原来程序的逻辑行为（behavior）不变及正确性不被破坏。" class="headerlink" title="子类对象（object of subtype/derived class）能够替换程序（program）中父类对象（object of base/parent class）出现的任何地方，并且保证原来程序的逻辑行为（behavior）不变及正确性不被破坏。"></a><em>子类对象（object of subtype/derived class）能够替换程序（program）中父类对象（object of base/parent class）出现的任何地方，并且保证原来程序的逻辑行为（behavior）不变及正确性不被破坏。</em></h4></li>
-<li><h4 id="子类在设计的时候，要遵守父类的行为约定（或者叫协议）。父类定义了函数的行为约定，那子类可以改变函数的内部实现逻辑，但不能改变函数原有的行为约定。这里的行为约定包括：函数声明要实现的功能；对输入、输出、异常的约定；甚至包括注释中所罗列的任何特殊说明。实际上，定义中父类和子类之间的关系，也可以替换成接口和实现类之间的关系。"><a href="#子类在设计的时候，要遵守父类的行为约定（或者叫协议）。父类定义了函数的行为约定，那子类可以改变函数的内部实现逻辑，但不能改变函数原有的行为约定。这里的行为约定包括：函数声明要实现的功能；对输入、输出、异常的约定；甚至包括注释中所罗列的任何特殊说明。实际上，定义中父类和子类之间的关系，也可以替换成接口和实现类之间的关系。" class="headerlink" title="子类在设计的时候，要遵守父类的行为约定（或者叫协议）。父类定义了函数的行为约定，那子类可以改变函数的内部实现逻辑，但不能改变函数原有的行为约定。这里的行为约定包括：函数声明要实现的功能；对输入、输出、异常的约定；甚至包括注释中所罗列的任何特殊说明。实际上，定义中父类和子类之间的关系，也可以替换成接口和实现类之间的关系。"></a><em>子类在设计的时候，要遵守父类的行为约定（或者叫协议）。父类定义了函数的行为约定，那子类可以改变函数的内部实现逻辑，但不能改变函数原有的行为约定。这里的行为约定包括：函数声明要实现的功能；对输入、输出、异常的约定；甚至包括注释中所罗列的任何特殊说明。实际上，定义中父类和子类之间的关系，也可以替换成接口和实现类之间的关系。</em></h4></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/KISS%E5%8E%9F%E5%88%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/KISS%E5%8E%9F%E5%88%99/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 14:21:24" itemprop="dateModified" datetime="2021-01-11T14:21:24+08:00">2021-01-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="KISS-原则"><a href="#KISS-原则" class="headerlink" title="KISS 原则"></a>KISS 原则</h1><p><em>Keep It Simple and Stupid.</em></p>
-<p><em>Keep It Short and Simple.</em></p>
-<p><em>Keep It Simple and Straightforward.</em></p>
-<p><strong>KISS 原则是保持代码可读和可维护的重要手段。KISS 原则中的“简单”并不是以代码行数来考量的。代码行数越少并不代表代码越简单，我们还要考虑逻辑复杂度、实现难度、代码的可读性等。而且，本身就复杂的问题，用复杂的方法解决，并不违背 KISS 原则。除此之外，同样的代码，在某个业务场景下满足 KISS 原则，换一个应用场景可能就不满足了。</strong></p>
+          <h1 id="平均"><a href="#平均" class="headerlink" title="平均"></a>平均</h1><ul>
+<li><p>防溢出求平均并向上取整</p>
 <ul>
-<li>不要使用同事可能不懂的技术来实现代码；</li>
-<li>不要重复造轮子，要善于使用已经有的工具类库；</li>
-<li>不要过度优化。</li>
+<li>```c++<br>int half = (s &gt;&gt; 1) + (e &gt;&gt; 1) + ((s | e) &amp; 1);<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 防溢出求平均并向下取整</span><br><span class="line"></span><br><span class="line">  - ```c++</span><br><span class="line">    int half = (s &gt;&gt; 1) + (e &gt;&gt; 1) + (s &amp; 1 &amp; e);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 </ul>
 
       
@@ -835,7 +384,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/I/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/unitest/googletest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -849,7 +398,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/basic/I/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/unitest/googletest/" class="post-title-link" itemprop="url">对象遍历</a>
         </h2>
 
         <div class="post-meta">
@@ -858,16 +407,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:06:18" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 13:34:53" itemprop="dateModified" datetime="2021-01-11T13:34:53+08:00">2021-01-11</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/unitest/" itemprop="url" rel="index"><span itemprop="name">unitest</span></a>
+                </span>
+            </span>
 
           
 
@@ -880,24 +436,614 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="接口隔离原则（ISP）"><a href="#接口隔离原则（ISP）" class="headerlink" title="接口隔离原则（ISP）"></a>接口隔离原则（ISP）</h1><h4 id="客户端不应该被强迫依赖它不需要的接口。其中的“客户端”，可以理解为接口的调用者或者使用者"><a href="#客户端不应该被强迫依赖它不需要的接口。其中的“客户端”，可以理解为接口的调用者或者使用者" class="headerlink" title="客户端不应该被强迫依赖它不需要的接口。其中的“客户端”，可以理解为接口的调用者或者使用者"></a><em>客户端不应该被强迫依赖它不需要的接口。其中的“客户端”，可以理解为接口的调用者或者使用者</em></h4><ul>
-<li><ol>
-<li><p><strong>如何理解“接口隔离原则”？</strong></p>
-<p>​       理解“接口隔离原则”的重点是理解其中的“接口”二字。这里有三种不同的理解。</p>
-<ul>
-<li>如果把“接口”理解为一组接口集合，可以是某个微服务的接口，也可以是某个类库的接口等。如果部分接口只被部分调用者使用，我们就需要将这部分接口隔离出来，单独给这部分调用者使用，而不强迫其他调用者也依赖这部分不会被用到的接口。</li>
-<li>如果把“接口”理解为单个 API 接口或函数，部分调用者只需要函数中的部分功能，那我们就需要把函数拆分成粒度更细的多个函数，让调用者只依赖它需要的那个细粒度函数。</li>
-<li>如果把“接口”理解为 OOP 中的接口，也可以理解为面向对象编程语言中的接口语法。那接口的设计要尽量单一，不要让接口的实现类和调用者，依赖不需要的接口函数。</li>
+          <h1 id="googletest"><a href="#googletest" class="headerlink" title="googletest"></a>googletest</h1><h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><table>
+<thead>
+<tr>
+<th align="center">断言方法</th>
+<th align="center">断言结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ASSERT_ *</td>
+<td align="center">fatal failures(致命错误，程序中断)</td>
+</tr>
+<tr>
+<td align="center">EXPECT_ *</td>
+<td align="center">non-fatal failure(非致命错误，适用于普通错误)</td>
+</tr>
+</tbody></table>
+<h2 id="基本断言方法"><a href="#基本断言方法" class="headerlink" title="基本断言方法"></a>基本断言方法</h2><table>
+<thead>
+<tr>
+<th align="center">fatal assertion</th>
+<th align="center"><strong>Nonfatal assertion</strong></th>
+<th align="center">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ASSERT_TRUE(</code><em>condition</em><code>)</code>;</td>
+<td align="center"><code>EXPECT_TRUE(</code><em>condition</em><code>)</code>;</td>
+<td align="center"><em>condition</em> is true</td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_FALSE(</code><em>condition</em><code>)</code>;</td>
+<td align="center"><code>EXPECT_FALSE(</code><em>condition</em><code>)</code>;</td>
+<td align="center"><em>condition</em> is false</td>
+</tr>
+</tbody></table>
+<h2 id="二值比较"><a href="#二值比较" class="headerlink" title="二值比较"></a>二值比较</h2><table>
+<thead>
+<tr>
+<th align="center">fatal assertion</th>
+<th><strong>Nonfatal assertion</strong></th>
+<th>Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ASSERT_EQ(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><code>EXPECT_EQ(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><em>val1</em> <code>==</code> <em>val2</em></td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_NE(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><code>EXPECT_NE(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><em>val1</em> <code>!=</code> <em>val2</em></td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_LT(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><code>EXPECT_LT(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><em>val1</em> <code>&lt;</code> <em>val2</em></td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_LE(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><code>EXPECT_LE(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><em>val1</em> <code>&lt;=</code> <em>val2</em></td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_GT(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><code>EXPECT_GT(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><em>val1</em> <code>&gt;</code> <em>val2</em></td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_GE(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><code>EXPECT_GE(</code><em>val1</em><code>,</code><em>val2</em><code>);</code></td>
+<td><em>val1</em> <code>&gt;=</code> <em>val2</em></td>
+</tr>
+</tbody></table>
+<p>​    ASSERT_EQ（）指针的指针相等。如果在两个C字符串上使用，它会测试它们是否在同一个内存位置，而不是它们具有相同的值。因此，如果你想比较C字符串（例如const char *）的值，使用ASSERT_STREQ（），稍后将会描述。特别地，要断言C字符串为NULL，请使用ASSERT_STREQ（NULL，c_string）。但是，要比较两个字符串对象，应该使用ASSERT_EQ。</p>
+<p>​    本节中的宏适用于窄和宽字符串对象（string和wstring）。</p>
+<h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><table>
+<thead>
+<tr>
+<th align="center">fatal assertion</th>
+<th><strong>Nonfatal assertion</strong></th>
+<th align="center">Verifies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ASSERT_STREQ(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td><code>EXPECT_STREQ(</code><em>str1</em><code>,</code>_str_2<code>);</code></td>
+<td align="center">the two C strings have the same content</td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_STRNE(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td><code>EXPECT_STRNE(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td align="center">the two C strings have different content</td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_STRCASEEQ(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td><code>EXPECT_STRCASEEQ(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td align="center">the two C strings have the same content, ignoring case(忽略大小写)</td>
+</tr>
+<tr>
+<td align="center"><code>ASSERT_STRCASENE(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td><code>EXPECT_STRCASENE(</code><em>str1</em><code>,</code><em>str2</em><code>);</code></td>
+<td align="center">the two C strings have different content, ignoring case</td>
+</tr>
+</tbody></table>
+<p>NULL指针和空字符串被认为是不同的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">refactor(一)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:28:37" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/refactor/" itemprop="url" rel="index"><span itemprop="name">refactor</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em><strong>重构是一种对软件内部结构的改善，目的是在不改变软件的可见行为的情况下，使其更易理解，修改成本更低。</strong></em></p>
+<h3 id="重构的目的：为什么要重构（why）？"><a href="#重构的目的：为什么要重构（why）？" class="headerlink" title="重构的目的：为什么要重构（why）？"></a>重构的目的：为什么要重构（why）？</h3><ul>
+<li><p>重构是避免过度设计的有效手段。</p>
+</li>
+<li><p>重构实际上是对我们学习的经典设计思想、设计原则、设计模式、编程规范的一种应用。</p>
+</li>
+<li><p>重构能力也是衡量一个工程师代码能力的有效手段。</p>
+</li>
+</ul>
+<h3 id="重构的对象：到底重构什么（what）？"><a href="#重构的对象：到底重构什么（what）？" class="headerlink" title="重构的对象：到底重构什么（what）？"></a>重构的对象：到底重构什么（what）？</h3><ul>
+<li>大型重构指的是对顶层代码设计的重构，包括：系统、模块、代码结构、类与类之间的关系等的重构，重构的手段有：分层、模块化、解耦、抽象可复用组件等等。这类重构的工具就是我们学习过的那些设计思想、原则和模式。这类重构涉及的代码改动会比较多，影响面会比较大，所以难度也较大，耗时会比较长，引入 bug 的风险也会相对比较大。</li>
+<li>小型重构指的是对代码细节的重构，主要是针对类、函数、变量等代码级别的重构，比如规范命名、规范注释、消除超大类或函数、提取重复代码等等。小型重构更多的是利用我们能后面要讲到的编码规范。这类重构要修改的地方比较集中，比较简单，可操作性较强，耗时会比较短，引入 bug 的风险相对来说也会比较小。你只需要熟练掌握各种编码规范，就可以做到得心应手。</li>
+</ul>
+<h3 id="重构的时机：什么时候重构（when）？"><a href="#重构的时机：什么时候重构（when）？" class="headerlink" title="重构的时机：什么时候重构（when）？"></a>重构的时机：什么时候重构（when）？</h3><ul>
+<li>提倡的重构策略是持续重构。</li>
+</ul>
+<h3 id="重构的方法：又该如何重构（how）？"><a href="#重构的方法：又该如何重构（how）？" class="headerlink" title="重构的方法：又该如何重构（how）？"></a>重构的方法：又该如何重构（how）？</h3><ul>
+<li>静态代码分析工具（比如 CheckStyle、FindBugs、PMD）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%B8%83%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%B8%83%EF%BC%89/" class="post-title-link" itemprop="url">refactor(七)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:29:39" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/refactor/" itemprop="url" rel="index"><span itemprop="name">refactor</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><h3 id="把代码分割成更小的单元块"><a href="#把代码分割成更小的单元块" class="headerlink" title="把代码分割成更小的单元块"></a>把代码分割成更小的单元块</h3></li>
+<li><h3 id="避免函数参数过多"><a href="#避免函数参数过多" class="headerlink" title="避免函数参数过多"></a>避免函数参数过多</h3><ul>
+<li>考虑函数是否职责单一，是否能通过拆分成多个函数的方式来减少参数。</li>
 </ul>
 </li>
-</ol>
+<li><h3 id="将函数的参数封装成对象。"><a href="#将函数的参数封装成对象。" class="headerlink" title="将函数的参数封装成对象。"></a>将函数的参数封装成对象。</h3></li>
+<li><h3 id="勿用函数参数来控制逻辑。"><a href="#勿用函数参数来控制逻辑。" class="headerlink" title="勿用函数参数来控制逻辑。"></a>勿用函数参数来控制逻辑。</h3></li>
+<li><h3 id="函数设计要职责单一。"><a href="#函数设计要职责单一。" class="headerlink" title="函数设计要职责单一。"></a>函数设计要职责单一。</h3></li>
+<li><h3 id="移除过深的嵌套层次。"><a href="#移除过深的嵌套层次。" class="headerlink" title="移除过深的嵌套层次。"></a>移除过深的嵌套层次。</h3></li>
+<li><h3 id="学会使用解释性变量"><a href="#学会使用解释性变量" class="headerlink" title="学会使用解释性变量"></a>学会使用解释性变量</h3></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%B8%89%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%B8%89%EF%BC%89/" class="post-title-link" itemprop="url">refactor(三)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:28:57" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/refactor/" itemprop="url" rel="index"><span itemprop="name">refactor</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="什么是代码的可测试性？"><a href="#什么是代码的可测试性？" class="headerlink" title="什么是代码的可测试性？"></a>什么是代码的可测试性？</h3><ul>
+<li><p>代码的可测试性可以从侧面上反应代码设计是否合理。</p>
 </li>
-<li><ol start="2">
-<li><strong>接口隔离原则与单一职责原则的区别</strong><ul>
-<li>单一职责原则针对的是模块、类、接口的设计。接口隔离原则相对于单一职责原则，一方面更侧重于接口的设计，另一方面它的思考角度也是不同的。接口隔离原则提供了一种判断接口的职责是否单一的标准：通过调用者如何使用接口来间接地判定。如果调用者只使用部分接口或接口的部分功能，那接口的设计就不够职责单一。</li>
+<li><p>粗略地讲，所谓代码的可测试性，就是针对代码编写单元测试的难易程度。对于一段代码，如果很难为其编写单元测试，或者单元测试写起来很费劲，需要依靠单元测试框架中很高级的特性，那往往就意味着代码设计得不够合理，代码的可测试性不好。</p>
+</li>
+</ul>
+<h3 id="如何写出可测试的代码？"><a href="#如何写出可测试的代码？" class="headerlink" title="如何写出可测试的代码？"></a>如何写出可测试的代码？</h3><ul>
+<li>依赖注入是编写可测试性代码的最有效手段。通过依赖注入，我们在编写单元测试的时候，可以通过 mock 的方法解依赖外部服务，这也是我们在编写单元测试的过程中最有技术挑战的地方。</li>
+</ul>
+<h3 id="有哪些常见的不好测试的代码？"><a href="#有哪些常见的不好测试的代码？" class="headerlink" title="有哪些常见的不好测试的代码？"></a>有哪些常见的不好测试的代码？</h3><ul>
+<li>未决行为</li>
+<li>全局变量</li>
+<li>静态方法</li>
+<li>复杂继承</li>
+<li>高耦合代码</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-title-link" itemprop="url">refactor(二)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:28:48" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/refactor/" itemprop="url" rel="index"><span itemprop="name">refactor</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit-Testing）"><a href="#最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit-Testing）" class="headerlink" title="最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit Testing）"></a>最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit Testing）</h4><h3 id="什么是单元测试？"><a href="#什么是单元测试？" class="headerlink" title="什么是单元测试？"></a>什么是单元测试？</h3><p>单元测试的测试对象是类或者函数，用来测试一个类和函数是否都按照预期的逻辑执行。这是代码层级的测试。</p>
+<h3 id="为什么要写单元测试？"><a href="#为什么要写单元测试？" class="headerlink" title="为什么要写单元测试？"></a>为什么要写单元测试？</h3><ul>
+<li>单元测试能有效地帮你发现代码中的 bug</li>
+<li>写单元测试能帮你发现代码设计上的问题</li>
+<li>单元测试是对集成测试的有力补充</li>
+<li>写单元测试的过程本身就是代码重构的过程</li>
+<li>阅读单元测试能帮助你快速熟悉代码</li>
+<li>单元测试是 TDD 可落地执行的改进方案</li>
+</ul>
+<h3 id="如何编写单元测试？"><a href="#如何编写单元测试？" class="headerlink" title="如何编写单元测试？"></a>如何编写单元测试？</h3><ul>
+<li>利用单元测试框架，来简化测试代码的编写。</li>
+</ul>
+<h3 id="单元测试为何难落地执行？"><a href="#单元测试为何难落地执行？" class="headerlink" title="单元测试为何难落地执行？"></a>单元测试为何难落地执行？</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E5%85%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E5%85%AD%EF%BC%89/" class="post-title-link" itemprop="url">refactor(六)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:29:27" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/refactor/" itemprop="url" rel="index"><span itemprop="name">refactor</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="编码规范：代码风格（Code-Style）"><a href="#编码规范：代码风格（Code-Style）" class="headerlink" title="编码规范：代码风格（Code Style）"></a>编码规范：代码风格（Code Style）</h1><h3 id="类、函数多大才合适？"><a href="#类、函数多大才合适？" class="headerlink" title="类、函数多大才合适？"></a>类、函数多大才合适？</h3><h3 id="一行代码多长最合适？"><a href="#一行代码多长最合适？" class="headerlink" title="一行代码多长最合适？"></a>一行代码多长最合适？</h3><h3 id="善用空行分割单元块"><a href="#善用空行分割单元块" class="headerlink" title="善用空行分割单元块"></a>善用空行分割单元块</h3><h3 id="四格缩进还是两格缩进？"><a href="#四格缩进还是两格缩进？" class="headerlink" title="四格缩进还是两格缩进？"></a>四格缩进还是两格缩进？</h3><h3 id="大括号是否要另起一行？"><a href="#大括号是否要另起一行？" class="headerlink" title="大括号是否要另起一行？"></a>大括号是否要另起一行？</h3><h3 id="类中成员的排列顺序"><a href="#类中成员的排列顺序" class="headerlink" title="类中成员的排列顺序"></a>类中成员的排列顺序</h3><p>​    比如 C++ 中，成员变量会习惯性放到函数后面。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%BA%94%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/refactor/refactor%EF%BC%88%E4%BA%94%EF%BC%89/" class="post-title-link" itemprop="url">refactor(五)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:29:17" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/refactor/" itemprop="url" rel="index"><span itemprop="name">refactor</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="编码规范：（命名与注释（Naming-and-Comments））"><a href="#编码规范：（命名与注释（Naming-and-Comments））" class="headerlink" title="编码规范：（命名与注释（Naming and Comments））"></a>编码规范：（命名与注释（Naming and Comments））</h1><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><ul>
+<li><h5 id="命名多长最合适？"><a href="#命名多长最合适？" class="headerlink" title="命名多长最合适？"></a>命名多长最合适？</h5></li>
+<li><h5 id="利用上下文简化命名"><a href="#利用上下文简化命名" class="headerlink" title="利用上下文简化命名"></a>利用上下文简化命名</h5></li>
+<li><h5 id="命名要可读、可搜索"><a href="#命名要可读、可搜索" class="headerlink" title="命名要可读、可搜索"></a>命名要可读、可搜索</h5></li>
+<li><h5 id="如何命名接口和抽象类？"><a href="#如何命名接口和抽象类？" class="headerlink" title="如何命名接口和抽象类？"></a>如何命名接口和抽象类？</h5></li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li>注释到底该写什么？<ul>
+<li>注释比代码承载的信息更多</li>
+<li>注释起到总结性作用、文档的作用</li>
+<li>一些总结性注释能让代码结构更清晰</li>
 </ul>
 </li>
-</ol>
+<li>注释是不是越多越好？<ul>
+<li>类和函数一定要写注释，而且要写得尽可能全面、详细，而函数内部的注释要相对少一些，一般都是靠好的命名、提炼函数、解释性变量、总结性注释来提高代码的可读性。</li>
+</ul>
 </li>
 </ul>
 
@@ -986,20 +1132,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

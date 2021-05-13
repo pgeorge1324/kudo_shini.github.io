@@ -22,15 +22,15 @@
 
   <meta name="description" content="Lighting Point&#x2F;Omni Light 平方反比衰减光源 light &#x3D; light0*pow(r0&#x2F;r,2); 问题：当距离太近时出现过曝； 解决1： light &#x3D; light0*pow(r0,2)&#x2F;(pow(r,2)+e);  ue4使用e&#x3D;1cm;     解决2： light &#x3D; light0*pow(r0,2)&#x2F;pow(max(r,rmin),2);   问题：当距离太远时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kudo_shini">
+<meta property="og:title" content="Lighting">
 <meta property="og:url" content="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/lighting/index.html">
 <meta property="og:site_name" content="kudo_shini">
 <meta property="og:description" content="Lighting Point&#x2F;Omni Light 平方反比衰减光源 light &#x3D; light0*pow(r0&#x2F;r,2); 问题：当距离太近时出现过曝； 解决1： light &#x3D; light0*pow(r0,2)&#x2F;(pow(r,2)+e);  ue4使用e&#x3D;1cm;     解决2： light &#x3D; light0*pow(r0,2)&#x2F;pow(max(r,rmin),2);   问题：当距离太远时">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-13T08:46:47.091Z">
-<meta property="article:modified_time" content="2020-12-25T07:19:18.450Z">
+<meta property="article:published_time" content="2021-05-13T06:26:52.000Z">
+<meta property="article:modified_time" content="2021-05-13T09:38:58.423Z">
 <meta property="article:author" content="kudo_shini">
-<meta property="article:tag" content="c++ vue googletest designPattern datastruct algorithm">
+<meta property="article:tag" content="opengl">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/lighting/">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title> | kudo_shini</title>
+  <title>Lighting | kudo_shini</title>
   
 
 
@@ -174,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Lighting
         </h1>
 
         <div class="post-meta">
@@ -183,16 +183,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:38:58" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-25 15:19:18" itemprop="dateModified" datetime="2020-12-25T15:19:18+08:00">2020-12-25</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/opengl/" itemprop="url" rel="index"><span itemprop="name">opengl</span></a>
+                </span>
+            </span>
 
           
 
@@ -227,6 +230,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/pgeorge1324/pgeorge1324.github.io/tags/opengl/" rel="tag"># opengl</a>
+          </div>
 
         
 
@@ -234,12 +240,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/opengl/" rel="prev" title="">
-      <i class="fa fa-chevron-left"></i> 
+    <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/opengl/" rel="prev" title="OpenGL">
+      <i class="fa fa-chevron-left"></i> OpenGL
     </a></div>
       <div class="post-nav-item">
-    <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%89%E8%A7%92%E5%BD%A2/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
+    <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CGMath/" rel="next" title="CGMath">
+      CGMath <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -315,20 +321,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

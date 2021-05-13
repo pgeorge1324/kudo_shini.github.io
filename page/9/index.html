@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/build/cmake/%E5%AE%8F%E5%92%8C%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -172,220 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/build/cmake/%E5%AE%8F%E5%92%8C%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:46" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:46+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-15 16:56:38" itemprop="dateModified" datetime="2021-01-15T16:56:38+08:00">2021-01-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="宏和函数（marco-amp-function）"><a href="#宏和函数（marco-amp-function）" class="headerlink" title="宏和函数（marco&amp;function）"></a>宏和函数（marco&amp;function）</h1><ul>
-<li><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><ul>
-<li><p>macro</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">macro(MACRO_NAME arg)</span><br><span class="line">  message(&quot;arg = $&#123;arg&#125;&quot;)</span><br><span class="line">endmacro()</span><br></pre></td></tr></table></figure></li>
-<li><p>function</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function(FUNCTION_NAME arg)</span><br><span class="line">  message(&quot;arg = $&#123;arg&#125;&quot;)</span><br><span class="line">endfunction()</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><h2 id="传递列表类型的参数-macro和function相同"><a href="#传递列表类型的参数-macro和function相同" class="headerlink" title="传递列表类型的参数(macro和function相同)"></a>传递列表类型的参数(macro和function相同)</h2><ul>
-<li><pre><code>// wrong use:
-function(loop_print arg)
-    foreach(v $&#123;arg&#125;)
-        message($&#123;v&#125;)
-    endforeach()
-endfunction()
-
-loop_print(1 2 3 4) // print 1
-
-// good use:
-function(loop_print arg)
-    foreach(v $&#123;ARGV&#125;)
-        message($&#123;v&#125;)
-    endforeach()
-endfunction()
-loop_print(1 2 3 4) // print 1 2 3 4
-</code></pre>
-</li>
-<li><p>传入的值是一个基本类型，则${arg} = arg</p>
-</li>
-<li><p>传入的值是一个list,则${arg}=arg[0]其余参数如下:</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th align="center"><em>name</em></th>
-<th align="center"><em>description</em></th>
-<th align="center">test</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">ARGC</td>
-<td align="center">函数实参的个数</td>
-<td align="center">${ARGC}=arg.length</td>
-</tr>
-<tr>
-<td align="center">ARGV</td>
-<td align="center">所有实参列表</td>
-<td align="center">${ARGV}=arg</td>
-</tr>
-<tr>
-<td align="center">ARGN</td>
-<td align="center">所有额外实参列表, 即ARGV去掉函数声明时显示指定的实参，剩余的实参</td>
-<td align="center">arg.pop();${ARGN}=arg</td>
-</tr>
-<tr>
-<td align="center">ARGV0</td>
-<td align="center">函数第1个实参</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">ARGV1</td>
-<td align="center">函数第2个实参</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">ARGV2</td>
-<td align="center">函数第3个实参</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">依次类推</td>
-<td align="center">依次类推</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-<li><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/elloop/article/details/51130395?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.control">CMAKE函数和宏</a></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/Vue%E6%BA%90%E7%A0%81-%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/Vue%E6%BA%90%E7%A0%81-%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 15:51:41" itemprop="dateCreated datePublished" datetime="2021-05-13T15:51:41+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 14:43:45" itemprop="dateModified" datetime="2020-08-31T14:43:45+08:00">2020-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Vue源码-工具方法"><a href="#Vue源码-工具方法" class="headerlink" title="Vue源码-工具方法"></a>Vue源码-工具方法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/*  */</span></span><br><span class="line"><span class="comment">//Object.freeze()阻止修改现有属性的特性和值，并阻止添加新属性。</span></span><br><span class="line">    <span class="keyword">var</span> emptyObject = <span class="built_in">Object</span>.freeze(&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// these helpers produces better vm code in JS engines due to their</span></span><br><span class="line"><span class="comment">// explicitness and function inlining</span></span><br><span class="line">    <span class="comment">// these helpers produces better vm code in JS engines due to their</span></span><br><span class="line"><span class="comment">// explicitness and function inlining</span></span><br><span class="line">    <span class="comment">//判断数据 是否是undefined或者null</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isUndef</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v === <span class="literal">undefined</span> || v === <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断数据 是否不等于 undefined或者null</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isDef</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v !== <span class="literal">undefined</span> &amp;&amp; v !== <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断是否真的等于true</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isTrue</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v === <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  判断是否是false</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isFalse</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> v === <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if value is primitive</span></span><br><span class="line"><span class="comment">     *  //判断数据类型是否是string，number，symbol，boolean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isPrimitive</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//判断数据类型是否是string，number，symbol，boolean</span></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="keyword">typeof</span> value === <span class="string">&#x27;string&#x27;</span> ||</span><br><span class="line">            <span class="keyword">typeof</span> value === <span class="string">&#x27;number&#x27;</span> ||</span><br><span class="line">            <span class="comment">// $flow-disable-line</span></span><br><span class="line">            <span class="keyword">typeof</span> value === <span class="string">&#x27;symbol&#x27;</span> ||</span><br><span class="line">            <span class="keyword">typeof</span> value === <span class="string">&#x27;boolean&#x27;</span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Quick object check - this is primarily used to tell</span></span><br><span class="line"><span class="comment">     * Objects from primitive values when we know the value</span></span><br><span class="line"><span class="comment">     * is a JSON-compliant type.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//判断是否是对象</span></span><br><span class="line">        <span class="keyword">return</span> obj !== <span class="literal">null</span> &amp;&amp; <span class="keyword">typeof</span> obj === <span class="string">&#x27;object&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Get the raw type string of a value e.g. [object Object]</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">        <span class="comment">//获取toString 简写</span></span><br><span class="line">    <span class="keyword">var</span> _toString = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toRawType</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//类型判断 返会Array ，Function，String,Object,Re 等</span></span><br><span class="line">        <span class="keyword">return</span> _toString.call(value).slice(<span class="number">8</span>, -<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Strict object type check. Only returns true</span></span><br><span class="line"><span class="comment">     * for plain JavaScript objects.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//判断是否是对象</span></span><br><span class="line">        <span class="keyword">return</span> _toString.call(obj) === <span class="string">&#x27;[object Object]&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isRegExp</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//判断是否是正则对象</span></span><br><span class="line">        <span class="keyword">return</span> _toString.call(v) === <span class="string">&#x27;[object RegExp]&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if val is a valid array index.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if val is a valid array index.</span></span><br><span class="line"><span class="comment">     * 检查VAL是否是有效的数组索引。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isValidArrayIndex</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//isFinite 检测是否是数据</span></span><br><span class="line">        <span class="comment">//Math.floor 向下取整</span></span><br><span class="line">        <span class="keyword">var</span> n = <span class="built_in">parseFloat</span>(<span class="built_in">String</span>(val));</span><br><span class="line">        <span class="comment">//isFinite 如果 number 是有限数字（或可转换为有限数字），那么返回 true。否则，如果 number 是 NaN（非数字），或者是正、负无穷大的数，则返回 false。</span></span><br><span class="line">        <span class="keyword">return</span> n &gt;= <span class="number">0</span> &amp;&amp; <span class="built_in">Math</span>.floor(n) === n &amp;&amp; <span class="built_in">isFinite</span>(val)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Convert a value to a string that is actually rendered.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toString</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将对象或者其他基本数据 变成一个 字符串</span></span><br><span class="line">        <span class="keyword">return</span> val == <span class="literal">null</span></span><br><span class="line">            ? <span class="string">&#x27;&#x27;</span></span><br><span class="line">            : <span class="keyword">typeof</span> val === <span class="string">&#x27;object&#x27;</span></span><br><span class="line">            ? <span class="built_in">JSON</span>.stringify(val, <span class="literal">null</span>, <span class="number">2</span>)</span><br><span class="line">            : <span class="built_in">String</span>(val)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Convert a input value to a number for persistence.</span></span><br><span class="line"><span class="comment">     * If the conversion fails, return original string.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toNumber</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//字符串转数字，如果失败则返回字符串</span></span><br><span class="line">        <span class="keyword">var</span> n = <span class="built_in">parseFloat</span>(val);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">isNaN</span>(n) ? val : n</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Make a map and return a function for checking if a key</span></span><br><span class="line"><span class="comment">     * is in that map.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *  //map 对象中的[name1,name2,name3,name4]  变成这样的map&#123;name1:true,name2:true,name3:true,name4:true&#125;</span></span><br><span class="line"><span class="comment">     *  并且传进一个key值取值，这里用到策略者模式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">makeMap</span>(<span class="params">str,</span></span></span><br><span class="line"><span class="params"><span class="function">                     expectsLowerCase</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> map = <span class="built_in">Object</span>.create(<span class="literal">null</span>);   <span class="comment">//创建一个新的对象</span></span><br><span class="line">        <span class="keyword">var</span> list = str.split(<span class="string">&#x27;,&#x27;</span>);    <span class="comment">//按字符串,分割</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">            map[list[i]] = <span class="literal">true</span>;   <span class="comment">//map 对象中的[name1,name2,name3,name4]  变成这样的map&#123;name1:true,name2:true,name3:true,name4:true&#125;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> expectsLowerCase</span><br><span class="line">            ? <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> map[val.toLowerCase()];</span><br><span class="line">        &#125;   <span class="comment">//返回一个柯里化函数 toLowerCase转换成小写</span></span><br><span class="line">            : <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> map[val];</span><br><span class="line">        &#125;   <span class="comment">//返回一个柯里化函数 并且把map中添加一个 属性建</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if a tag is a built-in tag.</span></span><br><span class="line"><span class="comment">     * 检查标记是否为内置标记。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> isBuiltInTag = makeMap(<span class="string">&#x27;slot,component&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if a attribute is a reserved attribute.</span></span><br><span class="line"><span class="comment">     * 检查属性是否为保留属性。</span></span><br><span class="line"><span class="comment">     * isReservedAttribute=function(vale)&#123; map&#123;key:true,ref:true,slot-scope:true,is:true,vaule:undefined&#125;  &#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> isReservedAttribute = makeMap(<span class="string">&#x27;key,ref,slot,slot-scope,is&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Remove an item from an array</span></span><br><span class="line"><span class="comment">     *    //删除数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">remove</span>(<span class="params">arr, item</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (arr.length) &#123;</span><br><span class="line">            <span class="keyword">var</span> index = arr.indexOf(item);</span><br><span class="line">            <span class="keyword">if</span> (index &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> arr.splice(index, <span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check whether the object has the property.</span></span><br><span class="line"><span class="comment">     *检查对象属性是否是实例化还是原型上面的</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> hasOwnProperty = <span class="built_in">Object</span>.prototype.hasOwnProperty;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">hasOwn</span>(<span class="params">obj, key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> hasOwnProperty.call(obj, key)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Create a cached version of a pure function.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Create a cached version of a pure function.</span></span><br><span class="line"><span class="comment">     * 创建纯函数的缓存版本。</span></span><br><span class="line"><span class="comment">     * 创建一个函数，缓存，再return 返回柯里化函数</span></span><br><span class="line"><span class="comment">     * 闭包用法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">/***********************************************************************************************</span></span><br><span class="line"><span class="comment">     *函数名 ：cached</span></span><br><span class="line"><span class="comment">     *函数功能描述 ： 创建纯函数的缓存版本。 创建一个函数，缓存，再return 返回柯里化函数 闭包用法</span></span><br><span class="line"><span class="comment">     *函数参数 ： fn 函数</span></span><br><span class="line"><span class="comment">     *函数返回值 ：    fn</span></span><br><span class="line"><span class="comment">     *作者 ：</span></span><br><span class="line"><span class="comment">     *函数创建日期 ：</span></span><br><span class="line"><span class="comment">     *函数修改日期 ：</span></span><br><span class="line"><span class="comment">     *修改人 ：</span></span><br><span class="line"><span class="comment">     *修改原因 ：</span></span><br><span class="line"><span class="comment">     *版本 ：</span></span><br><span class="line"><span class="comment">     *历史版本 ：</span></span><br><span class="line"><span class="comment">     ***********************************************************************************************/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * var aFn =  cached(function(string)&#123;</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *      return string</span></span><br><span class="line"><span class="comment">     *  &#125;)</span></span><br><span class="line"><span class="comment">     * aFn(string1);</span></span><br><span class="line"><span class="comment">     * aFn(string2);</span></span><br><span class="line"><span class="comment">     * aFn(string);</span></span><br><span class="line"><span class="comment">     * aFn(string1);</span></span><br><span class="line"><span class="comment">     * aFn(string2);</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * aFn 函数会多次调用 里面就能体现了</span></span><br><span class="line"><span class="comment">     *  用对象去缓存记录函数</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">cached</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> cache = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">return</span> (<span class="function"><span class="keyword">function</span> <span class="title">cachedFn</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> hit = cache[str];</span><br><span class="line">            <span class="keyword">return</span> hit || (cache[str] = fn(str))</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Camelize a hyphen-delimited string.</span></span><br><span class="line"><span class="comment">     * 用连字符分隔的字符串。</span></span><br><span class="line"><span class="comment">     * camelize = cachedFn(str)=&gt;&#123; var hit = cache[str];</span></span><br><span class="line"><span class="comment">    return hit || (cache[str] = fn(str))&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     调用一个camelize 存一个建进来 调用两次 如果建一样就返回 hit</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     横线-的转换成驼峰写法</span></span><br><span class="line"><span class="comment">     可以让这样的的属性 v-model 变成 vModel</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> camelizeRE = <span class="regexp">/-(\w)/g</span>;</span><br><span class="line">    <span class="keyword">var</span> camelize = cached(<span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> str.replace(camelizeRE, <span class="function"><span class="keyword">function</span> (<span class="params">_, c</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> c ? c.toUpperCase() : <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Capitalize a string.  将首字母变成大写。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> capitalize = cached(<span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> str.charAt(<span class="number">0</span>).toUpperCase() + str.slice(<span class="number">1</span>)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Hyphenate a camelCase string.</span></span><br><span class="line"><span class="comment">     * \B的用法</span></span><br><span class="line"><span class="comment">     \B是非单词分界符，即可以查出是否包含某个字，如“ABCDEFGHIJK”中是否包含“BCDEFGHIJK”这个字。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> hyphenateRE = <span class="regexp">/\B([A-Z])/g</span>;</span><br><span class="line">    <span class="keyword">var</span> hyphenate = cached(<span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//大写字母，加完减号又转成小写了 比如把驼峰 aBc 变成了 a-bc</span></span><br><span class="line">        <span class="comment">//匹配大写字母并且两面不是空白的 替换成 &#x27;-&#x27; + &#x27;字母&#x27; 在全部转换成小写</span></span><br><span class="line">        <span class="keyword">return</span> str.replace(hyphenateRE, <span class="string">&#x27;-$1&#x27;</span>).toLowerCase();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Simple bind polyfill for environments that do not support it... e.g.</span></span><br><span class="line"><span class="comment">     * PhantomJS 1.x. Technically we don&#x27;t need this anymore since native bind is</span></span><br><span class="line"><span class="comment">     * now more performant in most browsers, but removing it would be breaking for</span></span><br><span class="line"><span class="comment">     * code that was able to run in PhantomJS 1.x, so this must be kept for</span></span><br><span class="line"><span class="comment">     * backwards compatibility.</span></span><br><span class="line"><span class="comment">     *  改变this 上下文</span></span><br><span class="line"><span class="comment">     *  执行方式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* istanbul ignore next */</span></span><br><span class="line">    <span class="comment">//绑定事件 并且改变上下文指向</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">polyfillBind</span>(<span class="params">fn, ctx</span>) </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">boundFn</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> l = <span class="built_in">arguments</span>.length;</span><br><span class="line">            <span class="keyword">return</span> l</span><br><span class="line">                ? l &gt; <span class="number">1</span></span><br><span class="line">                ? fn.apply(ctx, <span class="built_in">arguments</span>)</span><br><span class="line">                : fn.call(ctx, a)</span><br><span class="line">                : fn.call(ctx)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        boundFn._length = fn.length;</span><br><span class="line">        <span class="keyword">return</span> boundFn</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//执行方式</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">nativeBind</span>(<span class="params">fn, ctx</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fn.bind(ctx)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//bing 改变this上下文</span></span><br><span class="line">    <span class="keyword">var</span> bind = <span class="built_in">Function</span>.prototype.bind</span><br><span class="line">        ? nativeBind</span><br><span class="line">        : polyfillBind;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Convert an Array-like object to a real Array.</span></span><br><span class="line"><span class="comment">     * 将假的数组转换成真的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toArray</span>(<span class="params">list, start</span>) </span>&#123;</span><br><span class="line">        start = start || <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> i = list.length - start;</span><br><span class="line">        <span class="keyword">var</span> ret = <span class="keyword">new</span> <span class="built_in">Array</span>(i);</span><br><span class="line">        <span class="keyword">while</span> (i--) &#123;</span><br><span class="line">            ret[i] = list[i + start];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Mix properties into target object.</span></span><br><span class="line"><span class="comment">     * * 浅拷贝</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">/***********************************************************************************************</span></span><br><span class="line"><span class="comment">     *函数名 ：extend</span></span><br><span class="line"><span class="comment">     *函数功能描述 ： 浅拷贝</span></span><br><span class="line"><span class="comment">     *函数参数 ： to 超类， _from 子类</span></span><br><span class="line"><span class="comment">     *函数返回值 ： 合并类</span></span><br><span class="line"><span class="comment">     *作者 ：</span></span><br><span class="line"><span class="comment">     *函数创建日期 ：</span></span><br><span class="line"><span class="comment">     *函数修改日期 ：</span></span><br><span class="line"><span class="comment">     *修改人 ：</span></span><br><span class="line"><span class="comment">     *修改原因 ：</span></span><br><span class="line"><span class="comment">     *版本 ：</span></span><br><span class="line"><span class="comment">     *历史版本 ：</span></span><br><span class="line"><span class="comment">     ***********************************************************************************************/</span></span><br><span class="line">    <span class="comment">//对象浅拷贝，参数（to, _from）循环_from的值，会覆盖掉to的值</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">to, _from</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> _from) &#123;</span><br><span class="line">            to[key] = _from[key];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> to</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Merge an Array of Objects into a single Object.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">/***********************************************************************************************</span></span><br><span class="line"><span class="comment">     *函数名 ：toObject</span></span><br><span class="line"><span class="comment">     *函数功能描述 ： 和并对象数组合并成一个对象</span></span><br><span class="line"><span class="comment">     *函数参数 ： arr 数组对象类</span></span><br><span class="line"><span class="comment">     *函数返回值 ：</span></span><br><span class="line"><span class="comment">     *作者 ：</span></span><br><span class="line"><span class="comment">     *函数创建日期 ：</span></span><br><span class="line"><span class="comment">     *函数修改日期 ：</span></span><br><span class="line"><span class="comment">     *修改人 ：</span></span><br><span class="line"><span class="comment">     *修改原因 ：</span></span><br><span class="line"><span class="comment">     *版本 ：</span></span><br><span class="line"><span class="comment">     *历史版本 ：</span></span><br><span class="line"><span class="comment">     ***********************************************************************************************/</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">toObject</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> res = &#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]) &#123;</span><br><span class="line">                extend(res, arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Perform no operation.</span></span><br><span class="line"><span class="comment">     * Stubbing args to make Flow happy without leaving useless transpiled code</span></span><br><span class="line"><span class="comment">     * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">noop</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Always return false.</span></span><br><span class="line"><span class="comment">     * 返回假的</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> no = <span class="function"><span class="keyword">function</span> (<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Return same value</span></span><br><span class="line"><span class="comment">     *返回相同值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> identity = <span class="function"><span class="keyword">function</span> (<span class="params">_</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Generate a static keys string from compiler modules.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     *    [&#123; staticKeys:1&#125;,&#123;staticKeys:2&#125;,&#123;staticKeys:3&#125;]</span></span><br><span class="line"><span class="comment">     * 连接数组对象中的 staticKeys key值，连接成一个字符串 str=‘1,2,3’</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">genStaticKeys</span>(<span class="params">modules</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> modules.reduce(</span><br><span class="line">                        <span class="function"><span class="keyword">function</span> (<span class="params">keys, m</span>) </span>&#123;</span><br><span class="line">                                        <span class="comment">//累加staticKeys的值变成数组</span></span><br><span class="line">                                          <span class="keyword">return</span> keys.concat(m.staticKeys || [])</span><br><span class="line">                                      &#125;,</span><br><span class="line">                         []</span><br><span class="line">        ).join(<span class="string">&#x27;,&#x27;</span>) <span class="comment">//转换成字符串</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if two values are loosely equal - that is,</span></span><br><span class="line"><span class="comment">     * if they are plain objects, do they have the same shape?</span></span><br><span class="line"><span class="comment">     * 检测a和b的数据类型，是否是不是数组或者对象，对象的key长度一样即可，数组长度一样即可</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">looseEqual</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (a === b) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;  <span class="comment">//如果a和b是完全相等 则true</span></span><br><span class="line">        <span class="keyword">var</span> isObjectA = isObject(a);</span><br><span class="line">        <span class="keyword">var</span> isObjectB = isObject(b);</span><br><span class="line">        <span class="keyword">if</span> (isObjectA &amp;&amp; isObjectB) &#123;  <span class="comment">//如果a和都是对象则让下走</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">var</span> isArrayA = <span class="built_in">Array</span>.isArray(a);</span><br><span class="line">                <span class="keyword">var</span> isArrayB = <span class="built_in">Array</span>.isArray(b);</span><br><span class="line">                <span class="keyword">if</span> (isArrayA &amp;&amp; isArrayB) &#123;  <span class="comment">//如果a和b都是数组</span></span><br><span class="line">                    <span class="comment">// every  条件判断</span></span><br><span class="line">                    <span class="keyword">return</span> a.length === b.length &amp;&amp; a.every(<span class="function"><span class="keyword">function</span> (<span class="params">e, i</span>) </span>&#123;  <span class="comment">//如果a长度和b长度一样的时候</span></span><br><span class="line">                            <span class="keyword">return</span> looseEqual(e, b[i])  <span class="comment">//递归</span></span><br><span class="line">                        &#125;)</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!isArrayA &amp;&amp; !isArrayB) &#123;  <span class="comment">//或者a和b都不是数组</span></span><br><span class="line">                    <span class="keyword">var</span> keysA = <span class="built_in">Object</span>.keys(a);  <span class="comment">// 获取到a的key值 变成一个数组</span></span><br><span class="line">                    <span class="keyword">var</span> keysB = <span class="built_in">Object</span>.keys(b); <span class="comment">// 获取到b的key值 变成一个数组</span></span><br><span class="line">                    <span class="comment">//他们的对象key值长度是一样的时候  则加载every 条件函数</span></span><br><span class="line">                    <span class="keyword">return</span> keysA.length === keysB.length &amp;&amp; keysA.every(<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">                            <span class="comment">//递归 a和b的值</span></span><br><span class="line">                            <span class="keyword">return</span> looseEqual(a[key], b[key])</span><br><span class="line">                        &#125;)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//如果不是对象跳槽循环</span></span><br><span class="line">                    <span class="comment">/* istanbul ignore next */</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">                <span class="comment">//如果不是对象跳槽循环</span></span><br><span class="line">                <span class="comment">/* istanbul ignore next */</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!isObjectA &amp;&amp; !isObjectB) &#123;  <span class="comment">//b和a 都不是对象的时候</span></span><br><span class="line">            <span class="comment">//把a和b变成字符串，判断他们是否相同</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">String</span>(a) === <span class="built_in">String</span>(b)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断 arr数组中的数组 是否和val相等。</span></span><br><span class="line"><span class="comment">// 或者 arr数组中的对象，或者对象数组 是否和val 相等</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">looseIndexOf</span>(<span class="params">arr, val</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (looseEqual(arr[i], val)) &#123;</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Ensure a function is called only once.</span></span><br><span class="line"><span class="comment">     *  确保该函数只调用一次 闭包函数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">once</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> called = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!called) &#123;</span><br><span class="line">                called = <span class="literal">true</span>;</span><br><span class="line">                fn.apply(<span class="built_in">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">观察者模式（Observer Design Pattern）</a>
         </h2>
 
         <div class="post-meta">
@@ -396,234 +183,7 @@ loop_print(1 2 3 4) // print 1 2 3 4
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-13 15:51:41 / 修改时间：10:15:36" itemprop="dateCreated datePublished" datetime="2021-05-13T15:51:41+08:00">2021-05-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Vue技巧"><a href="#Vue技巧" class="headerlink" title="Vue技巧"></a>Vue技巧</h1><ul>
-<li><h3 id="添加滚动事件"><a href="#添加滚动事件" class="headerlink" title="添加滚动事件"></a>添加滚动事件</h3><ul>
-<li>```vue<br>mounted{<pre><code>this.$refs.boxScroll.addEventListener(&#39;scroll&#39;,this.handleScroll) 
-// 监听滚动事件，然后用handleScroll这个方法进行相应的处理
-</code></pre>
-},<br>beforeDestroy(){<pre><code>this.$refs.boxScroll.removeEventListener(&#39;scroll&#39;,this.handleScroll)             // 取消监听滚动事件，需要在beforedestroy
-</code></pre>
-},<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">- ### 对象的监听与修改</span><br><span class="line"></span><br><span class="line">  - ```vue</span><br><span class="line">    this.$set(data,key,newValue) //只能用于给复杂数据添加属性触发监测</span><br><span class="line">    this.$forceUpdate(); //用于强制刷新</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><h3 id="面向vue组件的节流函数"><a href="#面向vue组件的节流函数" class="headerlink" title="面向vue组件的节流函数"></a>面向vue组件的节流函数</h3><ul>
-<li><pre><code class="vue">/**
-     * [throttle js节流公用方法]
-     * @param  &#123;[function]&#125; method  [你要执行的方法]
-     * @param  &#123;[]&#125; context [上下文语境如window，可忽略]
-     */
-    throttle(method, context, t,...args) &#123;
-        clearTimeout(context.timerId);
-        t = t || 200;
-        context.timerId = setTimeout(() =&gt; &#123;
-            method.apply(context,args);
-        &#125;, t);
-    &#125;,
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue3+TS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue3+TS/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 15:51:41" itemprop="dateCreated datePublished" datetime="2021-05-13T15:51:41+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-27 11:59:14" itemprop="dateModified" datetime="2020-11-27T11:59:14+08:00">2020-11-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="vue3-TS-组件导出"><a href="#vue3-TS-组件导出" class="headerlink" title="vue3+TS 组件导出"></a>vue3+TS 组件导出</h1><ul>
-<li><h3 id="vue3-0"><a href="#vue3-0" class="headerlink" title="vue3.0+"></a>vue3.0+</h3></li>
-<li><h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h3><ol>
-<li><strong>vue2.0中常用方法，不推荐</strong></li>
-<li><strong>配合shims-vue.d.ts进行组件定义和注册</strong><br><strong>【注意】:导入组件时需加上‘.vue’后缀</strong><pre><code> **import LaMenu from &quot;@/components/Menu.vue&quot;;**
-</code></pre>
-</li>
-<li><strong>目前vue-class-component不支持vue3.0组合API写法，不建议使用</strong></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">// vue3.0+TypeScript使用时的一些小坑</span><br><span class="line">// 【三种定义方式在Vue3.*+Ts】</span><br><span class="line"></span><br><span class="line">/*******************************************************************/</span><br><span class="line">// 【1.直接导出】</span><br><span class="line">export default&#123;</span><br><span class="line">	name: &#x27;myComponent&#x27;</span><br><span class="line">&#125;</span><br><span class="line">/*******************************************************************/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*******************************************************************/</span><br><span class="line">// 【2.使用defineComponent导出】</span><br><span class="line">import &#123;defineComponent&#125; from &#x27;vue&#x27;</span><br><span class="line">export default defineComponent(&#123;</span><br><span class="line">	name: &#x27;myComponent&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">/*******************************************************************/</span><br><span class="line"></span><br><span class="line">/*******************************************************************/</span><br><span class="line">// 【3.使用vue-class-component】</span><br><span class="line">import Vue from &#x27;vue&#x27;</span><br><span class="line">import Options from &#x27;vue-class-component&#x27;</span><br><span class="line"></span><br><span class="line">// Define the component in class-style</span><br><span class="line">// 最新版Component注解已经改为Options</span><br><span class="line">@Options(&#123;</span><br><span class="line">  computed: mapGetters([</span><br><span class="line">    &#x27;posts&#x27;</span><br><span class="line">  ]),</span><br><span class="line"></span><br><span class="line">  methods: mapActions([</span><br><span class="line">    &#x27;fetchPosts&#x27;</span><br><span class="line">  ])</span><br><span class="line">&#125;)</span><br><span class="line">export default class Counter extends Vue &#123;</span><br><span class="line">	property: number;</span><br><span class="line">	method()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">/*******************************************************************/</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/v-show%E5%92%8Cv-if%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/v-show%E5%92%8Cv-if%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 15:51:41" itemprop="dateCreated datePublished" datetime="2021-05-13T15:51:41+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-29 13:38:06" itemprop="dateModified" datetime="2020-10-29T13:38:06+08:00">2020-10-29</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="v-show和v-if-区别"><a href="#v-show和v-if-区别" class="headerlink" title="v-show和v-if 区别"></a>v-show和v-if 区别</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> v-show 不支持 &lt;template&gt; 元素，也不支持 v-<span class="keyword">else</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> v-<span class="keyword">if</span> 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> v-<span class="keyword">if</span> 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</span><br><span class="line"></span><br><span class="line">一般来说，v-<span class="keyword">if</span> 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-<span class="keyword">if</span> 较好。</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/css/" class="post-title-link" itemprop="url">CSS常见问题及解决</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：15:08:01" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:25:12" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -631,11 +191,11 @@ loop_print(1 2 3 4) // print 1 2 3 4
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/behavioralPattern/" itemprop="url" rel="index"><span itemprop="name">behavioralPattern</span></a>
                 </span>
             </span>
 
@@ -650,58 +210,106 @@ loop_print(1 2 3 4) // print 1 2 3 4
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="CSS常见问题及解决："><a href="#CSS常见问题及解决：" class="headerlink" title="CSS常见问题及解决："></a>CSS常见问题及解决：</h1><ul>
-<li><h2 id="background-size使用不生效"><a href="#background-size使用不生效" class="headerlink" title="background-size使用不生效"></a>background-size使用不生效</h2></li>
+          <h1 id="观察者模式（Observer-Design-Pattern）"><a href="#观察者模式（Observer-Design-Pattern）" class="headerlink" title="观察者模式（Observer Design Pattern）"></a>观察者模式（Observer Design Pattern）</h1><p><em><strong>观察者模式（Observer Design Pattern）也被称为发布订阅模式（Publish-Subscribe Design Pattern）</strong></em></p>
+<p><em><strong>在对象之间定义一个一对多的依赖，当一个对象状态改变的时候，所有依赖的对象都会自动收到通知。</strong></em></p>
+<h3 id="原理及应用场景剖析"><a href="#原理及应用场景剖析" class="headerlink" title="原理及应用场景剖析"></a>原理及应用场景剖析</h3><ul>
+<li>被依赖的对象叫作被观察者（Observable），依赖的对象叫作观察者（Observer）。</li>
+<li><strong>设计模式要干的事情就是解耦。创建型模式是将创建和使用代码解耦，结构型模式是将不同功能代码解耦，行为型模式是将不同的行为代码解耦，具体到观察者模式，它是将观察者和被观察者代码解耦。</strong></li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// <span class="number">1</span>.注意顺序<span class="attribute">background-size</span>必须定义在<span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">&quot;&quot;</span>)后</span><br><span class="line">// background-size:contain;---图片自身的宽高比不变，缩放至图片自身能完全显示出来，所以容器会有留白区域；</span><br><span class="line">// <span class="attribute">background-size</span>：<span class="number">100%</span> <span class="number">100%</span>;---按容器比例撑满，图片变形；</span><br><span class="line">// <span class="attribute">background-size</span>:cover;---把背景图片放大到适合元素容器的尺寸，图片比例不变，但是要注意，超出容器的部分可能会裁掉。</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="background常见设置"><a href="#background常见设置" class="headerlink" title="background常见设置"></a>background常见设置</h2></li>
+<h3 id="基于不同应用场景的不同实现方式"><a href="#基于不同应用场景的不同实现方式" class="headerlink" title="基于不同应用场景的不同实现方式"></a>基于不同应用场景的不同实现方式</h3><ul>
+<li>同步阻塞的实现方式</li>
+<li>异步非阻塞的实现方式<ul>
+<li>简单一点的做法是，在每个 handleRegSuccess() 函数中，创建一个新的线程执行代码。</li>
+<li>基于 EventBus 来实现</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// <span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">&quot;&quot;</span>) no-repeat center center</span><br><span class="line">// background:<span class="built_in">url</span>(<span class="string">&quot;&quot;</span>) no-repeat <span class="number">0</span> <span class="number">0</span></span><br><span class="line">// background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="控制行内元素不换行而是横向溢出"><a href="#控制行内元素不换行而是横向溢出" class="headerlink" title="控制行内元素不换行而是横向溢出"></a>控制行内元素不换行而是横向溢出</h2></li>
+</li>
+<li>进程内的实现方式</li>
+<li>跨进程的实现方式<ul>
+<li>如果用户注册成功之后，我们需要发送用户信息给大数据征信系统，而大数据征信系统是一个独立的系统，跟它之间的交互是跨不同进程的，那如何实现一个跨进程的观察者模式呢？如果大数据征信系统提供了发送用户注册信息的 RPC 接口，我们仍然可以沿用之前的实现思路，在 handleRegSuccess() 函数中调用 RPC 接口来发送数据。但是，我们还有更加优雅、更加常用的一种实现方式，那就是基于消息队列（Message Queue，比如 ActiveMQ）来实现。</li>
+<li>而基于消息队列的实现方式，被观察者和观察者解耦更加彻底，两部分的耦合更小。被观察者完全不感知观察者，同理，观察者也完全不感知被观察者。被观察者只管发送消息到消息队列，观察者只管从消息队列中读取消息来执行相应的逻辑。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 父节点 <span class="attribute">white-space</span>:no-wrap</span><br><span class="line">// 子节点 inline-block</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="文字溢出省略"><a href="#文字溢出省略" class="headerlink" title="文字溢出省略"></a>文字溢出省略</h2></li>
+</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// -webkit-line-clamp: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    -webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="初始化所有元素的margin和padding"><a href="#初始化所有元素的margin和padding" class="headerlink" title="初始化所有元素的margin和padding"></a>初始化所有元素的margin和padding</h2></li>
+<h3 id="异步非阻塞观察者模式的简易实现"><a href="#异步非阻塞观察者模式的简易实现" class="headerlink" title="异步非阻塞观察者模式的简易实现"></a>异步非阻塞观察者模式的简易实现</h3><ul>
+<li>框架的作用有：隐藏实现细节，降低开发难度，做到代码复用，解耦业务与非业务代码，让程序员聚焦业务开发。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	<span class="attribute">margin</span>:initial;</span><br><span class="line">	<span class="attribute">padding</span>:initial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="EventBus-框架功能需求介绍"><a href="#EventBus-框架功能需求介绍" class="headerlink" title="EventBus 框架功能需求介绍"></a>EventBus 框架功能需求介绍</h3>
+      
+    </div>
 
-<ul>
-<li><h2 id="控制文字为不可复制"><a href="#控制文字为不可复制" class="headerlink" title="控制文字为不可复制"></a>控制文字为不可复制</h2></li>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">解释器模式（ Interpreter Design Pattern）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:25:25" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/behavioralPattern/" itemprop="url" rel="index"><span itemprop="name">behavioralPattern</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="解释器模式（-Interpreter-Design-Pattern）"><a href="#解释器模式（-Interpreter-Design-Pattern）" class="headerlink" title="解释器模式（ Interpreter Design Pattern）"></a>解释器模式（ Interpreter Design Pattern）</h1><p><em><strong>解释器模式为某个语言定义它的语法（或者叫文法）表示，并定义一个解释器用来处理这个语法</strong></em></p>
+<p><em><strong>解释器模式只在一些特定的领域会被用到，比如编译器、规则引擎、正则表达式</strong></em></p>
+<h3 id="解释器模式的原理和实现"><a href="#解释器模式的原理和实现" class="headerlink" title="解释器模式的原理和实现"></a>解释器模式的原理和实现</h3><ul>
+<li>解释器模式为某个语言定义它的语法（或者叫文法）表示，并定义一个解释器用来处理这个语法。实际上，这里的“语言”不仅仅指我们平时说的中、英、日、法等各种语言。从广义上来讲，只要是能承载信息的载体，我们都可以称之为“语言”，比如，古代的结绳记事、盲文、哑语、摩斯密码等。</li>
+<li>解释器模式的代码实现比较灵活，没有固定的模板。我们前面说过，应用设计模式主要是应对代码的复杂性，解释器模式也不例外。它的代码实现的核心思想，就是将语法解析的工作拆分到各个小类中，以此来避免大而全的解析类。一般的做法是，将语法规则拆分一些小的独立的单元，然后对每个单元进行解析，最终合并为对整个语法规则的解析。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user-select: none;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="设置全局高度"><a href="#设置全局高度" class="headerlink" title="设置全局高度"></a>设置全局高度</h2></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">html</span>&gt;*&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h2></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>) <span class="built_in">brightness</span>(<span class="number">200%</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="css前缀与浏览器关联"><a href="#css前缀与浏览器关联" class="headerlink" title="css前缀与浏览器关联"></a>css前缀与浏览器关联</h2></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-moz代表firefox浏览器私有属性</span><br><span class="line">-ms代表ie浏览器私有属性</span><br><span class="line">-webkit代表safari、chrome私有属性</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h2 id="absolute和zIndex的层级关系"><a href="#absolute和zIndex的层级关系" class="headerlink" title="absolute和zIndex的层级关系"></a>absolute和zIndex的层级关系</h2></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对于没有设置 <span class="attribute">position</span>:absolute 属性的元素 不管 z-index 设置多少都为 <span class="number">0</span></span><br><span class="line">但低于 position:absolute 中 z-index:<span class="number">0</span> 的元素</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -721,7 +329,7 @@ loop_print(1 2 3 4) // print 1 2 3 4
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -735,7 +343,7 @@ loop_print(1 2 3 4) // print 1 2 3 4
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86/" class="post-title-link" itemprop="url">对象遍历</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">访问者模式（Visitor Design Pattern）</a>
         </h2>
 
         <div class="post-meta">
@@ -746,7 +354,7 @@ loop_print(1 2 3 4) // print 1 2 3 4
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：15:55:11" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:24:53" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -754,11 +362,11 @@ loop_print(1 2 3 4) // print 1 2 3 4
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/behavioralPattern/" itemprop="url" rel="index"><span itemprop="name">behavioralPattern</span></a>
                 </span>
             </span>
 
@@ -773,10 +381,123 @@ loop_print(1 2 3 4) // print 1 2 3 4
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="对象遍历"><a href="#对象遍历" class="headerlink" title="对象遍历"></a>对象遍历</h1><ul>
-<li><h2 id="对象遍历-1"><a href="#对象遍历-1" class="headerlink" title="对象遍历"></a>对象遍历</h2></li>
+          <h1 id="访问者模式（Visitor-Design-Pattern）"><a href="#访问者模式（Visitor-Design-Pattern）" class="headerlink" title="访问者模式（Visitor Design Pattern）"></a>访问者模式（Visitor Design Pattern）</h1><p><em><strong>多态是一种动态绑定，可以在运行时获取对象的实际类型，来运行实际类型对应的方法。而函数重载是一种静态绑定，在编译时并不能获取对象的实际类型，而是根据声明类型执行声明类型对应的方法。</strong></em></p>
+<p><em><strong>允许一个或者多个操作应用到一组对象上，解耦操作和对象本身</strong></em></p>
+<h3 id="访问者模式的原理和实现"><a href="#访问者模式的原理和实现" class="headerlink" title="访问者模式的原理和实现"></a>访问者模式的原理和实现</h3><ul>
+<li><p>对于访问者模式，学习的主要难点在代码实现。而代码实现比较复杂的主要原因是，函数重载在大部分面向对象编程语言中是静态绑定的。也就是说，调用类的哪个重载函数，是在编译期间，由参数的声明类型决定的，而非运行时，根据参数的实际类型决定的。</p>
+</li>
+<li><p>访问者模式针对的是一组类型不同的对象（PdfFile、PPTFile、WordFile）。不过，尽管这组对象的类型是不同的，但是，它们继承相同的父类（ResourceFile）或者实现相同的接口。在不同的应用场景下，我们需要对这组对象进行一系列不相关的业务操作（抽取文本、压缩等），但为了避免不断添加功能导致类（PdfFile、PPTFile、WordFile）不断膨胀，职责越来越不单一，以及避免频繁地添加功能导致的频繁代码修改，我们使用访问者模式，将对象与操作解耦，将这些业务操作抽离出来，定义在独立细分的访问者类（Extractor、Compressor）中。</p>
+</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历对象 </span></span><br><span class="line"><span class="keyword">let</span> key <span class="keyword">of</span> obj</span><br></pre></td></tr></table></figure>
+<h3 id="为什么支持双分派的语言不需要访问者模式？"><a href="#为什么支持双分派的语言不需要访问者模式？" class="headerlink" title="为什么支持双分派的语言不需要访问者模式？"></a>为什么支持双分派的语言不需要访问者模式？</h3><ul>
+<li>既然有 Double Dispatch，对应的就有 Single Dispatch。</li>
+<li> Single Dispatch，指的是执行哪个对象的方法，根据对象的运行时类型来决定；执行对象的哪个方法，根据方法参数的编译时类型来决定。Single Dispatch 之所以称为“Single”，是因为执行哪个对象的哪个方法，只跟“对象”的运行时类型有关。</li>
+<li> Double Dispatch，指的是执行哪个对象的方法，根据对象的运行时类型来决定；执行对象的哪个方法，根据方法参数的运行时类型来决定。Double Dispatch 之所以称为“Double”，是因为执行哪个对象的哪个方法，跟“对象”和“方法参数”两者的运行时类型有关。</li>
+<li>具体到编程语言的语法机制，Single Dispatch 和 Double Dispatch 跟多态和函数重载直接相关。当前主流的面向对象编程语言（比如，Java、C++、C#）都只支持 Single Dispatch，不支持 Double Dispatch。</li>
+</ul>
+<h3 id="简单替代"><a href="#简单替代" class="headerlink" title="简单替代"></a>简单替代</h3><ul>
+<li>工厂模式</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">迭代器模式（Iterator Design Pattern）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:24:39" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/" itemprop="url" rel="index"><span itemprop="name">designPattern</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/designPattern/behavioralPattern/" itemprop="url" rel="index"><span itemprop="name">behavioralPattern</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="迭代器模式（Iterator-Design-Pattern）"><a href="#迭代器模式（Iterator-Design-Pattern）" class="headerlink" title="迭代器模式（Iterator Design Pattern）"></a>迭代器模式（Iterator Design Pattern）</h1><p><em><strong>用来遍历集合对象。这里说的“集合对象”也可以叫“容器”“聚合对象”，实际上就是包含一组对象的对象，比如数组、链表、树、图、跳表。迭代器模式将集合对象的遍历操作从集合类中拆分出来，放到迭代器类中，让两者的职责更加单一</strong></em></p>
+<h3 id="迭代器模式的原理和实现"><a href="#迭代器模式的原理和实现" class="headerlink" title="迭代器模式的原理和实现"></a>迭代器模式的原理和实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 接口定义方式一</span><br><span class="line">public interface Iterator&lt;E&gt; &#123;</span><br><span class="line">  boolean hasNext();</span><br><span class="line">  void next();</span><br><span class="line">  E currentItem();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 接口定义方式二</span><br><span class="line">public interface Iterator&lt;E&gt; &#123;</span><br><span class="line">  boolean hasNext();</span><br><span class="line">  E next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface List &#123; Iterator iterator(); //...省略其他接口函数...&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="迭代器模式的优势"><a href="#迭代器模式的优势" class="headerlink" title="迭代器模式的优势"></a>迭代器模式的优势</h3><ul>
+<li>for 循环</li>
+<li>foreach 循环，foreach 循环只是一个语法糖而已，底层是基于迭代器来实现的。</li>
+<li>iterator 迭代器</li>
+<li>对于类似数组和链表这样的数据结构，遍历方式比较简单，直接使用 for 循环来遍历就足够了。但是，对于复杂的数据结构（比如树、图）来说，有各种复杂的遍历方式。比如，树有前中后序、按层遍历，图有深度优先、广度优先遍历等等。如果由客户端代码来实现这些遍历算法，势必增加开发成本，而且容易写错。如果将这部分遍历的逻辑写到容器类中，也会导致容器类代码的复杂性。</li>
+<li>我们可以将遍历操作拆分到迭代器类中。比如，针对图的遍历，我们就可以定义 DFSIterator、BFSIterator 两个迭代器类，让它们分别来实现深度优先遍历和广度优先遍历。</li>
+<li>将游标指向的当前位置等信息，存储在迭代器类中，每个迭代器独享游标信息。这样，我们就可以创建多个不同的迭代器，同时对同一个容器进行遍历而互不影响。</li>
+<li>容器和迭代器都提供了抽象的接口，方便我们在开发的时候，基于接口而非具体的实现编程。当需要切换新的遍历算法的时候，比如，从前往后遍历链表切换成从后往前遍历链表，客户端代码只需要将迭代器类从 LinkedIterator 切换为 ReversedLinkedIterator 即可，其他代码都不需要修改。除此之外，添加新的遍历算法，我们只需要扩展新的迭代器类，也更符合开闭原则。</li>
+</ul>
+<h3 id="在遍历的同时增删集合元素会发生什么？"><a href="#在遍历的同时增删集合元素会发生什么？" class="headerlink" title="在遍历的同时增删集合元素会发生什么？"></a>在遍历的同时增删集合元素会发生什么？</h3><ul>
+<li>在通过迭代器来遍历集合元素的同时，增加或者删除集合中的元素，有可能会导致某个元素被重复遍历或遍历不到。</li>
+</ul>
+<h3 id="如何实现一个支持“快照”功能的迭代器模式？"><a href="#如何实现一个支持“快照”功能的迭代器模式？" class="headerlink" title="如何实现一个支持“快照”功能的迭代器模式？"></a>如何实现一个支持“快照”功能的迭代器模式？</h3><ul>
+<li>所谓“快照”，指我们为容器创建迭代器的时候，相当于给容器拍了一张快照（Snapshot）。之后即便我们增删容器中的元素，快照中的元素并不会做相应的改动。而迭代器遍历的对象是快照而非容器，这样就避免了在使用迭代器遍历的过程中，增删容器中的元素，导致的不可预期的结果或者报错。</li>
+<li>解决方案一：每当创建迭代器的时候，都拷贝一份容器中的元素到快照中，后续的遍历操作都基于这个迭代器自己持有的快照来进行。</li>
+<li>解决方案二：我们可以在容器中，为每个元素保存两个时间戳，一个是添加时间戳 addTimestamp，一个是删除时间戳 delTimestamp。当元素被加入到集合中的时候，我们将 addTimestamp 设置为当前时间，将 delTimestamp 设置成最大长整型值（Long.MAX_VALUE）。当元素被删除时，我们将 delTimestamp 更新为当前时间，表示已经被删除。<ul>
+<li>注意，这里只是标记删除，而非真正将它从容器中删除。同时，每个迭代器也保存一个迭代器创建时间戳 snapshotTimestamp，也就是迭代器对应的快照的创建时间戳。当使用迭代器来遍历容器的时候，只有满足 addTimestamp&lt;snapshotTimestamp&lt;delTimestamp 的元素，才是属于这个迭代器的快照。</li>
+<li>如果元素的 addTimestamp&gt;snapshotTimestamp，说明元素在创建了迭代器之后才加入的，不属于这个迭代器的快照；如果元素的 delTimestamp&lt;snapshotTimestamp，说明元素在创建迭代器之前就被删除掉了，也不属于这个迭代器的快照。</li>
+<li>上面的解决方案相当于解决了一个问题，又引入了另外一个问题。ArrayList 底层依赖数组这种数据结构，原本可以支持快速的随机访问，在 O(1) 时间复杂度内获取下标为 i 的元素，但现在，删除数据并非真正的删除，只是通过时间戳来标记删除，这就导致无法支持按照下标快速随机访问了。</li>
+<li>我们可以在 ArrayList 中存储两个数组。一个支持标记删除的，用来实现快照遍历功能；一个不支持标记删除的（也就是将要删除的数据直接从数组中移除），用来支持随机访问。对应的代码我这里就不给出了，感兴趣的话你可以自己实现一下。</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -862,20 +583,20 @@ loop_print(1 2 3 4) // print 1 2 3 4
       <div class="site-state-item site-state-posts">
           <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

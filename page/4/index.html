@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/reference/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/reference/" class="post-title-link" itemprop="url">reference 引用</a>
         </h2>
 
         <div class="post-meta">
@@ -181,16 +181,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:50" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 14:28:22" itemprop="dateModified" datetime="2021-01-20T14:28:22+08:00">2021-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
 
           
 
@@ -203,17 +210,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="命令模式（Command-Design-Pattern）"><a href="#命令模式（Command-Design-Pattern）" class="headerlink" title="命令模式（Command Design Pattern）"></a>命令模式（Command Design Pattern）</h1><p><em><strong>命令模式将请求（命令）封装为一个对象，这样可以使用不同的请求参数化其他对象（将不同请求依赖注入到其他对象），并且能够支持请求（命令）的排队执行、记录日志、撤销等（附加控制）功能</strong></em></p>
-<h3 id="命令模式的原理与实现"><a href="#命令模式的原理与实现" class="headerlink" title="命令模式的原理与实现"></a>命令模式的原理与实现</h3><ul>
-<li>落实到编码实现，命令模式用的最核心的实现手段，是将函数封装成对象。我们知道，C 语言支持函数指针，我们可以把函数当作变量传递来传递去。但是，在大部分编程语言中，函数没法儿作为参数传递给其他函数，也没法儿赋值给变量。借助命令模式，我们可以将函数封装成对象。具体来说就是，设计一个包含这个函数的类，实例化一个对象传来传去，这样就可以实现把函数像对象一样使用。从实现的角度来说，它类似我们之前讲过的回调。</li>
-<li>命令模式的主要作用和应用场景，是用来控制命令的执行，比如，异步、延迟、排队执行命令、撤销重做命令、存储命令、给命令记录日志等等，这才是命令模式能发挥独一无二作用的地方</li>
-</ul>
-<h3 id="命令模式-VS-策略模式"><a href="#命令模式-VS-策略模式" class="headerlink" title="命令模式 VS 策略模式"></a>命令模式 VS 策略模式</h3><ul>
-<li>在策略模式中，不同的策略具有相同的目的、不同的实现、互相之间可以替换。比如，BubbleSort、SelectionSort 都是为了实现排序的，只不过一个是用冒泡排序算法来实现的，另一个是用选择排序算法来实现的。而在命令模式中，不同的命令具有不同的目的，对应不同的处理逻辑，并且互相之间不可替换。</li>
-<li>实际上，每个设计模式都应该由两部分组成：第一部分是应用场景，即这个模式可以解决哪类问题；第二部分是解决方案，即这个模式的设计思路和具体的代码实现。不过，代码实现并不是模式必须包含的。如果你单纯地只关注解决方案这一部分，甚至只关注代码实现，就会产生大部分模式看起来都很相似的错觉。</li>
-<li>实际上，设计模式之间的主要区别还是在于设计意图，也就是应用场景。单纯地看设计思路或者代码实现，有些模式确实很相似，比如策略模式和工厂模式。</li>
-<li>之前讲策略模式的时候，我们有讲到，策略模式包含策略的定义、创建和使用三部分，从代码结构上来，它非常像工厂模式。它们的区别在于，策略模式侧重“策略”或“算法”这个特定的应用场景，用来解决根据运行时状态从一组策略中选择不同策略的问题，而工厂模式侧重封装对象的创建过程，这里的对象没有任何业务场景的限定，可以是策略，但也可以是其他东西。从设计意图上来，这两个模式完全是两回事儿。</li>
-</ul>
+          <h1 id="reference-引用"><a href="#reference-引用" class="headerlink" title="reference 引用"></a>reference 引用</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span>* p = &amp;x;<span class="comment">// pointer</span></span><br><span class="line"><span class="keyword">int</span>&amp; r = x; <span class="comment">// reference</span></span><br><span class="line"><span class="comment">// sizeof(r) == sizeof(x)</span></span><br><span class="line"><span class="comment">// &amp;x == &amp;r;</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">imag</span><span class="params">(<span class="keyword">const</span> <span class="keyword">double</span>&amp; im)</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">imag</span><span class="params">(<span class="keyword">const</span> <span class="keyword">double</span> im)</span></span>&#123;&#125;</span><br><span class="line"><span class="comment">// same signature 函数签名相同，产生二义性</span></span><br><span class="line"><span class="comment">// const是函数签名的一部分</span></span><br><span class="line"><span class="comment">// 所以const也可以重载</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -233,7 +231,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E4%B8%AD%E4%BB%8B%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/vptr&vtbl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -247,7 +245,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E4%B8%AD%E4%BB%8B%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/vptr&vtbl/" class="post-title-link" itemprop="url">vptr&vtbl 虚指针和虚表</a>
         </h2>
 
         <div class="post-meta">
@@ -256,16 +254,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:57" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-20 15:02:19" itemprop="dateModified" datetime="2021-01-20T15:02:19+08:00">2021-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
 
           
 
@@ -278,14 +283,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="中介模式-（Mediator-Design-Pattern）"><a href="#中介模式-（Mediator-Design-Pattern）" class="headerlink" title="中介模式 （Mediator Design Pattern）"></a>中介模式 （Mediator Design Pattern）</h1><p><em><strong>中介模式定义了一个单独的（中介）对象，来封装一组对象之间的交互。将这组对象之间的交互委派给与中介对象交互，来避免对象之间的直接交互</strong></em></p>
-<h3 id="中介模式的原理和实现"><a href="#中介模式的原理和实现" class="headerlink" title="中介模式的原理和实现"></a>中介模式的原理和实现</h3><ul>
-<li>中介模式的设计思想跟中间层很像，通过引入中介这个中间层，将一组对象之间的交互关系（或者依赖关系）从多对多（网状关系）转换为一对多（星状关系）。原来一个对象要跟 n 个对象交互，现在只需要跟一个中介对象交互，从而最小化对象之间的交互关系，降低了代码的复杂度，提高了代码的可读性和可维护性。</li>
-</ul>
-<h3 id="中介模式-VS-观察者模式"><a href="#中介模式-VS-观察者模式" class="headerlink" title="中介模式 VS 观察者模式"></a>中介模式 VS 观察者模式</h3><ul>
-<li>在观察者模式中，尽管一个参与者既可以是观察者，同时也可以是被观察者，但是，大部分情况下，交互关系往往都是单向的，一个参与者要么是观察者，要么是被观察者，不会兼具两种身份。</li>
-<li>中介模式正好相反。只有当参与者之间的交互关系错综复杂，维护成本很高的时候，我们才考虑使用中介模式。</li>
-</ul>
+          <h1 id="vptr-amp-vtbl-虚指针和虚表"><a href="#vptr-amp-vtbl-虚指针和虚表" class="headerlink" title="vptr&amp;vtbl 虚指针和虚表"></a>vptr&amp;vtbl 虚指针和虚表</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(* p-&gt;vptr[n])(p);</span><br><span class="line">(* (p-&gt;vptr)[n])(p);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -305,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -319,7 +318,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/" class="post-title-link" itemprop="url">变量声明</a>
         </h2>
 
         <div class="post-meta">
@@ -328,16 +327,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:41" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-07 16:29:31" itemprop="dateModified" datetime="2021-05-07T16:29:31+08:00">2021-05-07</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
 
           
 
@@ -350,109 +356,129 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="门面模式-外观模式（Facade-Design-Pattern）"><a href="#门面模式-外观模式（Facade-Design-Pattern）" class="headerlink" title="门面模式/外观模式（Facade Design Pattern）"></a>门面模式/外观模式（Facade Design Pattern）</h1><p><em><strong>门面模式为子系统提供一组统一的接口，定义一组高层接口让子系统更易用。</strong></em></p>
-<h3 id="门面模式的原理与实现"><a href="#门面模式的原理与实现" class="headerlink" title="门面模式的原理与实现"></a>门面模式的原理与实现</h3><ul>
-<li>假设有一个系统 A，提供了 a、b、c、d 四个接口。系统 B 完成某个业务功能，需要调用 A 系统的 a、b、d 接口。利用门面模式，我们提供一个包裹 a、b、d 接口调用的门面接口 x，给系统 B 直接使用。</li>
-</ul>
-<h3 id="门面模式的应用场景举例"><a href="#门面模式的应用场景举例" class="headerlink" title="门面模式的应用场景举例"></a>门面模式的应用场景举例</h3><ul>
-<li>解决易用性问题<ul>
-<li>门面模式可以用来封装系统的底层实现，隐藏系统的复杂性，提供一组更加简单易用、更高层的接口。比如，Linux 系统调用函数就可以看作一种“门面”。它是 Linux 操作系统暴露给开发者的一组“特殊”的编程接口，它封装了底层更基础的 Linux 内核调用。</li>
+          <h1 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h1><ol>
+<li><p>多变量声明：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b;</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br></pre></td></tr></table></figure></li>
+<li><p>多类型声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a;</span><br><span class="line">double b;</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heap corruption detected</span><br><span class="line">内存溢出写入内容后delete报告此错误</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">基础类型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：16:59:10" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h1><h2 id="c-内置类型"><a href="#c-内置类型" class="headerlink" title="c++内置类型"></a>c++内置类型</h2><ul>
+<li><h3 id="基本类型-算术类型"><a href="#基本类型-算术类型" class="headerlink" title="基本类型(算术类型)"></a>基本类型(算术类型)</h3><ul>
+<li><h4 id="整型-unsigned-lt-正整数-gt-signed-lt-整数-gt"><a href="#整型-unsigned-lt-正整数-gt-signed-lt-整数-gt" class="headerlink" title="整型(unsigned&lt;正整数&gt;  signed&lt;整数&gt;)"></a>整型(unsigned&lt;正整数&gt;  signed&lt;整数&gt;)</h4><ul>
+<li><h5 id="char"><a href="#char" class="headerlink" title="char"></a>char</h5></li>
+<li><h5 id="short"><a href="#short" class="headerlink" title="short"></a>short</h5></li>
+<li><h5 id="int（hex-16进制，oct：8进制，dec：10进制）"><a href="#int（hex-16进制，oct：8进制，dec：10进制）" class="headerlink" title="int（hex:16进制，oct：8进制，dec：10进制）"></a>int（hex:16进制，oct：8进制，dec：10进制）</h5></li>
+<li><h5 id="long"><a href="#long" class="headerlink" title="long"></a>long</h5></li>
+<li><h5 id="long-long"><a href="#long-long" class="headerlink" title="long long"></a>long long</h5></li>
+<li><h5 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a>char类型</h5></li>
+<li><h5 id="bool类型（非0true-0false）"><a href="#bool类型（非0true-0false）" class="headerlink" title="bool类型（非0true,0false）"></a>bool类型（非0true,0false）</h5></li>
 </ul>
 </li>
-<li>解决性能问题</li>
-<li>解决分布式事务问题</li>
+<li><h4 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h4><ul>
+<li><h5 id="float-f-F"><a href="#float-f-F" class="headerlink" title="float(f/F)"></a>float(f/F)</h5></li>
+<li><h5 id="double"><a href="#double" class="headerlink" title="double"></a>double</h5></li>
+<li><h5 id="long-double-l-L"><a href="#long-double-l-L" class="headerlink" title="long double(l/L)"></a>long double(l/L)</h5></li>
 </ul>
-<h3 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
-<li>我们知道，类、模块、系统之间的“通信”，一般都是通过接口调用来完成的。接口设计的好坏，直接影响到类、模块、系统是否好用。所以，我们要多花点心思在接口设计上。我经常说，完成接口设计，就相当于完成了一半的开发任务。只要接口设计得好，那代码就差不到哪里去。</li>
-<li>接口粒度设计得太大，太小都不好。太大会导致接口不可复用，太小会导致接口不易用。在实际的开发中，接口的可复用性和易用性需要“微妙”的权衡。针对这个问题，我的一个基本的处理原则是，尽量保持接口的可复用性，但针对特殊情况，允许提供冗余的门面接口，来提供更易用的接口。</li>
+</li>
+<li><h4 id="表达式中的类型转换："><a href="#表达式中的类型转换：" class="headerlink" title="表达式中的类型转换："></a>表达式中的类型转换：</h4><ul>
+<li>(1）如果有一个操作数的类型是long double，则将另一个操作数转换为long double。<br>(2）否则，如果有一个操作数的类型是double，则将另一个操作数转换为double。<br>(3）否则，如果有一个操作数的类型是float，则将另一个操作数转换为floato<br>(4）否则，说明操作数都是整型，因此执行整型提升。<br>(5）在这种情况下，如果两个操作数都是有符号或无符号的，且其中一个操作数的级别比另一个低，则转换为级别高的类型。<br>(6）如果一个操作数为有符号的，另一个操作数为无符号的，且无符号操作数的级别比有符号操作数高，则将有符号操作数转换为无符号操作数所属的类型。<br>(7)）否则，如果有符号类型可表示无符号类型的所有可能取值，则将无符号操作数转换为有符号操作数所属的类型。<br>(8）否则，<em>将两个操作数都转换为有符号类型的无符号版本。</em></li>
 </ul>
-<h3 id="经验法则"><a href="#经验法则" class="headerlink" title="经验法则"></a>经验法则</h3><ul>
-<li>适配器是做接口转换，解决的是原接口和目标接口不匹配的问题。（接口功能大致相似）<br>门面模式做接口整合，解决的是多接口调用带来的问题。（接口功能多样）</li>
+</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 15:45:40" itemprop="dateModified" datetime="2021-01-18T15:45:40+08:00">2021-01-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="适配器模式（Adapter-Design-Pattern）"><a href="#适配器模式（Adapter-Design-Pattern）" class="headerlink" title="适配器模式（Adapter Design Pattern）"></a>适配器模式（Adapter Design Pattern）</h1><p><em><strong>将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类可以一起工作。</strong></em></p>
-<h3 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h3><ul>
-<li><strong>类适配器</strong>：继承</li>
-<li><strong>对象适配器</strong>：组合</li>
-<li>如果 Adaptee 接口并不多，那两种实现方式都可以。</li>
-<li>如果 Adaptee 接口很多，而且 Adaptee 和 ITarget 接口定义大部分都相同，那我们推荐使用类适配器，因为 Adaptor 复用父类 Adaptee 的接口，比起对象适配器的实现方式，Adaptor 的代码量要少一些。</li>
-<li>如果 Adaptee 接口很多，而且 Adaptee 和 ITarget 接口定义大部分都不相同，那我们推荐使用对象适配器，因为组合结构相对于继承更加灵活。</li>
+</li>
+<li><h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><ul>
+<li><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4></li>
+<li><h4 id="字符串（string：string对象-cstring-c风格字符串）"><a href="#字符串（string：string对象-cstring-c风格字符串）" class="headerlink" title="字符串（string：string对象||cstring:c风格字符串）"></a>字符串（string：string对象||cstring:c风格字符串）</h4></li>
+<li><h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><ul>
+<li>```<br><typename> *p;//指向typename类型的指针，原数据和指针都必须是typename相同类型<pre><code>        //查看当前类型：#include &lt;typeinfo&gt;
+        //typeid(param).name()
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">- 已知地址赋值给指针</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+int *pt;<br>pt = (int *) 0xB8000000;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 已知值创建指针指向该值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+int *pt = new int;<br>*pt = 2000;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 不要重复delete指针，不能使用delete释放声明变量所获得的内存</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  int * pt = new int[10];</span><br><span class="line">  //pt[n] &lt;==&gt; *(pt+=n)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h3><ul>
-<li>封装有缺陷的接口设计</li>
-<li>统一多个类的接口设计</li>
-<li>替换依赖的外部系统</li>
-<li>兼容老版本接口</li>
-<li>适配不同格式的数据</li>
+</li>
+<li><h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4></li>
+<li><h4 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h4></li>
+<li><h4 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h4></li>
 </ul>
-<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ul>
-<li><strong>代理模式</strong>：代理模式在不改变原始类接口的条件下，为原始类定义一个代理类，主要目的是控制访问，而非加强功能，这是它跟装饰器模式最大的不同。</li>
-<li><strong>桥接模式</strong>：桥接模式的目的是将接口部分和实现部分分离，从而让它们可以较为容易、也相对独立地加以改变。</li>
-<li><strong>装饰器模式</strong>：装饰者模式在不改变原始类接口的情况下，对原始类功能进行增强，并且支持多个装饰器的嵌套使用。</li>
-<li><strong>适配器模式</strong>：适配器模式是一种事后的补救策略。适配器提供跟原始类不同的接口，而代理模式、装饰器模式提供的都是跟原始类相同的接口。</li>
+</li>
 </ul>
 
       
@@ -473,7 +499,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -487,7 +513,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">堆栈内存管理</a>
         </h2>
 
         <div class="post-meta">
@@ -496,16 +522,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:47" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 10:04:44" itemprop="dateModified" datetime="2021-01-19T10:04:44+08:00">2021-01-19</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
 
           
 
@@ -518,389 +551,497 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="组合模式（Composite-Design-Pattern）"><a href="#组合模式（Composite-Design-Pattern）" class="headerlink" title="组合模式（Composite Design Pattern）"></a>组合模式（Composite Design Pattern）</h1><p><em><strong>主要是用来处理树形结构数据</strong></em></p>
-<p><em><strong>将一组对象组织（Compose）成树形结构，以表示一种“部分 - 整体”的层次结构</strong></em></p>
+          <h1 id="堆栈内存管理"><a href="#堆栈内存管理" class="headerlink" title="堆栈内存管理"></a>堆栈内存管理</h1><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class complex&#123;&#125;...// 声明一个复数类</span><br><span class="line"></span><br><span class="line">// 作用域</span><br><span class="line">&#123;</span><br><span class="line">	complex c1(1,2); // 局部变量，存储在当前作用域的栈里</span><br><span class="line">	complex *p = new complex(3);// p指向的地址在堆中不会自动销毁</span><br><span class="line">	static complex c2(2,3);// static object 一直到整个程序结束才会销毁</span><br><span class="line">	delete p;// 手动回收指针</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">complex c3(3,4);// 全局变量</span><br></pre></td></tr></table></figure>
+
+<h3 id="new关键字的操作"><a href="#new关键字的操作" class="headerlink" title="new关键字的操作"></a>new关键字的操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">new:</span><br><span class="line">1.先分配足够内存</span><br><span class="line">2.调用该对象的构造函数</span><br><span class="line"></span><br><span class="line">complex *p = new complex(1,2);</span><br><span class="line">&lt;==&gt;</span><br><span class="line">void *mem = operator new(sizeof(complex));// 分配内存 operator new会调用malloc(n)</span><br><span class="line">p = static_cast&lt;complex*&gt;(mem);// 转换类型 把void*转成complex*</span><br><span class="line">p-&gt;Complex::Complex(1,2);// 调用构造函数</span><br></pre></td></tr></table></figure>
+
+<h3 id="delete关键字的操作"><a href="#delete关键字的操作" class="headerlink" title="delete关键字的操作"></a>delete关键字的操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">delete:</span><br><span class="line">1.先调用该对象的析构函数</span><br><span class="line">2.释放内存</span><br><span class="line"></span><br><span class="line">delete p;</span><br><span class="line">&lt;==&gt;</span><br><span class="line">String::~String(p);// 调用析构函数</span><br><span class="line">operator delte(p);// 释放内存 operator delete内部调用free(p)</span><br></pre></td></tr></table></figure>
+
+<h3 id="（vc编译器）调试模式下的内存管理："><a href="#（vc编译器）调试模式下的内存管理：" class="headerlink" title="（vc编译器）调试模式下的内存管理："></a>（vc编译器）调试模式下的内存管理：</h3><p><img src="E:\github\notebook\c++\assets\内存管理1.png" alt="image-20210220144539318"></p>
+<p>8byte(object size)+32byte(debug header)+4byte(debug tail)+4byte(cookie header)+4byte(cookie tail) = 52byte +12byte(padding)= 64 byte</p>
+<p>【cookie内容】:00000041 = 16进制64 00000040+ 00000001（表示程序使用中，最后一个bit用来标识状态，所以内存大小必须是16的倍数）</p>
+<p>当这块内存释放后变成00000040，表示这块64byte的内存已经回收</p>
+<h3 id="（vc编译器）发布模式下的内存管理："><a href="#（vc编译器）发布模式下的内存管理：" class="headerlink" title="（vc编译器）发布模式下的内存管理："></a>（vc编译器）发布模式下的内存管理：</h3><p><img src="E:\github\notebook\c++\assets\内存管理2.png" alt="image-20210220144921681"></p>
+<p>8byte（object size）+4byte(cookie header)+4byte(cookie tail) = 16byte </p>
+<p>【cookie内容】:00000011 = 16进制16 00000010+ 00000001（表示程序使用中）</p>
+<h3 id="new-array-new-动态分配所得的数组"><a href="#new-array-new-动态分配所得的数组" class="headerlink" title="new[] (array new)动态分配所得的数组"></a>new[] (array new)动态分配所得的数组</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// array new 一定要搭配array delete(如果对象没有指针，array delete能用但是不合理)</span><br><span class="line"></span><br><span class="line">string *p = new string[3];</span><br><span class="line">delete[] p;// 正确</span><br><span class="line"></span><br><span class="line">string *p = new string[3];</span><br><span class="line">delete p;// 错误 p[1]和p[2]字符串的内存因为没有调用析构函数而没有释放</span><br></pre></td></tr></table></figure>
+
+<h3 id="vc编译器-调试模式下的数组内存管理"><a href="#vc编译器-调试模式下的数组内存管理" class="headerlink" title="(vc编译器)调试模式下的数组内存管理"></a>(vc编译器)调试模式下的数组内存管理</h3><p><img src="E:\github\notebook\c++\assets\内存管理3.png" alt="image-20210220150501822"></p>
+<p>8byte(object size)*3 + 32byte（debug header） + 4byte (debug tail) + 4byte (cookie header)+ 4byte(cookie tail) + 4byte(array size) = 72 byte + 8byte(padding) = 80byte</p>
+<h3 id="vc编译器-发布模式下的数组内存管理"><a href="#vc编译器-发布模式下的数组内存管理" class="headerlink" title="(vc编译器)发布模式下的数组内存管理"></a>(vc编译器)发布模式下的数组内存管理</h3><p>同理</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E6%A8%A1%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">模板</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:58" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="静态变量-静态函数"><a href="#静态变量-静态函数" class="headerlink" title="静态变量/静态函数"></a>静态变量/静态函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class complex&#123;</span><br><span class="line">data members;// non-static data members 每个实例一份单独一份数据</span><br><span class="line">static data members;// static data members 所有实例共享一份数据</span><br><span class="line">member functions;// c1.real()&lt;==&gt;complex::real(&amp;c1) &amp;c1=this</span><br><span class="line">static member functions;// 只能处理静态数据或者无数据 静态函数通过类名和实例都可以调用</span><br><span class="line">// 函数永远只有一份 无论是静态的还是非静态的</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="template-模板"><a href="#template-模板" class="headerlink" title="template 模板"></a>template 模板</h1><h2 id="class-template-类模板"><a href="#class-template-类模板" class="headerlink" title="class template 类模板"></a>class template 类模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class foo&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="function-template-函数模板"><a href="#function-template-函数模板" class="headerlink" title="function template 函数模板"></a>function template 函数模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt; //编译器会根据实参对函数进行参数推导</span><br><span class="line">void bar(const T&amp;a)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="member-template-成员模板"><a href="#member-template-成员模板" class="headerlink" title="member template 成员模板"></a>member template 成员模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>, <span class="keyword">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Pair</span> &#123;</span></span><br><span class="line">    T1 first;</span><br><span class="line">    T2 second; <span class="comment">//first和second类型不需要一样</span></span><br><span class="line">    <span class="built_in">Pair</span>() : <span class="built_in">first</span>(<span class="built_in">T1</span>()), <span class="built_in">second</span>(<span class="built_in">T2</span>()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Pair</span>(<span class="keyword">const</span> T1 &amp;a, <span class="keyword">const</span> T2 &amp;b)</span><br><span class="line">            : <span class="built_in">first</span>(<span class="built_in">T1</span>()), <span class="built_in">second</span>(<span class="built_in">T2</span>()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 成员模板</span></span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt;class U1, class U2&gt;</span></span><br><span class="line"><span class="function">    <span class="title">Pair</span><span class="params">(Pair&lt;U1, U2&gt; &amp;p)</span></span></span><br><span class="line"><span class="function">            : first(p.first), second(p.second) &#123;</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// T1是U1的父类，T2是U2的父类</span></span><br><span class="line"><span class="comment">// Base1* ptr = new Derived1; // up-cast</span></span><br><span class="line"><span class="comment">// 所以智能指针需要改成</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">pointerLikeClasses</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T &amp;<span class="keyword">operator</span>*() <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> *pt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// -&gt;在重载时不会被消耗，直到执行了函数</span></span><br><span class="line">    T *<span class="keyword">operator</span>-&gt;() <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> pt;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">template</span>&lt;class T1&gt;</span></span><br><span class="line"><span class="function">    <span class="title">pointerLikeClasses</span><span class="params">(T1 *p)</span> : pt(p) &#123;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T *pt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="specialization-模板特化"><a href="#specialization-模板特化" class="headerlink" title="specialization 模板特化"></a>specialization 模板特化</h2><p>full specialization 泛化</p>
+<p>partial specialization 偏特化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class Key&gt;</span><br><span class="line">class hash&#123;&#125;;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;char&gt;&#123;</span><br><span class="line">	size_t operator()(char x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;int&gt;&#123;</span><br><span class="line">	size_t operator()(int x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;long&gt;&#123;</span><br><span class="line">	size_t operator()(long x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// cout &lt;&lt; hash&lt;long&gt;()(1000) &lt;&lt; endl; </span><br></pre></td></tr></table></figure>
+
+<h2 id="partial-specialization-偏特化"><a href="#partial-specialization-偏特化" class="headerlink" title="partial specialization 偏特化"></a>partial specialization 偏特化</h2><ul>
+<li>```<br>template&lt;typename T,typename T2&gt;<br>class foo{}<br>template<typename T2><br>class foo&lt;bool,T2&gt;{} // 个数模板偏特化<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  template&lt;typename T&gt;</span><br><span class="line">  class foo&#123;&#125;</span><br><span class="line">  template&lt;typename T&gt;</span><br><span class="line">  class foo&lt;T*&gt;&#123;&#125; // 范围模板偏特化</span><br><span class="line">  </span><br><span class="line">  // foo&lt;string&gt; obj1; 编译器使用非特化版本</span><br><span class="line">  // foo&lt;string*&gt; obj2; 编译器使用范围偏特化版本</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="template-template-parameter-模板模板参数"><a href="#template-template-parameter-模板模板参数" class="headerlink" title="template template parameter 模板模板参数"></a>template template parameter 模板模板参数</h2><ul>
+<li>```c++<br>template&lt;typename T,template<typename T> class Container&gt;<br>class XCls{<br>private:<pre><code>Container&lt;T&gt; c;
+</code></pre>
+}<br>// 使用：<br>template<typename T><br>using Lst = list&lt;T,allocator<T>&gt;;<br>XCls&lt;string,Lst&gt; xcls1;<br>// XCls&lt;string,list&gt; xcls2;错误,因为list模板需要指定两个类型，但此处只指定了一个<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  template&lt;typename T,template&lt;typename T&gt; class SmartPtr&gt;</span><br><span class="line">  class XCls&#123;</span><br><span class="line">  private:</span><br><span class="line">      SmartPtr&lt;T&gt; c;</span><br><span class="line">  &#125;</span><br><span class="line">  // 使用：</span><br><span class="line">  XCls&lt;string,shared_ptr&gt; xcls1;</span><br><span class="line">  XCls&lt;string,auto_ptr&gt; xcls1;</span><br><span class="line">  // XCls&lt;string,unique_ptr&gt; xcls1; 错误：因为unique_ptr和weak_ptr的问题错误</span><br><span class="line">  // XCls&lt;string,weak_ptr&gt; xcls1; 错误</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="指定默认模板"><a href="#指定默认模板" class="headerlink" title="指定默认模板"></a>指定默认模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>,<span class="keyword">class</span> <span class="title">Sequence</span> =</span> deque&lt;T&gt;&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">stack</span>&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	Sequence c;<span class="comment">// 底层容器</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用默认模板</span></span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt; s1;</span><br><span class="line">stack&lt;<span class="keyword">int</span>,list&lt;<span class="keyword">int</span>&gt;&gt; s2;</span><br></pre></td></tr></table></figure>
+
+<h2 id="variadic-templates-c-11-数量不定的模板参数"><a href="#variadic-templates-c-11-数量不定的模板参数" class="headerlink" title="variadic templates(c++11)数量不定的模板参数"></a>variadic templates(c++11)数量不定的模板参数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span>... Types&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span> <span class="params">(<span class="keyword">const</span>&amp;T arg1,<span class="keyword">const</span> Types&amp;... args)</span></span>&#123;</span><br><span class="line">	cout&lt;&lt; arg1 &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">sizeof</span>...(args); <span class="comment">// 查看个数</span></span><br><span class="line">	<span class="built_in">print</span>(args...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用：</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">7.5</span>,<span class="string">&quot;hello&quot;</span>,<span class="string">&#x27;c&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h1><h2 id="using-directive-using-namespace-std"><a href="#using-directive-using-namespace-std" class="headerlink" title="using directive: [using namespace std]"></a>using directive: [using namespace std]</h2><h2 id="using-declaration-usting-std-cout"><a href="#using-declaration-usting-std-cout" class="headerlink" title="using declaration:[usting std::cout]"></a>using declaration:[usting std::cout]</h2><h2 id="using-directly-std-cout"><a href="#using-directly-std-cout" class="headerlink" title="using directly:[std::cout]"></a>using directly:[std::cout]</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E7%89%B9%E6%AE%8A%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E7%89%B9%E6%AE%8A%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">特殊成员函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:17" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="特殊成员函数"><a href="#特殊成员函数" class="headerlink" title="特殊成员函数"></a>特殊成员函数</h1><h2 id="1-C-自动提供下面这些成员函数"><a href="#1-C-自动提供下面这些成员函数" class="headerlink" title="1.C++自动提供下面这些成员函数"></a>1.C++自动提供下面这些成员函数</h2><ul>
+<li><p>默认构造函数，如果没有定义构造函数;</p>
 <ul>
-<li>组合模式的设计思路，与其说是一种设计模式，倒不如说是对业务场景的一种数据结构和算法的抽象。其中，数据可以表示成树这种数据结构，业务需求可以通过在树上的递归遍历算法来实现。</li>
-<li>组合模式，将一组对象组织成树形结构，将单个对象和组合对象都看做树中的节点，以统一处理逻辑，并且它利用树形结构的特点，递归地处理每个子树，依次简化代码实现。使用组合模式的前提在于，你的业务场景必须能够表示成树形结构。所以，组合模式的应用场景也比较局限，它并不是一种很常用的设计模式。</li>
+<li>无参数的构造函数</li>
+<li>带参数的构造函数（所有参数都有默认值）</li>
+<li>如果上述二者都有会产生二义性</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 15:43:24" itemprop="dateModified" datetime="2021-01-18T15:43:24+08:00">2021-01-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h1><p>装饰器模式主要解决继承关系过于复杂的问题，通过组合来替代继承。它主要的作用是给原始类添加增强功能。这也是判断是否该用装饰器模式的一个重要的依据。除此之外，装饰器模式还有一个特点，那就是可以对原始类嵌套使用多个装饰器。为了满足这个应用场景，在设计的时候，装饰器类需要跟原始类继承相同的抽象类或者接口。</p>
-<p>代理模式中，代理类附加的是跟原始类无关的功能，而在装饰器模式中，装饰器类附加的是跟原始类相关的增强功能。代理模式用于隐藏实现细节（封装），装饰器模式用于暴露细节（多态），让设计者自己动态选择。</p>
-<p><strong>实现技巧</strong>：通过一个中间类继承并实现抽象类的所有方法，然后不同的定制类继承中间类，只需要重载涉及改动的方法即可；</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 14:42:09" itemprop="dateModified" datetime="2021-01-18T14:42:09+08:00">2021-01-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="桥接模式（-Bridge-Design-Pattern）"><a href="#桥接模式（-Bridge-Design-Pattern）" class="headerlink" title="桥接模式（ Bridge Design Pattern）"></a>桥接模式（ Bridge Design Pattern）</h1><p><em><strong>将抽象和实现解耦，让它们可以独立变化</strong></em></p>
+</li>
+<li><p>默认析构函数，如果没有定义;</p>
+</li>
+<li><p>复制构造函数，如果没有定义;</p>
 <ul>
-<li>Notification 类相当于抽象，MsgSender 类相当于实现，两者可以独立开发，通过组合关系（也就是桥梁）任意组合在一起。所谓任意组合的意思就是，不同紧急程度的消息和发送渠道之间的对应关系，不是在代码中固定写死的，我们可以动态地去指定（比如，通过读取配置来获取对应关系）。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 14:18:38" itemprop="dateModified" datetime="2021-01-18T14:18:38+08:00">2021-01-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="代理模式（Proxy-Design-Pattern）"><a href="#代理模式（Proxy-Design-Pattern）" class="headerlink" title="代理模式（Proxy Design Pattern）"></a>代理模式（Proxy Design Pattern）</h1><p><em><strong>通过引入代理类来给原始类附加功能；为了将框架代码和业务代码解耦，代理模式就派上用场了。</strong></em></p>
-<h3 id="代理模式的原理解析"><a href="#代理模式的原理解析" class="headerlink" title="代理模式的原理解析"></a>代理模式的原理解析</h3><ul>
-<li>参照基于接口而非实现编程的设计思想，将原始类对象替换为代理类对象的时候，为了让代码改动尽量少，在刚刚的代理模式的代码实现中，代理类和原始类需要实现相同的接口。</li>
-<li>但是，如果原始类并没有定义接口，并且原始类代码并不是我们开发维护的（比如它来自一个第三方的类库），我们也没办法直接修改原始类，对于这种外部类的扩展，我们一般都是采用继承的方式。</li>
-</ul>
-<h3 id="动态代理的原理解析"><a href="#动态代理的原理解析" class="headerlink" title="动态代理的原理解析"></a>动态代理的原理解析</h3><ul>
-<li>普通代理的问题：一方面，我们需要在代理类中，将原始类中的所有的方法，都重新实现一遍，并且为每个方法都附加相似的代码逻辑。另一方面，如果要添加的附加功能的类有不止一个，我们需要针对每个类都创建一个代理类。</li>
-<li>解决办法：<strong>动态代理</strong></li>
-<li>原理：<strong>不事先为每个原始类编写代理类，而是在运行的时候，动态地创建原始类对应的代理类，然后在系统中用代理类替换掉原始类。</strong></li>
-</ul>
-<h3 id="代理模式的应用场景"><a href="#代理模式的应用场景" class="headerlink" title="代理模式的应用场景"></a>代理模式的应用场景</h3><ul>
-<li><strong>业务系统的非功能性需求开发</strong><ul>
-<li>代理模式最常用的一个应用场景就是，在业务系统中开发一些非功能性需求，比如：监控、统计、鉴权、限流、事务、幂等、日志。我们将这些附加功能与业务功能解耦，放到代理类中统一处理，让程序员只需要关注业务方面的开发。实际上，前面举的搜集接口请求信息的例子，就是这个应用场景的一个典型例子。</li>
-<li>如果你熟悉 Java 语言和 Spring 开发框架，这部分工作都是可以在 Spring AOP 切面中完成的。前面我们也提到，Spring AOP 底层的实现原理就是基于动态代理。</li>
-</ul>
-</li>
-<li><strong>代理模式在 RPC、缓存中的应用</strong><ul>
-<li>RPC 框架也可以看作一种代理模式，GoF 的《设计模式》一书中把它称作远程代理。通过远程代理，将网络通信、数据编解码等细节隐藏起来。客户端在使用 RPC 服务的时候，就像使用本地函数一样，无需了解跟服务器交互的细节。除此之外，RPC 服务的开发者也只需要开发业务逻辑，就像开发本地使用的函数一样，不需要关注跟客户端的交互细节。</li>
-<li>假设我们要开发一个接口请求的缓存功能，对于某些接口请求，如果入参相同，在设定的过期时间内，直接返回缓存结果，而不用重新进行逻辑处理。比如，针对获取用户个人信息的需求，我们可以开发两个接口，一个支持缓存，一个支持实时查询。对于需要实时数据的需求，我们让其调用实时查询接口，对于不需要实时数据的需求，我们让其调用支持缓存的接口。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E7%BB%93%E6%9E%84%E5%9E%8B/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 10:29:36" itemprop="dateModified" datetime="2021-01-19T10:29:36+08:00">2021-01-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="享元模式（Flyweight-Design-Pattern）"><a href="#享元模式（Flyweight-Design-Pattern）" class="headerlink" title="享元模式（Flyweight Design Pattern）"></a>享元模式（Flyweight Design Pattern）</h1><h3 id="享元模式原理与实现"><a href="#享元模式原理与实现" class="headerlink" title="享元模式原理与实现"></a>享元模式原理与实现</h3><ul>
-<li>享元模式的意图是复用对象，节省内存，前提是享元对象是不可变对象。</li>
-<li>当一个系统中存在大量重复对象的时候，如果这些重复的对象是不可变对象，我们就可以利用享元模式将对象设计成享元，在内存中只保留一份实例，供多处代码引用。</li>
-<li>它的代码实现非常简单，主要是通过工厂模式，在工厂类中，通过一个 Map 来缓存已经创建过的享元对象，来达到复用的目的。</li>
-</ul>
-<h3 id="享元模式-vs-单例、缓存、对象池"><a href="#享元模式-vs-单例、缓存、对象池" class="headerlink" title="享元模式 vs 单例、缓存、对象池"></a>享元模式 vs 单例、缓存、对象池</h3><ul>
-<li>在单例模式中，一个类只能创建一个对象，而在享元模式中，一个类可以创建多个对象，每个对象被多处代码引用共享。</li>
-<li>应用享元模式是为了对象复用，节省内存，而应用多例模式是为了限制对象的个数。</li>
-<li>在享元模式的实现中，我们通过工厂类来“缓存”已经创建好的对象。这里的“缓存”实际上是“存储”的意思，跟我们平时所说的“数据库缓存”“CPU 缓存”“MemCache 缓存”是两回事。我们平时所讲的缓存，主要是为了提高访问效率，而非复用。</li>
-<li>池化技术中的“复用”可以理解为“重复使用”，主要目的是节省时间（比如从数据库池中取一个连接，不需要重新创建）。在任意时刻，每一个对象、连接、线程，并不会被多处使用，而是被一个使用者独占，当使用完成之后，放回到池中，再由其他使用者重复利用。享元模式中的“复用”可以理解为“共享使用”，在整个生命周期中，都是被所有使用者共享的，主要目的是节省空间。</li>
-</ul>
-<h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><ul>
-<li>在某些情况下，如果对象的生命周期很短，也不会被密集使用，利用享元模式反倒可能会浪费更多的内存。所以，除非经过线上验证，利用享元模式真的可以大大节省内存，否则，就不要过度使用这个模式，为了一点点内存的节省而引入一个复杂的设计模式，得不偿失啊。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/designPattern/%E6%9E%84%E5%BB%BA%E5%9E%8B/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-18 13:14:18" itemprop="dateModified" datetime="2021-01-18T13:14:18+08:00">2021-01-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Builder-模式-建造者模式-构建者模式-生成器模式"><a href="#Builder-模式-建造者模式-构建者模式-生成器模式" class="headerlink" title="Builder 模式/建造者模式/构建者模式/生成器模式"></a>Builder 模式/建造者模式/构建者模式/生成器模式</h1><ul>
-<li><h5 id="我们可以把校验逻辑放置到-Builder-类中，先创建建造者，并且通过-set-方法设置建造者的变量值，然后在使用-build-方法真正创建对象之前，做集中的校验，校验通过之后才会创建对象。除此之外，我们把-ResourcePoolConfig-的构造函数改为-private-私有权限。这样我们就只能通过建造者来创建-ResourcePoolConfig-类对象。"><a href="#我们可以把校验逻辑放置到-Builder-类中，先创建建造者，并且通过-set-方法设置建造者的变量值，然后在使用-build-方法真正创建对象之前，做集中的校验，校验通过之后才会创建对象。除此之外，我们把-ResourcePoolConfig-的构造函数改为-private-私有权限。这样我们就只能通过建造者来创建-ResourcePoolConfig-类对象。" class="headerlink" title="我们可以把校验逻辑放置到 Builder 类中，先创建建造者，并且通过 set() 方法设置建造者的变量值，然后在使用 build() 方法真正创建对象之前，做集中的校验，校验通过之后才会创建对象。除此之外，我们把 ResourcePoolConfig 的构造函数改为 private 私有权限。这样我们就只能通过建造者来创建 ResourcePoolConfig 类对象。"></a>我们可以把校验逻辑放置到 Builder 类中，先创建建造者，并且通过 set() 方法设置建造者的变量值，然后在使用 build() 方法真正创建对象之前，做集中的校验，校验通过之后才会创建对象。除此之外，我们把 ResourcePoolConfig 的构造函数改为 private 私有权限。这样我们就只能通过建造者来创建 ResourcePoolConfig 类对象。</h5></li>
-<li><p>建造者模式的原理和实现比较简单，重点是掌握应用场景，避免过度使用。</p>
-</li>
-<li><p>如果一个类中有很多属性，为了避免构造函数的参数列表过长，影响代码的可读性和易用性，我们可以通过构造函数配合 set() 方法来解决。</p>
-</li>
-<li><p>但是，如果存在下面情况中的任意一种，我们就要考虑使用建造者模式了。</p>
+<li><p>将一个对象复制到新创建的对象中时使用</p>
 <ul>
-<li>我们把类的必填属性放到构造函数中，强制创建对象的时候就设置。如果必填的属性有很多，把这些必填属性都放到构造函数中设置，那构造函数就又会出现参数列表很长的问题。如果我们把必填属性通过 set() 方法设置，那校验这些必填属性是否已经填写的逻辑就无处安放了。</li>
-<li>如果类的属性之间有一定的依赖关系或者约束条件，我们继续使用构造函数配合 set() 方法的设计思路，那这些依赖关系或约束条件的校验逻辑就无处安放了。</li>
-<li>如果我们希望创建不可变对象，也就是说，对象在创建好之后，就不能再修改内部的属性值，要实现这个功能，我们就不能在类中暴露 set() 方法。构造函数配合 set() 方法来设置属性值的方式就不适用了。</li>
+<li><p>新建对象初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">StringBad motto;</span><br><span class="line">StringBad ditto(motto);//calls StringBad(const StringBad &amp;)</span><br><span class="line">StringBad metoo = motto;//calls StringBad(const StringBad &amp;)</span><br><span class="line">StringBad also = StringBad(motto);//calls StringBad(const StringBad &amp;)</span><br><span class="line">StringBad * pStringBad = new StringBad(motto);//calls StringBad(const StringBad &amp;)</span><br></pre></td></tr></table></figure></li>
+<li><p>函数调用（按值传递时）</p>
+</li>
+<li><p>编译器生成临时对象时（函数返回对象）</p>
+</li>
 </ul>
 </li>
-<li><p>除此之外，在今天的讲解中，我们还对比了工厂模式和建造者模式的区别。工厂模式是用来创建不同但是相关类型的对象（继承同一父类或者接口的一组子类），由给定的参数来决定创建哪种类型的对象。建造者模式是用来创建一种类型的复杂对象，可以通过设置不同的可选参数，“定制化”地创建不同的对象。</p>
+<li><p>隐式复制构造函数</p>
+<ul>
+<li>浅拷贝，当成员是指针的时候，新对象和老对象指向该成员指向同一内存，会导致析构函数中重复释放该内存</li>
+</ul>
+</li>
+<li><p>显示复制构造函数</p>
+<ul>
+<li>需自定义</li>
+<li>将浅拷贝改为深拷贝</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>赋值运算符，如果没有定义;</p>
+</li>
+<li><p>地址运算符，如果没有定义。</p>
+</li>
+</ul>
+<h2 id="2-空指针"><a href="#2-空指针" class="headerlink" title="2.空指针"></a>2.空指针</h2><ul>
+<li>char * str = 0;</li>
+<li>char * str = nullptr;//c++新增关键字</li>
+<li>char * str = (void *)0;//不可用</li>
+<li>char * str = NULL;//c语言宏</li>
+</ul>
+<h2 id="3-静态类成员函数"><a href="#3-静态类成员函数" class="headerlink" title="3.静态类成员函数"></a>3.静态类成员函数</h2><ul>
+<li>static 声明函数</li>
+<li>不能通过实例对象调用函数</li>
+<li>不能使用this指针，也不能访问成员</li>
+<li>通过类名和作用域解析符调用</li>
+</ul>
+<h2 id="4-构造函数中使用new的注意事项"><a href="#4-构造函数中使用new的注意事项" class="headerlink" title="4.构造函数中使用new的注意事项"></a>4.构造函数中使用new的注意事项</h2><ul>
+<li>如果在构造函数中使用new来初始化指针成员，则应在析构函数中使用delete;</li>
+<li>new和delete必须相互兼容。new对应于delete，new[]对应于delete[ ]；</li>
+<li>多个构造函数使用相同的new类型；</li>
+<li>定义复制构造函数，通过深度复制将对象初始化为另一个对象；</li>
+<li>定义一个赋值运算符，通过深度复制将一个对象复制给另一个对象；（先检查自我赋值，释放之前的指针，返回一个当前对象的引用）</li>
+<li>如果成员中的所有类型都处理好了复制构造函数，甚至可以不写复制构造函数；但要是有一个没有处理，需要写一个复制构造函数处理，同时显式调用处理好的复制构造函数</li>
+</ul>
+<h2 id="5-new和delete"><a href="#5-new和delete" class="headerlink" title="5.new和delete"></a>5.new和delete</h2><ul>
+<li><p>使用定位new时</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const char *buffer[512];</span><br><span class="line">StringBad *pt = new(buffer) Stringbad;</span><br><span class="line">pt-&gt;~StringBad();//显示调用析构函数</span><br><span class="line">delete [] buffer;//delete buffer时不会调用保存对象的析构函数</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E7%BB%A7%E6%89%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">继承</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:22" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="1-派生类和基类之间的关系"><a href="#1-派生类和基类之间的关系" class="headerlink" title="1.派生类和基类之间的关系"></a>1.派生类和基类之间的关系</h2><ul>
+<li>派生类可以使用基类的共有方法</li>
+<li>基类指针可以在不进行显示转换的情况下指向派生类对象</li>
+<li>基类引用可以在不进行显示转换的情况下引用派生类对象</li>
+<li>没有关键字virtual,程序根据引用类型或指针类型选择方法</li>
+<li>使用virtual，程序将根据引用或指针指向的对象的类型来选择方法</li>
+<li>创建指向基类的指针数组，既可以指向基类也可以指向派生类</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E8%AF%AD%E6%B3%95%E7%B3%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/syntax/%E8%AF%AD%E6%B3%95%E7%B3%96/" class="post-title-link" itemprop="url">语法糖</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:12" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list&lt;string&gt; c;</span><br><span class="line">list&lt;string&gt;::iterator ite;</span><br><span class="line">ite = <span class="built_in">find</span>(c.<span class="built_in">begin</span>(),c.<span class="built_in">end</span>(),target);</span><br><span class="line"><span class="comment">// ==&gt;</span></span><br><span class="line"><span class="keyword">auto</span> ite = <span class="built_in">find</span>(c.<span class="built_in">begin</span>(),c.<span class="built_in">end</span>(),target);</span><br></pre></td></tr></table></figure>
+
+<h1 id="ranged-base-for"><a href="#ranged-base-for" class="headerlink" title="ranged-base for"></a>ranged-base for</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(decl:collection)&#123;</span><br><span class="line">	statement</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 例</span></span><br><span class="line">vector&lt;<span class="keyword">double</span>&gt; vec;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> elem:vec)&#123;</span><br><span class="line">	cout &lt;&lt; elem &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span>&amp; elem:vec)&#123;</span><br><span class="line">	cout &lt;&lt; elem &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 注意传引用和传值的区别</span></span><br><span class="line">&lt;==&gt; iterator foreach</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/stdlib/numeric/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/c++/stdlib/numeric/" class="post-title-link" itemprop="url">numeric</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：16:56:08" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/c/stdlib/" itemprop="url" rel="index"><span itemprop="name">stdlib</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="numeric"><a href="#numeric" class="headerlink" title="numeric"></a>numeric</h1><h2 id="accumulate"><a href="#accumulate" class="headerlink" title="accumulate"></a>accumulate</h2><ul>
+<li><p>无自定义函数版本</p>
+<ul>
+<li><p>源码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  @brief  Accumulate values in a range.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  Accumulates the values in the range [first,last) using operator+().  The</span></span><br><span class="line"><span class="comment">   *  initial value is @a init.  The values are processed in order.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  @param  __first  Start of range.</span></span><br><span class="line"><span class="comment">   *  @param  __last  End of range.</span></span><br><span class="line"><span class="comment">   *  @param  __init  Starting value to add other values to.</span></span><br><span class="line"><span class="comment">   *  @return  The final sum.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> _InputIterator, <span class="keyword">typename</span> _Tp&gt;</span></span><br><span class="line"><span class="function">    <span class="keyword">inline</span> _Tp</span></span><br><span class="line"><span class="function">    <span class="title">accumulate</span><span class="params">(_InputIterator __first, _InputIterator __last, _Tp __init)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      <span class="comment">// concept requirements</span></span><br><span class="line">      __glibcxx_function_requires(_InputIteratorConcept&lt;_InputIterator&gt;)</span><br><span class="line">      __glibcxx_requires_valid_range(__first, __last);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (; __first != __last; ++__first)</span><br><span class="line">	__init = __init + *__first;</span><br><span class="line">      <span class="keyword">return</span> __init;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>测试</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> res = std::<span class="built_in">accumulate</span>(numbers.<span class="built_in">begin</span>(),numbers.<span class="built_in">end</span>(),<span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>自定义操作</p>
+<ul>
+<li><p>源码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  @brief  Accumulate values in a range with operation.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  Accumulates the values in the range [first,last) using the function</span></span><br><span class="line"><span class="comment">   *  object @p __binary_op.  The initial value is @p __init.  The values are</span></span><br><span class="line"><span class="comment">   *  processed in order.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  @param  __first  Start of range.</span></span><br><span class="line"><span class="comment">   *  @param  __last  End of range.</span></span><br><span class="line"><span class="comment">   *  @param  __init  Starting value to add other values to.</span></span><br><span class="line"><span class="comment">   *  @param  __binary_op  Function object to accumulate with.</span></span><br><span class="line"><span class="comment">   *  @return  The final sum.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> _InputIterator, <span class="keyword">typename</span> _Tp, <span class="keyword">typename</span> _BinaryOperation&gt;</span></span><br><span class="line"><span class="function">    <span class="keyword">inline</span> _Tp</span></span><br><span class="line"><span class="function">    <span class="title">accumulate</span><span class="params">(_InputIterator __first, _InputIterator __last, _Tp __init,</span></span></span><br><span class="line"><span class="params"><span class="function">	       _BinaryOperation __binary_op)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      <span class="comment">// concept requirements</span></span><br><span class="line">      __glibcxx_function_requires(_InputIteratorConcept&lt;_InputIterator&gt;)</span><br><span class="line">      __glibcxx_requires_valid_range(__first, __last);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (; __first != __last; ++__first)</span><br><span class="line">	__init = __binary_op(__init, *__first);</span><br><span class="line">      <span class="keyword">return</span> __init;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int myfunction (int x, int y) &#123;return x+2*y;&#125;</span><br><span class="line">struct myclass &#123;</span><br><span class="line">	int operator()(int x, int y) &#123;return x+3*y;&#125;</span><br><span class="line">&#125; myobject;</span><br><span class="line">int res = std::accumulate(numbers.begin(),numbers.end(),0,myfunction);</span><br><span class="line">int res = std::accumulate(numbers.begin(),numbers.end(),0,myobject);</span><br><span class="line">// return 减去这些元素</span><br><span class="line">int res = std::accumulate(numbers.begin(),numbers.end(),0,std::minus&lt;int&gt;());</span><br><span class="line">// 匿名函数</span><br><span class="line">string res = std::accumulate(numbers.begin(),numbers.end(),std::string&#123;&quot;str:&quot;&#125;,[](std::string str,int i)&#123;return str+=std::to_string(i);&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
 </li>
 </ul>
 
@@ -989,20 +1130,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

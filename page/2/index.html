@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/linux%E5%9B%BE%E5%BD%A2%E5%8C%96%E8%BE%93%E5%87%BA%E6%96%87%E5%AD%97/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/css/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -172,7 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/linux%E5%9B%BE%E5%BD%A2%E5%8C%96%E8%BE%93%E5%87%BA%E6%96%87%E5%AD%97/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/css/" class="post-title-link" itemprop="url">CSS常见问题及解决</a>
         </h2>
 
         <div class="post-meta">
@@ -181,16 +181,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：18:21:34" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-11 11:01:53" itemprop="dateModified" datetime="2020-09-11T11:01:53+08:00">2020-09-11</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
+                </span>
+            </span>
 
           
 
@@ -203,12 +210,432 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="linux图形化输出文字"><a href="#linux图形化输出文字" class="headerlink" title="linux图形化输出文字"></a>linux图形化输出文字</h1><ol>
-<li><h2 id="printerbanner-自带"><a href="#printerbanner-自带" class="headerlink" title="printerbanner(自带)"></a>printerbanner(自带)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printerbanner -w 50 LOVE</span><br></pre></td></tr></table></figure></li>
-<li><h2 id="banner"><a href="#banner" class="headerlink" title="banner"></a>banner</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sysvbanner</span><br><span class="line">banner LOVE</span><br></pre></td></tr></table></figure></li>
-<li><h2 id="toilet"><a href="#toilet" class="headerlink" title="toilet"></a>toilet</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get isntall toilet</span><br><span class="line">toilet LOVE</span><br></pre></td></tr></table></figure></li>
-<li><h2 id="filget"><a href="#filget" class="headerlink" title="filget"></a>filget</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install filget</span><br><span class="line">filget LOVE</span><br></pre></td></tr></table></figure></li>
-</ol>
+          <h1 id="CSS常见问题及解决："><a href="#CSS常见问题及解决：" class="headerlink" title="CSS常见问题及解决："></a>CSS常见问题及解决：</h1><ul>
+<li><h2 id="background-size使用不生效"><a href="#background-size使用不生效" class="headerlink" title="background-size使用不生效"></a>background-size使用不生效</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// <span class="number">1</span>.注意顺序<span class="attribute">background-size</span>必须定义在<span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">&quot;&quot;</span>)后</span><br><span class="line">// background-size:contain;---图片自身的宽高比不变，缩放至图片自身能完全显示出来，所以容器会有留白区域；</span><br><span class="line">// <span class="attribute">background-size</span>：<span class="number">100%</span> <span class="number">100%</span>;---按容器比例撑满，图片变形；</span><br><span class="line">// <span class="attribute">background-size</span>:cover;---把背景图片放大到适合元素容器的尺寸，图片比例不变，但是要注意，超出容器的部分可能会裁掉。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="background常见设置"><a href="#background常见设置" class="headerlink" title="background常见设置"></a>background常见设置</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// <span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">&quot;&quot;</span>) no-repeat center center</span><br><span class="line">// background:<span class="built_in">url</span>(<span class="string">&quot;&quot;</span>) no-repeat <span class="number">0</span> <span class="number">0</span></span><br><span class="line">// background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="控制行内元素不换行而是横向溢出"><a href="#控制行内元素不换行而是横向溢出" class="headerlink" title="控制行内元素不换行而是横向溢出"></a>控制行内元素不换行而是横向溢出</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 父节点 <span class="attribute">white-space</span>:no-wrap</span><br><span class="line">// 子节点 inline-block</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="文字溢出省略"><a href="#文字溢出省略" class="headerlink" title="文字溢出省略"></a>文字溢出省略</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// -webkit-line-clamp: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    -webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="初始化所有元素的margin和padding"><a href="#初始化所有元素的margin和padding" class="headerlink" title="初始化所有元素的margin和padding"></a>初始化所有元素的margin和padding</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	<span class="attribute">margin</span>:initial;</span><br><span class="line">	<span class="attribute">padding</span>:initial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="控制文字为不可复制"><a href="#控制文字为不可复制" class="headerlink" title="控制文字为不可复制"></a>控制文字为不可复制</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user-select: none;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="设置全局高度"><a href="#设置全局高度" class="headerlink" title="设置全局高度"></a>设置全局高度</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">html</span>&gt;*&#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="灰度图"><a href="#灰度图" class="headerlink" title="灰度图"></a>灰度图</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>) <span class="built_in">brightness</span>(<span class="number">200%</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="css前缀与浏览器关联"><a href="#css前缀与浏览器关联" class="headerlink" title="css前缀与浏览器关联"></a>css前缀与浏览器关联</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-moz代表firefox浏览器私有属性</span><br><span class="line">-ms代表ie浏览器私有属性</span><br><span class="line">-webkit代表safari、chrome私有属性</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="absolute和zIndex的层级关系"><a href="#absolute和zIndex的层级关系" class="headerlink" title="absolute和zIndex的层级关系"></a>absolute和zIndex的层级关系</h2></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对于没有设置 <span class="attribute">position</span>:absolute 属性的元素 不管 z-index 设置多少都为 <span class="number">0</span></span><br><span class="line">但低于 position:absolute 中 z-index:<span class="number">0</span> 的元素</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/v-show%E5%92%8Cv-if%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/v-show%E5%92%8Cv-if%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">v-show和v-if 区别</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:43:39" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="v-show和v-if-区别"><a href="#v-show和v-if-区别" class="headerlink" title="v-show和v-if 区别"></a>v-show和v-if 区别</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> v-show 不支持 &lt;template&gt; 元素，也不支持 v-<span class="keyword">else</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> v-<span class="keyword">if</span> 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> v-<span class="keyword">if</span> 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</span><br><span class="line"></span><br><span class="line">一般来说，v-<span class="keyword">if</span> 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-<span class="keyword">if</span> 较好。</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue3+TS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue3+TS/" class="post-title-link" itemprop="url">vue3+TS 组件导出</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:50:39" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="vue3-TS-组件导出"><a href="#vue3-TS-组件导出" class="headerlink" title="vue3+TS 组件导出"></a>vue3+TS 组件导出</h1><ul>
+<li><h2 id="三种定义方式在Vue3-Ts"><a href="#三种定义方式在Vue3-Ts" class="headerlink" title="三种定义方式在Vue3.*+Ts"></a>三种定义方式在Vue3.*+Ts</h2><ul>
+<li><h3 id="vue2-0中常用方法，不推荐"><a href="#vue2-0中常用方法，不推荐" class="headerlink" title="vue2.0中常用方法，不推荐"></a><strong>vue2.0中常用方法，不推荐</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******************************************************************/</span></span><br><span class="line"><span class="comment">// 【1.直接导出】</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;myComponent&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*******************************************************************/</span></span><br></pre></td></tr></table></figure></li>
+<li><h3 id="配合shims-vue-d-ts进行组件定义和注册"><a href="#配合shims-vue-d-ts进行组件定义和注册" class="headerlink" title="配合shims-vue.d.ts进行组件定义和注册"></a><strong>配合shims-vue.d.ts进行组件定义和注册</strong></h3><p> <strong>【注意】:导入组件时需加上‘.vue’后缀</strong></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> LaMenu <span class="keyword">from</span> <span class="string">&quot;@/components/Menu.vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*******************************************************************/</span></span><br><span class="line"><span class="comment">// 【2.使用defineComponent导出】</span></span><br><span class="line"><span class="keyword">import</span> &#123;defineComponent&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineComponent(&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;myComponent&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">/*******************************************************************/</span></span><br></pre></td></tr></table></figure></li>
+<li><h3 id="目前vue-class-component不支持vue3-0组合API写法，不建议使用"><a href="#目前vue-class-component不支持vue3-0组合API写法，不建议使用" class="headerlink" title="目前vue-class-component不支持vue3.0组合API写法，不建议使用"></a><strong>目前vue-class-component不支持vue3.0组合API写法，不建议使用</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******************************************************************/</span></span><br><span class="line"><span class="comment">// 【3.使用vue-class-component】</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Options <span class="keyword">from</span> <span class="string">&#x27;vue-class-component&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Define the component in class-style</span></span><br><span class="line"><span class="comment">// 最新版Component注解已经改为Options</span></span><br><span class="line">@Options(&#123;</span><br><span class="line">  <span class="attr">computed</span>: mapGetters([</span><br><span class="line">    <span class="string">&#x27;posts&#x27;</span></span><br><span class="line">  ]),</span><br><span class="line"></span><br><span class="line">  <span class="attr">methods</span>: mapActions([</span><br><span class="line">    <span class="string">&#x27;fetchPosts&#x27;</span></span><br><span class="line">  ])</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">	<span class="attr">property</span>: number;</span><br><span class="line">	<span class="function"><span class="title">method</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*******************************************************************/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">Vue技巧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：18:19:23" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Vue技巧"><a href="#Vue技巧" class="headerlink" title="Vue技巧"></a>Vue技巧</h1><ul>
+<li><h3 id="添加滚动事件"><a href="#添加滚动事件" class="headerlink" title="添加滚动事件"></a>添加滚动事件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mounted&#123;</span><br><span class="line">	this.$refs.boxScroll.addEventListener(&#x27;scroll&#x27;,this.handleScroll) </span><br><span class="line">	// 监听滚动事件，然后用handleScroll这个方法进行相应的处理</span><br><span class="line">&#125;,</span><br><span class="line">beforeDestroy()&#123;</span><br><span class="line">	this.$refs.boxScroll.removeEventListener(&#x27;scroll&#x27;,this.handleScroll) 			// 取消监听滚动事件，需要在beforedestroy</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><h3 id="对象的监听与修改"><a href="#对象的监听与修改" class="headerlink" title="对象的监听与修改"></a>对象的监听与修改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$set(data,key,newValue) //只能用于给复杂数据添加属性触发监测</span><br><span class="line">this.$forceUpdate(); //用于强制刷新</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="面向vue组件的节流函数"><a href="#面向vue组件的节流函数" class="headerlink" title="面向vue组件的节流函数"></a>面向vue组件的节流函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * [throttle js节流公用方法]</span><br><span class="line">     * @param  &#123;[function]&#125; method  [你要执行的方法]</span><br><span class="line">     * @param  &#123;[]&#125; context [上下文语境如window，可忽略]</span><br><span class="line">     */</span><br><span class="line">    throttle(method, context, t,...args) &#123;</span><br><span class="line">        clearTimeout(context.timerId);</span><br><span class="line">        t = t || 200;</span><br><span class="line">        context.timerId = setTimeout(() =&gt; &#123;</span><br><span class="line">            method.apply(context,args);</span><br><span class="line">        &#125;, t);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/h5/%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86/" class="post-title-link" itemprop="url">对象遍历</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：18:21:31" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/h5/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="对象遍历"><a href="#对象遍历" class="headerlink" title="对象遍历"></a>对象遍历</h1><ul>
+<li><h2 id="对象遍历-1"><a href="#对象遍历-1" class="headerlink" title="对象遍历"></a>对象遍历</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历对象 </span></span><br><span class="line"><span class="keyword">let</span> key <span class="keyword">of</span> obj</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/java/service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/java/service/" class="post-title-link" itemprop="url">serve</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:34:14" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="JAVA-SERVE"><a href="#JAVA-SERVE" class="headerlink" title="JAVA SERVE"></a>JAVA SERVE</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -j xxx.jar</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -242,7 +669,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="post-title-link" itemprop="url">Linux命令行</a>
         </h2>
 
         <div class="post-meta">
@@ -251,16 +678,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:34:54" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-11 11:02:43" itemprop="dateModified" datetime="2020-09-11T11:02:43+08:00">2020-09-11</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
 
           
 
@@ -385,7 +815,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/java/service/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/linux%E5%9B%BE%E5%BD%A2%E5%8C%96%E8%BE%93%E5%87%BA%E6%96%87%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -399,7 +829,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/java/service/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/linux%E5%9B%BE%E5%BD%A2%E5%8C%96%E8%BE%93%E5%87%BA%E6%96%87%E5%AD%97/" class="post-title-link" itemprop="url">linux图形化输出文字</a>
         </h2>
 
         <div class="post-meta">
@@ -408,16 +838,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:35:31" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-08 16:00:05" itemprop="dateModified" datetime="2021-03-08T16:00:05+08:00">2021-03-08</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
 
           
 
@@ -430,8 +863,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -j xxx.jar</span><br></pre></td></tr></table></figure>
-
+          <h1 id="linux图形化输出文字"><a href="#linux图形化输出文字" class="headerlink" title="linux图形化输出文字"></a>linux图形化输出文字</h1><ol>
+<li><h2 id="printerbanner-自带"><a href="#printerbanner-自带" class="headerlink" title="printerbanner(自带)"></a>printerbanner(自带)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printerbanner -w 50 LOVE</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="banner"><a href="#banner" class="headerlink" title="banner"></a>banner</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sysvbanner</span><br><span class="line">banner LOVE</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="toilet"><a href="#toilet" class="headerlink" title="toilet"></a>toilet</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get isntall toilet</span><br><span class="line">toilet LOVE</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="filget"><a href="#filget" class="headerlink" title="filget"></a>filget</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install filget</span><br><span class="line">filget LOVE</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -451,7 +888,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E5%AE%9E%E6%88%98%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -465,7 +902,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E5%AE%9E%E6%88%98%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" class="post-title-link" itemprop="url">文件权限</a>
         </h2>
 
         <div class="post-meta">
@@ -474,16 +911,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:35:38" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 17:31:53" itemprop="dateModified" datetime="2021-01-13T17:31:53+08:00">2021-01-13</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
 
           
 
@@ -496,17 +936,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="E:\github\notebook\designPattern\assets\业务规范.jpg" alt="业务规范"><img src="E:\github\notebook\designPattern\assets\代码规范.jpg" alt="代码规范"></p>
+          <h1 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h1><h2 id="一-查看文件权限"><a href="#一-查看文件权限" class="headerlink" title="一.查看文件权限"></a>一.查看文件权限</h2><ol>
+<li></li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ll //ls -l查看文件详细格式</span><br><span class="line">ls -a //显示所有文件（隐藏）</span><br><span class="line">ls -al</span><br><span class="line">ls -asSh//小 s 为显示文件大小，大 S 为按文件大小排序</span><br></pre></td></tr></table></figure>
+
+<p>   <img src="https://doc.shiyanlou.com/linux_base/3-9.png" alt="img"></p>
+<p>   <img src="https://doc.shiyanlou.com/linux_base/3-10.png" alt="img"></p>
+<h2 id="二-变更文件权限"><a href="#二-变更文件权限" class="headerlink" title="二.变更文件权限"></a>二.变更文件权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">su - lilei</span><br><span class="line">pwd</span><br><span class="line">touch iphone11</span><br><span class="line">ls -alh iphone11</span><br><span class="line"># 需要切换到 shiyanlou 用户执行以下操作</span><br><span class="line">cd /home/lilei</span><br><span class="line">ls iphone11</span><br><span class="line">sudo chown shiyanlou iphone11</span><br></pre></td></tr></table></figure>
+
+<p>如果你有一个自己的文件不想被其他用户读、写、执行，那么就需要对文件的权限做修改。文件的权限有两种表示方式：</p>
 <ul>
-<li><p>第一轮重构：提高代码的可读性</p>
-</li>
-<li><p>第二轮重构：提高代码的可测试性</p>
-</li>
-<li><p>第三轮重构：编写完善的单元测试</p>
-</li>
-<li><p>第四轮重构：所有重构完成之后添加注释</p>
-</li>
+<li>方式一：二进制数字表示</li>
 </ul>
+<p><img src="https://doc.shiyanlou.com/linux_base/3-14.png" alt="pic"></p>
+<p>每个文件有三组固定的权限，分别对应拥有者，所属用户组，其他用户，<strong>记住这个顺序是固定的</strong>。文件的读写执行对应字母 <code>rwx</code>，以二进制表示就是 <code>111</code>，用十进制表示就是 <code>7</code>，对进制转换不熟悉的同学可以看看 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/3117222">进制转换</a>。例如我们刚刚新建的文件 iphone11 的权限是 <code>rw-rw-rw-</code>，换成对应的十进制表示就是 666，这就表示这个文件的拥有者，所属用户组和其他用户具有读写权限，不具有执行权限。</p>
+<ul>
+<li>方式二：加减赋值操作</li>
+</ul>
+<p>要完成上述实验相同的效果，你可以：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod go-rw iphone11 //group others 减去rw权限</span><br></pre></td></tr></table></figure>
+
+<p><code>g</code>、<code>o</code> 还有 <code>u</code> 分别表示 group（用户组）、others（其他用户） 和 user（用户），<code>+</code> 和 <code>-</code> 分别表示增加和去掉相应的权限。</p>
 
       
     </div>
@@ -526,7 +977,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E5%9B%9B%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
@@ -540,7 +991,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E5%9B%9B%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7/" class="post-title-link" itemprop="url">查看用户</a>
         </h2>
 
         <div class="post-meta">
@@ -549,16 +1000,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:35:42" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 14:12:16" itemprop="dateModified" datetime="2021-01-13T14:12:16+08:00">2021-01-13</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/pgeorge1324/pgeorge1324.github.io/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
 
           
 
@@ -571,402 +1025,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="解耦”为何如此重要？"><a href="#解耦”为何如此重要？" class="headerlink" title="解耦”为何如此重要？"></a>解耦”为何如此重要？</h3><ul>
-<li>过于复杂的代码往往在可读性、可维护性上都不友好。解耦保证代码松耦合、高内聚，是控制代码复杂度的有效手段。代码高内聚、松耦合，也就是意味着，代码结构清晰、分层模块化合理、依赖关系简单、模块或类之间的耦合小，那代码整体的质量就不会差。</li>
-</ul>
-<h3 id="如何判定代码是否需要“解耦”？"><a href="#如何判定代码是否需要“解耦”？" class="headerlink" title="如何判定代码是否需要“解耦”？"></a>如何判定代码是否需要“解耦”？</h3><ul>
-<li>间接的衡量标准有很多，比如，看修改代码是否牵一发而动全身。直接的衡量标准是把模块与模块、类与类之间的依赖关系画出来，根据依赖关系图的复杂性来判断是否需要解耦重构。</li>
-</ul>
-<h3 id="如何给代码“解耦”？"><a href="#如何给代码“解耦”？" class="headerlink" title="如何给代码“解耦”？"></a>如何给代码“解耦”？</h3><ul>
-<li><p> 封装与抽象</p>
+          <h1 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h1><ol>
+<li><h2 id="查看当前终端信息"><a href="#查看当前终端信息" class="headerlink" title="查看当前终端信息"></a>查看当前终端信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">who am i</span><br><span class="line"></span><br><span class="line">#or </span><br><span class="line"></span><br><span class="line">who mom likes</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\wm200618\AppData\Roaming\Typora\typora-user-images\image-20200911110625464.png" alt="image-20200911110625464"></p>
 </li>
-<li><p>中间层</p>
-<p><img src="https://static001.geekbang.org/resource/image/cb/52/cbcefa78026fd1d0cb9837dde9adae52.jpg" alt="img"></p>
+</ol>
+<h4 id="pts表示伪终端，1是伪终端编号"><a href="#pts表示伪终端，1是伪终端编号" class="headerlink" title="pts表示伪终端，1是伪终端编号"></a>pts表示伪终端，1是伪终端编号</h4><h3 id="who参数："><a href="#who参数：" class="headerlink" title="who参数："></a>who参数：</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-a</code></td>
+<td>打印能打印的全部</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>打印死掉的进程</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>同<code>am i</code>，<code>mom likes</code></td>
+</tr>
+<tr>
+<td><code>-q</code></td>
+<td>打印当前登录用户数及用户名</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>打印当前登录用户登录信息</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>打印运行等级</td>
+</tr>
+</tbody></table>
+<h1 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser kudo //创建用户</span><br><span class="line">sudo passwd [username] //修改密码</span><br><span class="line">ls /home //查看用户工作目录</span><br><span class="line">su -l [username] //切换用户</span><br><span class="line">who am i //</span><br><span class="line">whoami //看当前登录用户的用户名，去掉空格直接使用 whoami 即可</span><br></pre></td></tr></table></figure>
+
+<h1 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h1><h4 id="su，su-与-sudo"><a href="#su，su-与-sudo" class="headerlink" title="su，su- 与 sudo"></a>su，su- 与 sudo</h4><p><strong>需要注意 Linux 环境下输入密码是不会显示的。</strong></p>
+<p><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，<code>sudo &lt;cmd&gt;</code> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，但是同时用户的环境变量和工作目录也会跟着改变成目标用户所对应的。</p>
+<h1 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h1><h2 id="一-查看用户组"><a href="#一-查看用户组" class="headerlink" title="一.  查看用户组"></a>一.  查看用户组</h2><ol>
+<li><h3 id="方法一：使用-groups-命令"><a href="#方法一：使用-groups-命令" class="headerlink" title="方法一：使用 groups 命令"></a>方法一：使用 groups 命令</h3></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups [username]</span><br></pre></td></tr></table></figure>
+
+<p>​    默认情况下在 sudo 用户组里的可以使用 sudo 命令获得 root 权限。shiyanlou 用户也可以使用 sudo 命令，为什么这里没有显示在 sudo 用户组里呢？可以查看下 <code>/etc/sudoers.d/shiyanlou</code> 文件，我们在 <code>/etc/sudoers.d</code> 目录下创建了这个文件，从而给 shiyanlou 用户赋予了 sudo 权限：    <img src="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035855554.png" alt="此处输入图片的描述"></p>
+<ol start="2">
+<li><h3 id="方法二：查看-etc-group文件"><a href="#方法二：查看-etc-group文件" class="headerlink" title="方法二：查看/etc/group文件"></a>方法二：查看/etc/group文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group|sort//或者cat /etc/group | grep -E &quot;shiyanlou&quot;</span><br></pre></td></tr></table></figure>
+
+<p>/etc/group 的内容包括用户组（Group）、用户组口令、GID（组 ID） 及该用户组所包含的用户（User），每个用户组一条记录。格式如下：</p>
+<blockquote>
+<p>group_name:password:GID:user_list</p>
+</blockquote>
 </li>
-<li><p>模块化</p>
-</li>
-<li><p>其他设计思想和原则</p>
-</li>
-</ul>
+</ol>
+<h2 id="二-加入用户组"><a href="#二-加入用户组" class="headerlink" title="二.加入用户组"></a>二.加入用户组</h2><p>​    使用 <code>usermod</code> 命令可以为用户添加用户组，同样使用该命令你必需有 root 权限，你可以直接使用 root 用户为其它用户添加用户组，或者用其它已经在 sudo 用户组的用户使用 sudo 命令获取权限来执行该命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G sudo [name]</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
+<h2 id="三-删除用户"><a href="#三-删除用户" class="headerlink" title="三.删除用户"></a>三.删除用户</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo deluser [name] --remove-home</span><br><span class="line">//--remove-home删除工作空间</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%BA%94%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%BA%94%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 14:37:00" itemprop="dateModified" datetime="2021-01-13T14:37:00+08:00">2021-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="编码规范：（命名与注释（Naming-and-Comments））"><a href="#编码规范：（命名与注释（Naming-and-Comments））" class="headerlink" title="编码规范：（命名与注释（Naming and Comments））"></a>编码规范：（命名与注释（Naming and Comments））</h1><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><ul>
-<li><h5 id="命名多长最合适？"><a href="#命名多长最合适？" class="headerlink" title="命名多长最合适？"></a>命名多长最合适？</h5></li>
-<li><h5 id="利用上下文简化命名"><a href="#利用上下文简化命名" class="headerlink" title="利用上下文简化命名"></a>利用上下文简化命名</h5></li>
-<li><h5 id="命名要可读、可搜索"><a href="#命名要可读、可搜索" class="headerlink" title="命名要可读、可搜索"></a>命名要可读、可搜索</h5></li>
-<li><h5 id="如何命名接口和抽象类？"><a href="#如何命名接口和抽象类？" class="headerlink" title="如何命名接口和抽象类？"></a>如何命名接口和抽象类？</h5></li>
-</ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
-<li>注释到底该写什么？<ul>
-<li>注释比代码承载的信息更多</li>
-<li>注释起到总结性作用、文档的作用</li>
-<li>一些总结性注释能让代码结构更清晰</li>
-</ul>
-</li>
-<li>注释是不是越多越好？<ul>
-<li>类和函数一定要写注释，而且要写得尽可能全面、详细，而函数内部的注释要相对少一些，一般都是靠好的命名、提炼函数、解释性变量、总结性注释来提高代码的可读性。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E5%85%AD%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E5%85%AD%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 14:50:03" itemprop="dateModified" datetime="2021-01-13T14:50:03+08:00">2021-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="编码规范：代码风格（Code-Style）"><a href="#编码规范：代码风格（Code-Style）" class="headerlink" title="编码规范：代码风格（Code Style）"></a>编码规范：代码风格（Code Style）</h1><h3 id="类、函数多大才合适？"><a href="#类、函数多大才合适？" class="headerlink" title="类、函数多大才合适？"></a>类、函数多大才合适？</h3><h3 id="一行代码多长最合适？"><a href="#一行代码多长最合适？" class="headerlink" title="一行代码多长最合适？"></a>一行代码多长最合适？</h3><h3 id="善用空行分割单元块"><a href="#善用空行分割单元块" class="headerlink" title="善用空行分割单元块"></a>善用空行分割单元块</h3><h3 id="四格缩进还是两格缩进？"><a href="#四格缩进还是两格缩进？" class="headerlink" title="四格缩进还是两格缩进？"></a>四格缩进还是两格缩进？</h3><h3 id="大括号是否要另起一行？"><a href="#大括号是否要另起一行？" class="headerlink" title="大括号是否要另起一行？"></a>大括号是否要另起一行？</h3><h3 id="类中成员的排列顺序"><a href="#类中成员的排列顺序" class="headerlink" title="类中成员的排列顺序"></a>类中成员的排列顺序</h3><p>​    比如 C++ 中，成员变量会习惯性放到函数后面。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%BA%8C%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 10:15:44" itemprop="dateModified" datetime="2021-01-13T10:15:44+08:00">2021-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit-Testing）"><a href="#最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit-Testing）" class="headerlink" title="最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit Testing）"></a>最可落地执行、最有效的保证重构不出错的手段应该就是单元测试（Unit Testing）</h4><h3 id="什么是单元测试？"><a href="#什么是单元测试？" class="headerlink" title="什么是单元测试？"></a>什么是单元测试？</h3><p>单元测试的测试对象是类或者函数，用来测试一个类和函数是否都按照预期的逻辑执行。这是代码层级的测试。</p>
-<h3 id="为什么要写单元测试？"><a href="#为什么要写单元测试？" class="headerlink" title="为什么要写单元测试？"></a>为什么要写单元测试？</h3><ul>
-<li>单元测试能有效地帮你发现代码中的 bug</li>
-<li>写单元测试能帮你发现代码设计上的问题</li>
-<li>单元测试是对集成测试的有力补充</li>
-<li>写单元测试的过程本身就是代码重构的过程</li>
-<li>阅读单元测试能帮助你快速熟悉代码</li>
-<li>单元测试是 TDD 可落地执行的改进方案</li>
-</ul>
-<h3 id="如何编写单元测试？"><a href="#如何编写单元测试？" class="headerlink" title="如何编写单元测试？"></a>如何编写单元测试？</h3><ul>
-<li>利用单元测试框架，来简化测试代码的编写。</li>
-</ul>
-<h3 id="单元测试为何难落地执行？"><a href="#单元测试为何难落地执行？" class="headerlink" title="单元测试为何难落地执行？"></a>单元测试为何难落地执行？</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%B8%89%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%B8%89%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 10:41:01" itemprop="dateModified" datetime="2021-01-13T10:41:01+08:00">2021-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="什么是代码的可测试性？"><a href="#什么是代码的可测试性？" class="headerlink" title="什么是代码的可测试性？"></a>什么是代码的可测试性？</h3><ul>
-<li><p>代码的可测试性可以从侧面上反应代码设计是否合理。</p>
-</li>
-<li><p>粗略地讲，所谓代码的可测试性，就是针对代码编写单元测试的难易程度。对于一段代码，如果很难为其编写单元测试，或者单元测试写起来很费劲，需要依靠单元测试框架中很高级的特性，那往往就意味着代码设计得不够合理，代码的可测试性不好。</p>
-</li>
-</ul>
-<h3 id="如何写出可测试的代码？"><a href="#如何写出可测试的代码？" class="headerlink" title="如何写出可测试的代码？"></a>如何写出可测试的代码？</h3><ul>
-<li>依赖注入是编写可测试性代码的最有效手段。通过依赖注入，我们在编写单元测试的时候，可以通过 mock 的方法解依赖外部服务，这也是我们在编写单元测试的过程中最有技术挑战的地方。</li>
-</ul>
-<h3 id="有哪些常见的不好测试的代码？"><a href="#有哪些常见的不好测试的代码？" class="headerlink" title="有哪些常见的不好测试的代码？"></a>有哪些常见的不好测试的代码？</h3><ul>
-<li>未决行为</li>
-<li>全局变量</li>
-<li>静态方法</li>
-<li>复杂继承</li>
-<li>高耦合代码</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%B8%83%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/designPattern/standard&refactor/refactor%EF%BC%88%E4%B8%83%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-13 17:31:48" itemprop="dateModified" datetime="2021-01-13T17:31:48+08:00">2021-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><h3 id="把代码分割成更小的单元块"><a href="#把代码分割成更小的单元块" class="headerlink" title="把代码分割成更小的单元块"></a>把代码分割成更小的单元块</h3></li>
-<li><h3 id="避免函数参数过多"><a href="#避免函数参数过多" class="headerlink" title="避免函数参数过多"></a>避免函数参数过多</h3><ul>
-<li>考虑函数是否职责单一，是否能通过拆分成多个函数的方式来减少参数。</li>
-</ul>
-</li>
-<li><h3 id="将函数的参数封装成对象。"><a href="#将函数的参数封装成对象。" class="headerlink" title="将函数的参数封装成对象。"></a>将函数的参数封装成对象。</h3></li>
-<li><h3 id="勿用函数参数来控制逻辑。"><a href="#勿用函数参数来控制逻辑。" class="headerlink" title="勿用函数参数来控制逻辑。"></a>勿用函数参数来控制逻辑。</h3></li>
-<li><h3 id="函数设计要职责单一。"><a href="#函数设计要职责单一。" class="headerlink" title="函数设计要职责单一。"></a>函数设计要职责单一。</h3></li>
-<li><h3 id="移除过深的嵌套层次。"><a href="#移除过深的嵌套层次。" class="headerlink" title="移除过深的嵌套层次。"></a>移除过深的嵌套层次。</h3></li>
-<li><h3 id="学会使用解释性变量"><a href="#学会使用解释性变量" class="headerlink" title="学会使用解释性变量"></a>学会使用解释性变量</h3></li>
-</ul>
+<h2 id="四-更多"><a href="#四-更多" class="headerlink" title="四.更多"></a>四.更多</h2><h4 id="adduser-和-useradd-的区别是什么"><a href="#adduser-和-useradd-的区别是什么" class="headerlink" title="adduser 和 useradd 的区别是什么"></a><code>adduser</code> 和 <code>useradd</code> 的区别是什么</h4><p>答：<code>useradd</code> 只创建用户，不会创建用户密码和工作目录，创建完了需要使用 <code>passwd &lt;username&gt;</code> 去设置新用户的密码。<code>adduser</code> 在创建用户的同时，会创建工作目录和密码（提示你设置），做这一系列的操作。其实 <code>useradd</code>、<code>userdel</code> 这类操作更像是一种命令，执行完了就返回。而 <code>adduser</code> 更像是一种程序，需要你输入、确定等一系列操作。</p>
 
       
     </div>
@@ -1053,20 +1174,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

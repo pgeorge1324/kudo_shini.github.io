@@ -1,207 +1,1245 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pgeorge1324/pgeorge1324.github.io/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pgeorge1324/pgeorge1324.github.io/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pgeorge1324/pgeorge1324.github.io/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/pgeorge1324/pgeorge1324.github.io/images/safari-pinned-tab.svg" color="#222">
+
+<link rel="stylesheet" href="/pgeorge1324/pgeorge1324.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/pgeorge1324/pgeorge1324.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/pgeorge1324/pgeorge1324.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="kudo_shini的学习与分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kudo_shini">
+<meta property="og:url" content="https://github.com/pgeorge1324/pgeorge1324.github.io/index.html">
+<meta property="og:site_name" content="kudo_shini">
+<meta property="og:description" content="kudo_shini的学习与分享">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="kudo_shini">
+<meta property="article:tag" content="c++ vue googletest designPattern datastruct algorithm">
 <meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/pgeorge1324/pgeorge1324.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>kudo_shini</title>
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/pgeorge1324/pgeorge1324.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">kudo_shini</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">欲渡黄河冰塞川❤️将登太行雪满山</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/pgeorge1324/pgeorge1324.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/pgeorge1324/pgeorge1324.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/pgeorge1324/pgeorge1324.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/pgeorge1324/pgeorge1324.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <div class="reading-progress-bar"></div>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <a href="https://github.com/pgeorge1324" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+          <div class="content index posts-expand">
+            
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/public/Doxygen%E6%B3%A8%E9%87%8A/">
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/13/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-05-13T02:55:49.721Z" itemprop="datePublished">2021-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/13/hello-world/">Hello World</a>
-    </h1>
-  
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/public/Doxygen%E6%B3%A8%E9%87%8A/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-27 11:28:17" itemprop="dateModified" datetime="2020-11-27T11:28:17+08:00">2020-11-27</time>
+              </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+          <h1 id="Doxygen注释"><a href="#Doxygen注释" class="headerlink" title="Doxygen注释"></a>Doxygen注释</h1><hr>
+<h4 id="Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C-、Java、Objective-C和IDL语言，部分支持PHP、C-。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。"><a href="#Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C-、Java、Objective-C和IDL语言，部分支持PHP、C-。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。" class="headerlink" title="Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C++、Java、Objective-C和IDL语言，部分支持PHP、C#。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。"></a>Doxygen是一种开源跨平台的，以类似JavaDoc风格描述的文档系统，完全支持C、C++、Java、Objective-C和IDL语言，部分支持PHP、C#。注释的语法与Qt-Doc、KDoc和JavaDoc兼容。Doxygen可以从一套归档源文件开始，生成HTML格式的在线类浏览器，或离线的LATEX、RTF参考手册。</h4><hr>
+<p>@exception <exception-object> {exception description} 对一个异常对象进行注释。</p>
+<p>@warning {warning message } 一些需要注意的事情</p>
+<p>@todo { things to be done } 对将要做的事情进行注释，链接到所有TODO 汇总的TODO 列表</p>
+<p>@bug 缺陷，链接到所有缺陷汇总的缺陷列表</p>
+<p>@see {comment with reference to other items } 一段包含其他部分引用的注释，中间包含对其他代码项的名称，自动产生对其的引用链接。</p>
+<p>@relates <name> 通常用做把非成员函数的注释文档包含在类的说明文档中。</p>
+<p>@since {text} 通常用来说明从什么版本、时间写此部分代码。</p>
+<p>@deprecated</p>
+<p>@pre { description of the precondition } 用来说明代码项的前提条件。</p>
+<p>@post { description of the postcondition } 用来说明代码项之后的使用条件。</p>
+<p>@code 在注释中开始说明一段代码，直到@endcode命令。</p>
+<p>@endcode 注释中代码段的结束。</p>
+<p>@code .. @endcode 包含一段代码</p>
+<p>@addtogroup 添加到一个组。</p>
+<p>@brief 概要信息</p>
+<p>@deprecated 已废弃函数</p>
+<p>@details  详细描述</p>
+<p>@note 开始一个段落，用来描述一些注意事项</p>
+<p>@par 开始一个段落，段落名称描述由你自己指定</p>
+<p>@param 标记一个参数的意义</p>
+<p>@fn 函数说明</p>
+<p>@ingroup 加入到一个组</p>
+<p>@return 描述返回意义</p>
+<p>@retval 描述返回值意义</p>
+<p>@include 包含文件</p>
+<p>@var、@enum、@struct、@class 对变量、美剧、结构体、类等进行标注@exception <exception-object> {exception description} 对一个异常对象进行注释。</p>
+<p>@warning {warning message } 一些需要注意的事情</p>
+<p>@todo { things to be done } 对将要做的事情进行注释，链接到所有TODO 汇总的TODO 列表</p>
+<p>@bug 缺陷，链接到所有缺陷汇总的缺陷列表</p>
+<p>@see {comment with reference to other items } 一段包含其他部分引用的注释，中间包含对其他代码项的名称，自动产生对其的引用链接。</p>
+<p>@relates <name> 通常用做把非成员函数的注释文档包含在类的说明文档中。</p>
+<p>@since {text} 通常用来说明从什么版本、时间写此部分代码。</p>
+<p>@deprecated</p>
+<p>@pre { description of the precondition } 用来说明代码项的前提条件。</p>
+<p>@post { description of the postcondition } 用来说明代码项之后的使用条件。</p>
+<p>@code 在注释中开始说明一段代码，直到@endcode命令。</p>
+<p>@endcode 注释中代码段的结束。</p>
+<p>@code .. @endcode 包含一段代码</p>
+<p>@addtogroup 添加到一个组。</p>
+<p>@brief 概要信息</p>
+<p>@deprecated 已废弃函数</p>
+<p>@details  详细描述</p>
+<p>@note 开始一个段落，用来描述一些注意事项</p>
+<p>@par 开始一个段落，段落名称描述由你自己指定</p>
+<p>@param 标记一个参数的意义</p>
+<p>@fn 函数说明</p>
+<p>@ingroup 加入到一个组</p>
+<p>@return 描述返回意义</p>
+<p>@retval 描述返回值意义</p>
+<p>@include 包含文件</p>
+<p>@var、@enum、@struct、@class 对变量、美剧、结构体、类等进行标注</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/13/hello-world/" data-id="ckomawg5600004kd7fkp259rp" data-title="Hello World" class="article-share-link">Share</a>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%89%E8%A7%92%E5%BD%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%89%E8%A7%92%E5%BD%A2/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-22 18:09:49" itemprop="dateModified" datetime="2020-10-22T18:09:49+08:00">2020-10-22</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
+          <h1 id="你好，三角形"><a href="#你好，三角形" class="headerlink" title="你好，三角形"></a>你好，三角形</h1><ul>
+<li><h2 id="创建顶点数组（标准化设备坐标）"><a href="#创建顶点数组（标准化设备坐标）" class="headerlink" title="创建顶点数组（标准化设备坐标）"></a>创建顶点数组（标准化设备坐标）</h2></li>
+<li><h2 id="数据发送给顶点着色器"><a href="#数据发送给顶点着色器" class="headerlink" title="数据发送给顶点着色器"></a>数据发送给顶点着色器</h2></li>
+<li><h2 id="顶点着色器"><a href="#顶点着色器" class="headerlink" title="顶点着色器"></a>顶点着色器</h2><ul>
+<li><p>GPU上创建内存储存顶点数据（通过顶点缓冲对象【VBO】管理内存）</p>
+</li>
+<li><p>配置OpenGL如何解释内存</p>
+</li>
+<li><p>指定发送给显卡的方式</p>
+</li>
+<li><p>VBO优点：在GPU内存/显存中储存大量顶点。通过VBO可以一次性发送大量数据到显卡上，从CPU发送到显卡比较慢，显卡访问显存比较快</p>
+</li>
+<li><pre><code>// 顶点着色器源码
+const char *vertexShaderSource = &quot;#version 330 core\n&quot;
+                                 &quot;layout (location = 0) in vec3 aPos;\n&quot;
+                                 &quot;void main()\n&quot;
+                                 &quot;&#123;\n&quot;
+                                 &quot;   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n&quot;
+                                 &quot;&#125;\0&quot;;
+// 创建顶点着色器
+unsigned int vertexShader;
+vertexShader = glCreateShader(GL_VERTEX_SHADER);
+// 源码附着到顶点着色器对象上
+glShaderSource(vertexShader, 1, &amp;vertexShaderSource, NULL);
+// 编译源码
+glCompileShader(vertexShader);
+
+// 获取编译情况，并输出编译log
+int  success;
+char infoLog[512];
+glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &amp;success);
+if(!success)
+&#123;
+    glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+    std::cout &lt;&lt; &quot;ERROR::SHADER::VERTEX::COMPILATION_FAILED\n&quot; &lt;&lt; infoLog &lt;&lt; std::endl;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><h2 id="片段着色器"><a href="#片段着色器" class="headerlink" title="片段着色器"></a>片段着色器</h2><ul>
+<li>计算像素最后的颜色输出</li>
+</ul>
+</li>
+<li><h2 id="链接着色器到用于渲染的着色器程序（Shader-Program）中"><a href="#链接着色器到用于渲染的着色器程序（Shader-Program）中" class="headerlink" title="链接着色器到用于渲染的着色器程序（Shader Program）中"></a>链接着色器到用于渲染的着色器程序（Shader Program）中</h2></li>
+<li><h2 id="使用着色器程序"><a href="#使用着色器程序" class="headerlink" title="使用着色器程序"></a>使用着色器程序</h2></li>
+<li><h2 id="清除着色器对象"><a href="#清除着色器对象" class="headerlink" title="清除着色器对象"></a>清除着色器对象</h2></li>
+<li><h2 id="链接顶点属性"><a href="#链接顶点属性" class="headerlink" title="链接顶点属性"></a>链接顶点属性</h2></li>
+</ul>
+
       
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/lighting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/lighting/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-25 15:19:18" itemprop="dateModified" datetime="2020-12-25T15:19:18+08:00">2020-12-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Lighting"><a href="#Lighting" class="headerlink" title="Lighting"></a>Lighting</h1><ul>
+<li><h3 id="Point-Omni-Light"><a href="#Point-Omni-Light" class="headerlink" title="Point/Omni Light"></a>Point/Omni Light</h3><ul>
+<li><h5 id="平方反比衰减光源-light-light0-pow-r0-r-2"><a href="#平方反比衰减光源-light-light0-pow-r0-r-2" class="headerlink" title="平方反比衰减光源 light = light0*pow(r0/r,2);"></a>平方反比衰减光源 light = light0*pow(r0/r,2);</h5><ol>
+<li>问题：当距离太近时出现过曝；<ul>
+<li>解决1： light = light0*pow(r0,2)/(pow(r,2)+e);  ue4使用e=1cm;    </li>
+<li>解决2： light = light0*pow(r0,2)/pow(max(r,rmin),2);</li>
+</ul>
+</li>
+<li>问题：当距离太远时光照影响几乎没有，但计算影响性能</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/opengl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/opengl/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-21 17:01:32" itemprop="dateModified" datetime="2020-10-21T17:01:32+08:00">2020-10-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="OpenGL"><a href="#OpenGL" class="headerlink" title="OpenGL"></a>OpenGL</h1><ul>
+<li>在OpenGL中，任何事物都在3D空间中，而屏幕和窗口却是2D像素数组，这导致OpenGL的大部分工作都是关于把3D坐标转变为适应你屏幕的2D像素。3D坐标转为2D坐标的处理过程是由OpenGL的图形渲染管线（Graphics Pipeline，大多译为管线，实际上指的是一堆原始图形数据途经一个输送管道，期间经过各种变化处理最终出现在屏幕的过程）管理的。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CSMath/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CSMath/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-25 14:38:11" itemprop="dateModified" datetime="2020-12-25T14:38:11+08:00">2020-12-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CSMath"><a href="#CSMath" class="headerlink" title="CSMath"></a>CSMath</h1><ul>
+<li><p>【norm】:范数</p>
+</li>
+<li><p>【atan2】:反正切</p>
+<ul>
+<li>```<br>1、atan（x）表示求的是x的反正切，其返回值为[-pi/2,+pi/2]之间的一个数。2、atan2（y，x）求的是y/x的反正切，其返回值为[-pi,+pi]之间的一个数。atan2返回值解释：在三角函数中，两个参数的函数atan2是正切函数的一个变种。对于任意不同时等于0的实参数x和y，atan2(y,x)所表达的意思是坐标原点为起点，指向(y,x)的射线在坐标平面上与x轴正方向之间的角的角度度。当y&gt;0时，射线与x轴正方向的所得的角的角度指的是x轴正方向绕逆时针方向到达射线旋转的角的角度；而当y&lt;0时，射线与x轴正方向所得的角的角度指的是x轴正方向绕顺时针方向达到射线旋转的角的角度。atan2函数最初在计算机编程语言中被引入，但是现在它的应用在科学和工程等其他多个领域十分常见。他的出现最早可以追溯到FORTRAN语言[1]，并且可以在C语言的数学标准库的math.h文件中找到，此外在Java数学库、.NET的System.Math（可应用于C#、VB.NET等语言）、Python的数学模块以及其他地方都可以找到atan2的身影。许多脚本语言，比如Perl，也包含了C语言风格的atan2函数。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 【reflect】:反射函数 </span><br><span class="line"></span><br><span class="line">- 【mix】:线性插值</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    mix(a,b,c) === c*a+(1-c)*b</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>【normalize】:规范为单位向量</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CSEnglish/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/opengl/CSEnglish/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-30 16:05:33" itemprop="dateModified" datetime="2020-12-30T16:05:33+08:00">2020-12-30</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CSEnglish"><a href="#CSEnglish" class="headerlink" title="CSEnglish"></a>CSEnglish</h1><ul>
+<li><p>PBR（Physical basic rendering）</p>
+</li>
+<li><p>NPR:非真实感绘制(Non-photorealistic rendering)</p>
+</li>
+<li><p>Radiance：（L）点辐射在某方向上单位立体角单位面积内传送的辐射通量</p>
+</li>
+<li><p>Irradiance: （E）radiance在面积上的积分，点辐射在某单位面积内传送的辐射通量</p>
+</li>
+<li><p>scattering coefficient：（σs）散射系数</p>
+</li>
+<li><p>scalar: 标量</p>
+</li>
+<li><p>coordinate：坐标</p>
+</li>
+<li><p>a unary operator on a two-dimensional vector: (⊥) 在二维向量上的一元运算符</p>
+</li>
+<li><p>perpendicular: 垂直的，正交的</p>
+</li>
+<li><p>determinant：行列式，矩阵的行列式det(M)</p>
+</li>
+<li><p>frustum：平截头体，视锥(a truncated缩短 pyramid金字塔 with a rectangleular base)</p>
+</li>
+<li><p>Punctual Lights：点光源，拉丁语（punctus meaning point）</p>
+</li>
+<li><p>Moir´e fringes： 摩尔纹</p>
+</li>
+<li><p>volume light：体积光</p>
+</li>
+<li><p>umbra:  本影</p>
+</li>
+<li><p>penuumbra: 半影</p>
+</li>
+<li><p>Venetian blinds effect：活动百叶窗效应</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/%E4%BC%97%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/%E4%BC%97%E6%95%B0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-07 16:25:52" itemprop="dateModified" datetime="2021-05-07T16:25:52+08:00">2021-05-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="众数"><a href="#众数" class="headerlink" title="众数"></a>众数</h1><h2 id="Boyer-Moore-投票算法"><a href="#Boyer-Moore-投票算法" class="headerlink" title="Boyer-Moore 投票算法"></a>Boyer-Moore 投票算法</h2><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>如果我们把众数记为 +1+1，把其他数记为 -1−1，将它们全部加起来，显然和大于 0，从结果本身我们可以看出众数比其他数多。</p>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>Boyer-Moore 算法的本质和方法四中的分治十分类似。我们首先给出 Boyer-Moore 算法的详细步骤：</p>
+<p>我们维护一个候选众数 candidate 和它出现的次数 count。初始时 candidate 可以为任意值，count 为 0；</p>
+<p>我们遍历数组 nums 中的所有元素，对于每个元素 x，在判断 x 之前，如果 count 的值为 0，我们先将 x 的值赋予 candidate，随后我们判断 x：</p>
+<p>如果 x 与 candidate 相等，那么计数器 count 的值增加 1；</p>
+<p>如果 x 与 candidate 不等，那么计数器 count 的值减少 1。</p>
+<p>在遍历完成后，candidate 即为整个数组的众数。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>leetcode 169</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/bit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/math/bit/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-07 16:20:54" itemprop="dateModified" datetime="2021-05-07T16:20:54+08:00">2021-05-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="bit-calculate"><a href="#bit-calculate" class="headerlink" title="bit calculate"></a>bit calculate</h1><h2 id="异或性质"><a href="#异或性质" class="headerlink" title="异或性质"></a>异或性质</h2><ul>
+<li>x^x=0；</li>
+<li>x ^y=y^x（交换律）；</li>
+<li>(x⊕y)⊕z=x⊕(y⊕z)（结合律）；</li>
+<li>x⊕y⊕y=x（自反性）；</li>
+<li>∀i∈Z，有4i⊕(4i+1)⊕(4i+2)⊕(4i+3)=0。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-11 13:20:47" itemprop="dateModified" datetime="2020-09-11T13:20:47+08:00">2020-09-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h1><ol>
+<li><h2 id="查看当前终端信息"><a href="#查看当前终端信息" class="headerlink" title="查看当前终端信息"></a>查看当前终端信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">who am i</span><br><span class="line"></span><br><span class="line">#or </span><br><span class="line"></span><br><span class="line">who mom likes</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\wm200618\AppData\Roaming\Typora\typora-user-images\image-20200911110625464.png" alt="image-20200911110625464"></p>
+</li>
+</ol>
+<h4 id="pts表示伪终端，1是伪终端编号"><a href="#pts表示伪终端，1是伪终端编号" class="headerlink" title="pts表示伪终端，1是伪终端编号"></a>pts表示伪终端，1是伪终端编号</h4><h3 id="who参数："><a href="#who参数：" class="headerlink" title="who参数："></a>who参数：</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-a</code></td>
+<td>打印能打印的全部</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>打印死掉的进程</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>同<code>am i</code>，<code>mom likes</code></td>
+</tr>
+<tr>
+<td><code>-q</code></td>
+<td>打印当前登录用户数及用户名</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>打印当前登录用户登录信息</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>打印运行等级</td>
+</tr>
+</tbody></table>
+<h1 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser kudo //创建用户</span><br><span class="line">sudo passwd [username] //修改密码</span><br><span class="line">ls /home //查看用户工作目录</span><br><span class="line">su -l [username] //切换用户</span><br><span class="line">who am i //</span><br><span class="line">whoami //看当前登录用户的用户名，去掉空格直接使用 whoami 即可</span><br></pre></td></tr></table></figure>
+
+<h1 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h1><h4 id="su，su-与-sudo"><a href="#su，su-与-sudo" class="headerlink" title="su，su- 与 sudo"></a>su，su- 与 sudo</h4><p><strong>需要注意 Linux 环境下输入密码是不会显示的。</strong></p>
+<p><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，<code>sudo &lt;cmd&gt;</code> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，但是同时用户的环境变量和工作目录也会跟着改变成目标用户所对应的。</p>
+<h1 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h1><h2 id="一-查看用户组"><a href="#一-查看用户组" class="headerlink" title="一.  查看用户组"></a>一.  查看用户组</h2><ol>
+<li><h3 id="方法一：使用-groups-命令"><a href="#方法一：使用-groups-命令" class="headerlink" title="方法一：使用 groups 命令"></a>方法一：使用 groups 命令</h3></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups [username]</span><br></pre></td></tr></table></figure>
+
+<p>​    默认情况下在 sudo 用户组里的可以使用 sudo 命令获得 root 权限。shiyanlou 用户也可以使用 sudo 命令，为什么这里没有显示在 sudo 用户组里呢？可以查看下 <code>/etc/sudoers.d/shiyanlou</code> 文件，我们在 <code>/etc/sudoers.d</code> 目录下创建了这个文件，从而给 shiyanlou 用户赋予了 sudo 权限：    <img src="https://doc.shiyanlou.com/document-uid13labid3timestamp1454035855554.png" alt="此处输入图片的描述"></p>
+<ol start="2">
+<li><h3 id="方法二：查看-etc-group文件"><a href="#方法二：查看-etc-group文件" class="headerlink" title="方法二：查看/etc/group文件"></a>方法二：查看/etc/group文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group|sort//或者cat /etc/group | grep -E &quot;shiyanlou&quot;</span><br></pre></td></tr></table></figure>
+
+<p>/etc/group 的内容包括用户组（Group）、用户组口令、GID（组 ID） 及该用户组所包含的用户（User），每个用户组一条记录。格式如下：</p>
+<blockquote>
+<p>group_name:password:GID:user_list</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="二-加入用户组"><a href="#二-加入用户组" class="headerlink" title="二.加入用户组"></a>二.加入用户组</h2><p>​    使用 <code>usermod</code> 命令可以为用户添加用户组，同样使用该命令你必需有 root 权限，你可以直接使用 root 用户为其它用户添加用户组，或者用其它已经在 sudo 用户组的用户使用 sudo 命令获取权限来执行该命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G sudo [name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-删除用户"><a href="#三-删除用户" class="headerlink" title="三.删除用户"></a>三.删除用户</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo deluser [name] --remove-home</span><br><span class="line">//--remove-home删除工作空间</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-更多"><a href="#四-更多" class="headerlink" title="四.更多"></a>四.更多</h2><h4 id="adduser-和-useradd-的区别是什么"><a href="#adduser-和-useradd-的区别是什么" class="headerlink" title="adduser 和 useradd 的区别是什么"></a><code>adduser</code> 和 <code>useradd</code> 的区别是什么</h4><p>答：<code>useradd</code> 只创建用户，不会创建用户密码和工作目录，创建完了需要使用 <code>passwd &lt;username&gt;</code> 去设置新用户的密码。<code>adduser</code> 在创建用户的同时，会创建工作目录和密码（提示你设置），做这一系列的操作。其实 <code>useradd</code>、<code>userdel</code> 这类操作更像是一种命令，执行完了就返回。而 <code>adduser</code> 更像是一种程序，需要你输入、确定等一系列操作。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pgeorge1324/pgeorge1324.github.io/2021/05/13/linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 16:46:47" itemprop="dateCreated datePublished" datetime="2021-05-13T16:46:47+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-11 13:20:20" itemprop="dateModified" datetime="2020-09-11T13:20:20+08:00">2020-09-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h1><h2 id="一-查看文件权限"><a href="#一-查看文件权限" class="headerlink" title="一.查看文件权限"></a>一.查看文件权限</h2><ol>
+<li></li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ll //ls -l查看文件详细格式</span><br><span class="line">ls -a //显示所有文件（隐藏）</span><br><span class="line">ls -al</span><br><span class="line">ls -asSh//小 s 为显示文件大小，大 S 为按文件大小排序</span><br></pre></td></tr></table></figure>
+
+<p>   <img src="https://doc.shiyanlou.com/linux_base/3-9.png" alt="img"></p>
+<p>   <img src="https://doc.shiyanlou.com/linux_base/3-10.png" alt="img"></p>
+<h2 id="二-变更文件权限"><a href="#二-变更文件权限" class="headerlink" title="二.变更文件权限"></a>二.变更文件权限</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">su - lilei</span><br><span class="line">pwd</span><br><span class="line">touch iphone11</span><br><span class="line">ls -alh iphone11</span><br><span class="line"># 需要切换到 shiyanlou 用户执行以下操作</span><br><span class="line">cd /home/lilei</span><br><span class="line">ls iphone11</span><br><span class="line">sudo chown shiyanlou iphone11</span><br></pre></td></tr></table></figure>
+
+<p>如果你有一个自己的文件不想被其他用户读、写、执行，那么就需要对文件的权限做修改。文件的权限有两种表示方式：</p>
+<ul>
+<li>方式一：二进制数字表示</li>
+</ul>
+<p><img src="https://doc.shiyanlou.com/linux_base/3-14.png" alt="pic"></p>
+<p>每个文件有三组固定的权限，分别对应拥有者，所属用户组，其他用户，<strong>记住这个顺序是固定的</strong>。文件的读写执行对应字母 <code>rwx</code>，以二进制表示就是 <code>111</code>，用十进制表示就是 <code>7</code>，对进制转换不熟悉的同学可以看看 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/3117222">进制转换</a>。例如我们刚刚新建的文件 iphone11 的权限是 <code>rw-rw-rw-</code>，换成对应的十进制表示就是 666，这就表示这个文件的拥有者，所属用户组和其他用户具有读写权限，不具有执行权限。</p>
+<ul>
+<li>方式二：加减赋值操作</li>
+</ul>
+<p>要完成上述实验相同的效果，你可以：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod go-rw iphone11 //group others 减去rw权限</span><br></pre></td></tr></table></figure>
+
+<p><code>g</code>、<code>o</code> 还有 <code>u</code> 分别表示 group（用户组）、others（其他用户） 和 user（用户），<code>+</code> 和 <code>-</code> 分别表示增加和去掉相应的权限。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/pgeorge1324/pgeorge1324.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/pgeorge1324/pgeorge1324.github.io/page/9/">9</a><a class="extend next" rel="next" href="/pgeorge1324/pgeorge1324.github.io/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kudo_shini"
+      src="/pgeorge1324/pgeorge1324.github.io/images/favicon.jpg">
+  <p class="site-author-name" itemprop="name">kudo_shini</p>
+  <div class="site-description" itemprop="description">kudo_shini的学习与分享</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/pgeorge1324/pgeorge1324.github.io/archives/">
+        
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/pgeorge1324/pgeorge1324.github.io/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/pgeorge1324/pgeorge1324.github.io/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/pgeorge1324" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;pgeorge1324"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/kudo-shini/" title="Blog → https:&#x2F;&#x2F;www.cnblogs.com&#x2F;kudo-shini&#x2F;" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>Blog</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kudo_shini</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </footer>
   </div>
-  
-</article>
-
-
 
   
+  <script src="/pgeorge1324/pgeorge1324.github.io/lib/anime.min.js"></script>
+  <script src="/pgeorge1324/pgeorge1324.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/pgeorge1324/pgeorge1324.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/pgeorge1324/pgeorge1324.github.io/js/utils.js"></script>
+
+<script src="/pgeorge1324/pgeorge1324.github.io/js/motion.js"></script>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li></ul>
-    </div>
-  </div>
+<script src="/pgeorge1324/pgeorge1324.github.io/js/schemes/pisces.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/05/13/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+<script src="/pgeorge1324/pgeorge1324.github.io/js/next-boot.js"></script>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>

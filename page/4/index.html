@@ -158,299 +158,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/stdlib/sort/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/13/c++/stdlib/sort/" class="post-title-link" itemprop="url">sort</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：16:58:04" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/stdlib/" itemprop="url" rel="index"><span itemprop="name">stdlib</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span> <span class="class"><span class="keyword">struct</span> <span class="title">greater</span> :</span> binary_function &lt;T,T,<span class="keyword">bool</span>&gt; &#123;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y)</span> <span class="keyword">const</span> </span>&#123;<span class="keyword">return</span> x&gt;y;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="built_in">sort</span> (arr.<span class="built_in">begin</span>(), arr.<span class="built_in">end</span>(), std::less&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span> <span class="class"><span class="keyword">struct</span> <span class="title">less</span> :</span> binary_function &lt;T,T,<span class="keyword">bool</span>&gt; &#123;</span><br><span class="line">  <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y)</span> <span class="keyword">const</span> </span>&#123;<span class="keyword">return</span> x&lt;y;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/OOP&OOD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/13/c++/syntax/OOP&OOD/" class="post-title-link" itemprop="url">OOP&OOD</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:43" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="OOP面向对象编程"><a href="#OOP面向对象编程" class="headerlink" title="OOP面向对象编程"></a>OOP面向对象编程</h1><h2 id="组合（Compostion）has-a"><a href="#组合（Compostion）has-a" class="headerlink" title="组合（Compostion）has-a"></a>组合（Compostion）has-a</h2><ul>
-<li><h3 id="组合关系下的构造和析构函数"><a href="#组合关系下的构造和析构函数" class="headerlink" title="组合关系下的构造和析构函数"></a>组合关系下的构造和析构函数</h3><ul>
-<li><h5 id="构造函数（由内而外）"><a href="#构造函数（由内而外）" class="headerlink" title="构造函数（由内而外）"></a>构造函数（由内而外）</h5><ul>
-<li>container调用component的构造函数,然后执行自己的构造函数</li>
-<li>默认使用component的默认构造函数，定制需在container的函数内部调用</li>
-</ul>
-</li>
-<li><h5 id="析构函数（由外而内）"><a href="#析构函数（由外而内）" class="headerlink" title="析构函数（由外而内）"></a>析构函数（由外而内）</h5><ul>
-<li>container先调用自己的析构函数，然后调用component的析构函数</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="委托（Delegation）composition-by-reference"><a href="#委托（Delegation）composition-by-reference" class="headerlink" title="委托（Delegation）composition by reference"></a>委托（Delegation）composition by reference</h2><ul>
-<li>只有在需要component的时候才会去创建component</li>
-<li><img src="E:\github\notebook\c++\assets\接口.png" alt="image-20210222143212049"></li>
-<li>（编译防火墙）写时复制</li>
-</ul>
-<h2 id="继承（Inheritance）is-a"><a href="#继承（Inheritance）is-a" class="headerlink" title="继承（Inheritance）is-a"></a>继承（Inheritance）is-a</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> :</span><span class="keyword">public</span> bar&#123; <span class="comment">//通常</span></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> :</span><span class="keyword">private</span> bar&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">foo</span> :</span><span class="keyword">protected</span> bar&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h3 id="继承关系下的构造和析构函数（base父类-amp-amp-derived派生类）"><a href="#继承关系下的构造和析构函数（base父类-amp-amp-derived派生类）" class="headerlink" title="继承关系下的构造和析构函数（base父类 &amp;&amp; derived派生类）"></a>继承关系下的构造和析构函数（base父类 &amp;&amp; derived派生类）</h3><ul>
-<li><h5 id="构造函数（由内而外）-1"><a href="#构造函数（由内而外）-1" class="headerlink" title="构造函数（由内而外）"></a>构造函数（由内而外）</h5><ul>
-<li>derived调用base的构造函数,然后执行自己的构造函数</li>
-</ul>
-</li>
-<li><h5 id="析构函数（由外而内）-1"><a href="#析构函数（由外而内）-1" class="headerlink" title="析构函数（由外而内）"></a>析构函数（由外而内）</h5><ul>
-<li>derived先调用自己的析构函数，然后调用base 的析构函数</li>
-<li>base类的析构函数必须是virtual否则会出现undefined behavior</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h3><ul>
-<li><p>使用虚函数完成  模板模式</p>
-</li>
-<li><h5 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h5><ul>
-<li>不希望派生类override(重写)</li>
-</ul>
-</li>
-<li><h5 id="虚函数-virtual"><a href="#虚函数-virtual" class="headerlink" title="虚函数 virtual"></a>虚函数 virtual</h5><ul>
-<li>希望派生类override,有默认定义</li>
-<li>virtual function();</li>
-</ul>
-</li>
-<li><h5 id="纯虚函数-pure-virtual"><a href="#纯虚函数-pure-virtual" class="headerlink" title="纯虚函数 pure virtual"></a>纯虚函数 pure virtual</h5><ul>
-<li>派生类必须override</li>
-<li>virtual function() = 0;</li>
-<li>纯虚函数和空函数有区别</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="继承和组合嵌套使用的情况下的顺序？"><a href="#继承和组合嵌套使用的情况下的顺序？" class="headerlink" title="继承和组合嵌套使用的情况下的顺序？"></a>继承和组合嵌套使用的情况下的顺序？</h3></li>
-<li><h3 id="委托加继承用于观察者模式"><a href="#委托加继承用于观察者模式" class="headerlink" title="委托加继承用于观察者模式"></a>委托加继承用于观察者模式</h3><p><img src="E:\github\notebook\c++\assets\观察者模式.png" alt="image-20210222154953285"></p>
-</li>
-</ul>
-<h1 id="OOD面向对象设计"><a href="#OOD面向对象设计" class="headerlink" title="OOD面向对象设计"></a>OOD面向对象设计</h1><h3 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h3><p>比如文件系统：primitive表示文件，composite表示文件夹 </p>
-<p><img src="E:\github\notebook\c++\assets\组合模式.png" alt="image-20210222162154579"></p>
-<h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><p> <img src="E:\github\notebook\c++\assets\原型模式.png" alt="image-20210222162726046"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/conversion-function%20explicit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/13/c++/syntax/conversion-function%20explicit/" class="post-title-link" itemprop="url">conversion function转换函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:26" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="conversion-function转换函数"><a href="#conversion-function转换函数" class="headerlink" title="conversion function转换函数"></a>conversion function转换函数</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Fraction</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;&#125;</span><br><span class="line">    <span class="comment">// 必须加const</span></span><br><span class="line">    <span class="comment">// 返回类型为double</span></span><br><span class="line">    <span class="comment">// 函数参数this</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">double</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">double</span>) (<span class="built_in"><span class="keyword">double</span></span>(m_son) / <span class="built_in"><span class="keyword">double</span></span>(m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Fraction <span class="title">f</span> <span class="params">(<span class="number">3</span>,<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// 若没有转换函数，此语句报错 有转换函数，编译器调用转换函数将f转换为double</span></span><br><span class="line"><span class="comment">// 然后编译器继续使用operator(double,int)完成此语句	</span></span><br><span class="line"><span class="keyword">double</span> b = f + <span class="number">4</span>; </span><br></pre></td></tr></table></figure>
-
-<h1 id="explicit-显式关键字"><a href="#explicit-显式关键字" class="headerlink" title="explicit 显式关键字"></a>explicit 显式关键字</h1><h2 id="without-explicit"><a href="#without-explicit" class="headerlink" title="without explicit"></a>without explicit</h2><h5 id="不使用explicit时，当operator-操作符查询到只有（const-FractionExplicit-amp-f）重载类型时，会自动调用单实参构造函数来进行隐式转换"><a href="#不使用explicit时，当operator-操作符查询到只有（const-FractionExplicit-amp-f）重载类型时，会自动调用单实参构造函数来进行隐式转换" class="headerlink" title="不使用explicit时，当operator+操作符查询到只有（const FractionExplicit&amp;f）重载类型时，会自动调用单实参构造函数来进行隐式转换"></a>不使用explicit时，当operator+操作符查询到只有（const FractionExplicit&amp;f）重载类型时，会自动调用单实参构造函数来进行隐式转换</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FractionExplicit</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * non-explicit-one-argument ctor 非显性单实参构造函数</span></span><br><span class="line"><span class="comment">     * two parameter one argument</span></span><br><span class="line"><span class="comment">     * FractionExplicit d2 = f + 4; // call non-explicit ctor 将4转为 FractionNonExplicit(4,1)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">     <span class="built_in">FractionExplicit</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    FractionExplicit <span class="keyword">operator</span>+(<span class="keyword">const</span> FractionExplicit &amp;f) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">FractionExplicit</span>(f.m_son * m_mom + f.m_mom * m_son, f.m_mom * m_mom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">son</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_son;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mom</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_mom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">FractionExplicit <span class="title">f</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// call non-explicit ctor 将4转为 FractionNonExplicit(4,1)</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>; </span><br></pre></td></tr></table></figure>
-
-<h2 id="with-explicit"><a href="#with-explicit" class="headerlink" title="with explicit"></a>with explicit</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FractionExplicit</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * explicit function</span></span><br><span class="line"><span class="comment">     * 加上explicit，编译器不会自动转换</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">FractionExplicit</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>)</span> : m_son(num), m_mom(den) &#123;</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    FractionExplicit <span class="keyword">operator</span>+(<span class="keyword">const</span> FractionExplicit &amp;f) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">FractionExplicit</span>(f.m_son * m_mom + f.m_mom * m_son, f.m_mom * m_mom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">son</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_son;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mom</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_mom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">FractionExplicit <span class="title">f</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// 报错：Invalid operands to binary expression (&#x27;FractionExplicit&#x27; and &#x27;int&#x27;)</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>; </span><br><span class="line"><span class="comment">// 对整型进行显式转换</span></span><br><span class="line">FractionExplicit d2 = f + <span class="built_in">FractionExplicit</span>(<span class="number">4</span>); </span><br></pre></td></tr></table></figure>
-
-<h1 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h1><h2 id="隐式转换和非显式构造函数导致产生二义性"><a href="#隐式转换和非显式构造函数导致产生二义性" class="headerlink" title="隐式转换和非显式构造函数导致产生二义性"></a>隐式转换和非显式构造函数导致产生二义性</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FractionExplicit</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * non-explicit-one-argument ctor 非显性单实参构造函数</span></span><br><span class="line"><span class="comment">     * two parameter one argument</span></span><br><span class="line"><span class="comment">     * FractionExplicit d2 = f + 4; // call non-explicit ctor 将4转为 FractionNonExplicit(4,1)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">     <span class="built_in">FractionExplicit</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 必须加const</span></span><br><span class="line">    <span class="comment">// 返回类型为double</span></span><br><span class="line">    <span class="comment">// 函数参数this</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">double</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">double</span>) (<span class="built_in"><span class="keyword">double</span></span>(m_son) / <span class="built_in"><span class="keyword">double</span></span>(m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    FractionExplicit <span class="keyword">operator</span>+(<span class="keyword">const</span> FractionExplicit &amp;f) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">FractionExplicit</span>(f.m_son * m_mom + f.m_mom * m_son, f.m_mom * m_mom);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">son</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_son;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mom</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m_mom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">FractionExplicit <span class="title">f</span><span class="params">(<span class="number">3</span>, <span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">// 报错：Use of overloaded operator &#x27;+&#x27; is ambiguous (with operand types &#x27;FractionExplicit&#x27; and &#x27;int&#x27;)</span></span><br><span class="line"><span class="comment">// 因为操作符重载operator+(const FractionExplicit &amp;f),所以编译器可以执行FractionExplicit(4),再执行加法</span></span><br><span class="line"><span class="comment">// 同时因为该类包含一个隐式转换函数，所以operator+也可以先double(f)然后重载为operator+(double,int)</span></span><br><span class="line"><span class="comment">// 因此编译器会报错，此处产生二义性</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>;</span><br><span class="line"><span class="comment">// explicit FractionExplicit(int num, int den = 1) : m_son(num), m_mom(den) &#123;&#125;</span></span><br><span class="line"><span class="comment">// 此时仍然报错，此时编译器选择operator+(double,int),返回类型为double,不符合</span></span><br><span class="line">FractionExplicit d2 = f + <span class="number">4</span>;</span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line">FractionExplicit d2 = f + <span class="built_in">FractionExplicit</span>(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="多隐式转换造成的二义性"><a href="#多隐式转换造成的二义性" class="headerlink" title="多隐式转换造成的二义性"></a>多隐式转换造成的二义性</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fraction</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Fraction</span>(<span class="keyword">int</span> num, <span class="keyword">int</span> den = <span class="number">1</span>) : <span class="built_in">m_son</span>(num), <span class="built_in">m_mom</span>(den) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 必须加const</span></span><br><span class="line">    <span class="comment">// 返回类型为double</span></span><br><span class="line">    <span class="comment">// 函数参数this</span></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">double</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">double</span>) (<span class="built_in"><span class="keyword">double</span></span>(m_son) / <span class="built_in"><span class="keyword">double</span></span>(m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">operator</span> <span class="keyword">float</span> <span class="title">const</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">float</span>) (<span class="built_in"><span class="keyword">float</span></span> (m_son) / <span class="built_in"><span class="keyword">float</span></span> (m_mom));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> m_son;</span><br><span class="line">    <span class="keyword">int</span> m_mom;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">Fraction <span class="title">f</span><span class="params">(<span class="number">3</span>,<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="comment">//  不能写成下面这种情形，因为有多个转换函数double() float()，而operator+对float double都有相应的操作符重载 所以需要显示转换f</span></span><br><span class="line"><span class="comment">// 报错：Use of overloaded operator &#x27;+&#x27; is ambiguous</span></span><br><span class="line"><span class="keyword">float</span> a = <span class="number">4</span> + f;</span><br><span class="line"><span class="comment">// 4.6f</span></span><br><span class="line"><span class="keyword">float</span> a = <span class="number">4</span> + <span class="built_in"><span class="keyword">double</span></span> (f);</span><br><span class="line"><span class="comment">// 4.6f</span></span><br><span class="line"><span class="keyword">float</span> b = <span class="number">4</span> + <span class="built_in"><span class="keyword">float</span></span> (f);</span><br><span class="line"><span class="comment">// double 4.5999999999999996</span></span><br><span class="line"><span class="keyword">double</span> c = <span class="number">4</span> + <span class="built_in"><span class="keyword">double</span></span> (f);</span><br><span class="line"><span class="comment">// float(f)时会丢失部分精度，导致4.6 = 4.5999999999999996 d = 4.5999999046325684</span></span><br><span class="line"><span class="keyword">double</span> d = <span class="number">4</span> + <span class="built_in"><span class="keyword">float</span></span> (f);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/pgeorge1324/c/tree/master/learnCpp/course2">:bookmark_tabs: github</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/reference/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -881,103 +588,6 @@ int *pt = new int;<br>*pt = 2000;<figure class="highlight plaintext"><table><tr>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/%E6%A8%A1%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/13/c++/syntax/%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">模板</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:58" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="静态变量-静态函数"><a href="#静态变量-静态函数" class="headerlink" title="静态变量/静态函数"></a>静态变量/静态函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class complex&#123;</span><br><span class="line">data members;// non-static data members 每个实例一份单独一份数据</span><br><span class="line">static data members;// static data members 所有实例共享一份数据</span><br><span class="line">member functions;// c1.real()&lt;==&gt;complex::real(&amp;c1) &amp;c1=this</span><br><span class="line">static member functions;// 只能处理静态数据或者无数据 静态函数通过类名和实例都可以调用</span><br><span class="line">// 函数永远只有一份 无论是静态的还是非静态的</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="template-模板"><a href="#template-模板" class="headerlink" title="template 模板"></a>template 模板</h1><h2 id="class-template-类模板"><a href="#class-template-类模板" class="headerlink" title="class template 类模板"></a>class template 类模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class foo&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="function-template-函数模板"><a href="#function-template-函数模板" class="headerlink" title="function template 函数模板"></a>function template 函数模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt; //编译器会根据实参对函数进行参数推导</span><br><span class="line">void bar(const T&amp;a)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="member-template-成员模板"><a href="#member-template-成员模板" class="headerlink" title="member template 成员模板"></a>member template 成员模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>, <span class="keyword">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Pair</span> &#123;</span></span><br><span class="line">    T1 first;</span><br><span class="line">    T2 second; <span class="comment">//first和second类型不需要一样</span></span><br><span class="line">    <span class="built_in">Pair</span>() : <span class="built_in">first</span>(<span class="built_in">T1</span>()), <span class="built_in">second</span>(<span class="built_in">T2</span>()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Pair</span>(<span class="keyword">const</span> T1 &amp;a, <span class="keyword">const</span> T2 &amp;b)</span><br><span class="line">            : <span class="built_in">first</span>(<span class="built_in">T1</span>()), <span class="built_in">second</span>(<span class="built_in">T2</span>()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 成员模板</span></span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt;class U1, class U2&gt;</span></span><br><span class="line"><span class="function">    <span class="title">Pair</span><span class="params">(Pair&lt;U1, U2&gt; &amp;p)</span></span></span><br><span class="line"><span class="function">            : first(p.first), second(p.second) &#123;</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// T1是U1的父类，T2是U2的父类</span></span><br><span class="line"><span class="comment">// Base1* ptr = new Derived1; // up-cast</span></span><br><span class="line"><span class="comment">// 所以智能指针需要改成</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">pointerLikeClasses</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T &amp;<span class="keyword">operator</span>*() <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> *pt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// -&gt;在重载时不会被消耗，直到执行了函数</span></span><br><span class="line">    T *<span class="keyword">operator</span>-&gt;() <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> pt;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">template</span>&lt;class T1&gt;</span></span><br><span class="line"><span class="function">    <span class="title">pointerLikeClasses</span><span class="params">(T1 *p)</span> : pt(p) &#123;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T *pt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="specialization-模板特化"><a href="#specialization-模板特化" class="headerlink" title="specialization 模板特化"></a>specialization 模板特化</h2><p>full specialization 泛化</p>
-<p>partial specialization 偏特化</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class Key&gt;</span><br><span class="line">class hash&#123;&#125;;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;char&gt;&#123;</span><br><span class="line">	size_t operator()(char x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;int&gt;&#123;</span><br><span class="line">	size_t operator()(int x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;long&gt;&#123;</span><br><span class="line">	size_t operator()(long x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// cout &lt;&lt; hash&lt;long&gt;()(1000) &lt;&lt; endl; </span><br></pre></td></tr></table></figure>
-
-<h2 id="partial-specialization-偏特化"><a href="#partial-specialization-偏特化" class="headerlink" title="partial specialization 偏特化"></a>partial specialization 偏特化</h2><ul>
-<li>```<br>template&lt;typename T,typename T2&gt;<br>class foo{}<br>template<typename T2><br>class foo&lt;bool,T2&gt;{} // 个数模板偏特化<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  template&lt;typename T&gt;</span><br><span class="line">  class foo&#123;&#125;</span><br><span class="line">  template&lt;typename T&gt;</span><br><span class="line">  class foo&lt;T*&gt;&#123;&#125; // 范围模板偏特化</span><br><span class="line">  </span><br><span class="line">  // foo&lt;string&gt; obj1; 编译器使用非特化版本</span><br><span class="line">  // foo&lt;string*&gt; obj2; 编译器使用范围偏特化版本</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="template-template-parameter-模板模板参数"><a href="#template-template-parameter-模板模板参数" class="headerlink" title="template template parameter 模板模板参数"></a>template template parameter 模板模板参数</h2><ul>
-<li>```c++<br>template&lt;typename T,template<typename T> class Container&gt;<br>class XCls{<br>private:<pre><code>Container&lt;T&gt; c;
-</code></pre>
-}<br>// 使用：<br>template<typename T><br>using Lst = list&lt;T,allocator<T>&gt;;<br>XCls&lt;string,Lst&gt; xcls1;<br>// XCls&lt;string,list&gt; xcls2;错误,因为list模板需要指定两个类型，但此处只指定了一个<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  template&lt;typename T,template&lt;typename T&gt; class SmartPtr&gt;</span><br><span class="line">  class XCls&#123;</span><br><span class="line">  private:</span><br><span class="line">      SmartPtr&lt;T&gt; c;</span><br><span class="line">  &#125;</span><br><span class="line">  // 使用：</span><br><span class="line">  XCls&lt;string,shared_ptr&gt; xcls1;</span><br><span class="line">  XCls&lt;string,auto_ptr&gt; xcls1;</span><br><span class="line">  // XCls&lt;string,unique_ptr&gt; xcls1; 错误：因为unique_ptr和weak_ptr的问题错误</span><br><span class="line">  // XCls&lt;string,weak_ptr&gt; xcls1; 错误</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="指定默认模板"><a href="#指定默认模板" class="headerlink" title="指定默认模板"></a>指定默认模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>,<span class="keyword">class</span> <span class="title">Sequence</span> =</span> deque&lt;T&gt;&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">stack</span>&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	Sequence c;<span class="comment">// 底层容器</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用默认模板</span></span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt; s1;</span><br><span class="line">stack&lt;<span class="keyword">int</span>,list&lt;<span class="keyword">int</span>&gt;&gt; s2;</span><br></pre></td></tr></table></figure>
-
-<h2 id="variadic-templates-c-11-数量不定的模板参数"><a href="#variadic-templates-c-11-数量不定的模板参数" class="headerlink" title="variadic templates(c++11)数量不定的模板参数"></a>variadic templates(c++11)数量不定的模板参数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span>... Types&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span> <span class="params">(<span class="keyword">const</span>&amp;T arg1,<span class="keyword">const</span> Types&amp;... args)</span></span>&#123;</span><br><span class="line">	cout&lt;&lt; arg1 &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">sizeof</span>...(args); <span class="comment">// 查看个数</span></span><br><span class="line">	<span class="built_in">print</span>(args...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用：</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">7.5</span>,<span class="string">&quot;hello&quot;</span>,<span class="string">&#x27;c&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h1><h2 id="using-directive-using-namespace-std"><a href="#using-directive-using-namespace-std" class="headerlink" title="using directive: [using namespace std]"></a>using directive: [using namespace std]</h2><h2 id="using-declaration-usting-std-cout"><a href="#using-declaration-usting-std-cout" class="headerlink" title="using declaration:[usting std::cout]"></a>using declaration:[usting std::cout]</h2><h2 id="using-directly-std-cout"><a href="#using-directly-std-cout" class="headerlink" title="using directly:[std::cout]"></a>using directly:[std::cout]</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/%E7%89%B9%E6%AE%8A%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1093,6 +703,346 @@ int *pt = new int;<br>*pt = 2000;<figure class="highlight plaintext"><table><tr>
 <h2 id="5-new和delete"><a href="#5-new和delete" class="headerlink" title="5.new和delete"></a>5.new和delete</h2><ul>
 <li><p>使用定位new时</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const char *buffer[512];</span><br><span class="line">StringBad *pt = new(buffer) Stringbad;</span><br><span class="line">pt-&gt;~StringBad();//显示调用析构函数</span><br><span class="line">delete [] buffer;//delete buffer时不会调用保存对象的析构函数</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/%E6%A8%A1%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/c++/syntax/%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">模板</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:58" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="静态变量-静态函数"><a href="#静态变量-静态函数" class="headerlink" title="静态变量/静态函数"></a>静态变量/静态函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class complex&#123;</span><br><span class="line">data members;// non-static data members 每个实例一份单独一份数据</span><br><span class="line">static data members;// static data members 所有实例共享一份数据</span><br><span class="line">member functions;// c1.real()&lt;==&gt;complex::real(&amp;c1) &amp;c1=this</span><br><span class="line">static member functions;// 只能处理静态数据或者无数据 静态函数通过类名和实例都可以调用</span><br><span class="line">// 函数永远只有一份 无论是静态的还是非静态的</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="template-模板"><a href="#template-模板" class="headerlink" title="template 模板"></a>template 模板</h1><h2 id="class-template-类模板"><a href="#class-template-类模板" class="headerlink" title="class template 类模板"></a>class template 类模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class foo&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="function-template-函数模板"><a href="#function-template-函数模板" class="headerlink" title="function template 函数模板"></a>function template 函数模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt; //编译器会根据实参对函数进行参数推导</span><br><span class="line">void bar(const T&amp;a)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="member-template-成员模板"><a href="#member-template-成员模板" class="headerlink" title="member template 成员模板"></a>member template 成员模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>, <span class="keyword">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Pair</span> &#123;</span></span><br><span class="line">    T1 first;</span><br><span class="line">    T2 second; <span class="comment">//first和second类型不需要一样</span></span><br><span class="line">    <span class="built_in">Pair</span>() : <span class="built_in">first</span>(<span class="built_in">T1</span>()), <span class="built_in">second</span>(<span class="built_in">T2</span>()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Pair</span>(<span class="keyword">const</span> T1 &amp;a, <span class="keyword">const</span> T2 &amp;b)</span><br><span class="line">            : <span class="built_in">first</span>(<span class="built_in">T1</span>()), <span class="built_in">second</span>(<span class="built_in">T2</span>()) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 成员模板</span></span><br><span class="line">    <span class="function"><span class="keyword">template</span>&lt;class U1, class U2&gt;</span></span><br><span class="line"><span class="function">    <span class="title">Pair</span><span class="params">(Pair&lt;U1, U2&gt; &amp;p)</span></span></span><br><span class="line"><span class="function">            : first(p.first), second(p.second) &#123;</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// T1是U1的父类，T2是U2的父类</span></span><br><span class="line"><span class="comment">// Base1* ptr = new Derived1; // up-cast</span></span><br><span class="line"><span class="comment">// 所以智能指针需要改成</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">pointerLikeClasses</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T &amp;<span class="keyword">operator</span>*() <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> *pt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// -&gt;在重载时不会被消耗，直到执行了函数</span></span><br><span class="line">    T *<span class="keyword">operator</span>-&gt;() <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> pt;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">template</span>&lt;class T1&gt;</span></span><br><span class="line"><span class="function">    <span class="title">pointerLikeClasses</span><span class="params">(T1 *p)</span> : pt(p) &#123;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T *pt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="specialization-模板特化"><a href="#specialization-模板特化" class="headerlink" title="specialization 模板特化"></a>specialization 模板特化</h2><p>full specialization 泛化</p>
+<p>partial specialization 偏特化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class Key&gt;</span><br><span class="line">class hash&#123;&#125;;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;char&gt;&#123;</span><br><span class="line">	size_t operator()(char x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;int&gt;&#123;</span><br><span class="line">	size_t operator()(int x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct hash&lt;long&gt;&#123;</span><br><span class="line">	size_t operator()(long x) const &#123;return x;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// cout &lt;&lt; hash&lt;long&gt;()(1000) &lt;&lt; endl; </span><br></pre></td></tr></table></figure>
+
+<h2 id="partial-specialization-偏特化"><a href="#partial-specialization-偏特化" class="headerlink" title="partial specialization 偏特化"></a>partial specialization 偏特化</h2><ul>
+<li>```<br>template&lt;typename T,typename T2&gt;<br>class foo{}<br>template<typename T2><br>class foo&lt;bool,T2&gt;{} // 个数模板偏特化<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  template&lt;typename T&gt;</span><br><span class="line">  class foo&#123;&#125;</span><br><span class="line">  template&lt;typename T&gt;</span><br><span class="line">  class foo&lt;T*&gt;&#123;&#125; // 范围模板偏特化</span><br><span class="line">  </span><br><span class="line">  // foo&lt;string&gt; obj1; 编译器使用非特化版本</span><br><span class="line">  // foo&lt;string*&gt; obj2; 编译器使用范围偏特化版本</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="template-template-parameter-模板模板参数"><a href="#template-template-parameter-模板模板参数" class="headerlink" title="template template parameter 模板模板参数"></a>template template parameter 模板模板参数</h2><ul>
+<li>```c++<br>template&lt;typename T,template<typename T> class Container&gt;<br>class XCls{<br>private:<pre><code>Container&lt;T&gt; c;
+</code></pre>
+}<br>// 使用：<br>template<typename T><br>using Lst = list&lt;T,allocator<T>&gt;;<br>XCls&lt;string,Lst&gt; xcls1;<br>// XCls&lt;string,list&gt; xcls2;错误,因为list模板需要指定两个类型，但此处只指定了一个<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```c++</span><br><span class="line">  template&lt;typename T,template&lt;typename T&gt; class SmartPtr&gt;</span><br><span class="line">  class XCls&#123;</span><br><span class="line">  private:</span><br><span class="line">      SmartPtr&lt;T&gt; c;</span><br><span class="line">  &#125;</span><br><span class="line">  // 使用：</span><br><span class="line">  XCls&lt;string,shared_ptr&gt; xcls1;</span><br><span class="line">  XCls&lt;string,auto_ptr&gt; xcls1;</span><br><span class="line">  // XCls&lt;string,unique_ptr&gt; xcls1; 错误：因为unique_ptr和weak_ptr的问题错误</span><br><span class="line">  // XCls&lt;string,weak_ptr&gt; xcls1; 错误</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="指定默认模板"><a href="#指定默认模板" class="headerlink" title="指定默认模板"></a>指定默认模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>,<span class="keyword">class</span> <span class="title">Sequence</span> =</span> deque&lt;T&gt;&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">stack</span>&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	Sequence c;<span class="comment">// 底层容器</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用默认模板</span></span><br><span class="line">stack&lt;<span class="keyword">int</span>&gt; s1;</span><br><span class="line">stack&lt;<span class="keyword">int</span>,list&lt;<span class="keyword">int</span>&gt;&gt; s2;</span><br></pre></td></tr></table></figure>
+
+<h2 id="variadic-templates-c-11-数量不定的模板参数"><a href="#variadic-templates-c-11-数量不定的模板参数" class="headerlink" title="variadic templates(c++11)数量不定的模板参数"></a>variadic templates(c++11)数量不定的模板参数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,<span class="keyword">typename</span>... Types&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span> <span class="params">(<span class="keyword">const</span>&amp;T arg1,<span class="keyword">const</span> Types&amp;... args)</span></span>&#123;</span><br><span class="line">	cout&lt;&lt; arg1 &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">sizeof</span>...(args); <span class="comment">// 查看个数</span></span><br><span class="line">	<span class="built_in">print</span>(args...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用：</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">7.5</span>,<span class="string">&quot;hello&quot;</span>,<span class="string">&#x27;c&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h1><h2 id="using-directive-using-namespace-std"><a href="#using-directive-using-namespace-std" class="headerlink" title="using directive: [using namespace std]"></a>using directive: [using namespace std]</h2><h2 id="using-declaration-usting-std-cout"><a href="#using-declaration-usting-std-cout" class="headerlink" title="using declaration:[usting std::cout]"></a>using declaration:[usting std::cout]</h2><h2 id="using-directly-std-cout"><a href="#using-directly-std-cout" class="headerlink" title="using directly:[std::cout]"></a>using directly:[std::cout]</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/%E7%BB%A7%E6%89%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/c++/syntax/%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">继承</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:01:22" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h2 id="1-派生类和基类之间的关系"><a href="#1-派生类和基类之间的关系" class="headerlink" title="1.派生类和基类之间的关系"></a>1.派生类和基类之间的关系</h2><ul>
+<li>派生类可以使用基类的共有方法</li>
+<li>基类指针可以在不进行显示转换的情况下指向派生类对象</li>
+<li>基类引用可以在不进行显示转换的情况下引用派生类对象</li>
+<li>没有关键字virtual,程序根据引用类型或指针类型选择方法</li>
+<li>使用virtual，程序将根据引用或指针指向的对象的类型来选择方法</li>
+<li>创建指向基类的指针数组，既可以指向基类也可以指向派生类</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/syntax/%E8%AF%AD%E6%B3%95%E7%B3%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/c++/syntax/%E8%AF%AD%E6%B3%95%E7%B3%96/" class="post-title-link" itemprop="url">语法糖</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：17:02:12" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/syntax/" itemprop="url" rel="index"><span itemprop="name">syntax</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list&lt;string&gt; c;</span><br><span class="line">list&lt;string&gt;::iterator ite;</span><br><span class="line">ite = <span class="built_in">find</span>(c.<span class="built_in">begin</span>(),c.<span class="built_in">end</span>(),target);</span><br><span class="line"><span class="comment">// ==&gt;</span></span><br><span class="line"><span class="keyword">auto</span> ite = <span class="built_in">find</span>(c.<span class="built_in">begin</span>(),c.<span class="built_in">end</span>(),target);</span><br></pre></td></tr></table></figure>
+
+<h1 id="ranged-base-for"><a href="#ranged-base-for" class="headerlink" title="ranged-base for"></a>ranged-base for</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(decl:collection)&#123;</span><br><span class="line">	statement</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 例</span></span><br><span class="line">vector&lt;<span class="keyword">double</span>&gt; vec;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> elem:vec)&#123;</span><br><span class="line">	cout &lt;&lt; elem &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span>&amp; elem:vec)&#123;</span><br><span class="line">	cout &lt;&lt; elem &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 注意传引用和传值的区别</span></span><br><span class="line">&lt;==&gt; iterator foreach</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/c++/stdlib/numeric/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/c++/stdlib/numeric/" class="post-title-link" itemprop="url">numeric</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：16:56:08" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/stdlib/" itemprop="url" rel="index"><span itemprop="name">stdlib</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="numeric"><a href="#numeric" class="headerlink" title="numeric"></a>numeric</h1><h2 id="accumulate"><a href="#accumulate" class="headerlink" title="accumulate"></a>accumulate</h2><ul>
+<li><p>无自定义函数版本</p>
+<ul>
+<li><p>源码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  @brief  Accumulate values in a range.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  Accumulates the values in the range [first,last) using operator+().  The</span></span><br><span class="line"><span class="comment">   *  initial value is @a init.  The values are processed in order.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  @param  __first  Start of range.</span></span><br><span class="line"><span class="comment">   *  @param  __last  End of range.</span></span><br><span class="line"><span class="comment">   *  @param  __init  Starting value to add other values to.</span></span><br><span class="line"><span class="comment">   *  @return  The final sum.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> _InputIterator, <span class="keyword">typename</span> _Tp&gt;</span></span><br><span class="line"><span class="function">    <span class="keyword">inline</span> _Tp</span></span><br><span class="line"><span class="function">    <span class="title">accumulate</span><span class="params">(_InputIterator __first, _InputIterator __last, _Tp __init)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      <span class="comment">// concept requirements</span></span><br><span class="line">      __glibcxx_function_requires(_InputIteratorConcept&lt;_InputIterator&gt;)</span><br><span class="line">      __glibcxx_requires_valid_range(__first, __last);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (; __first != __last; ++__first)</span><br><span class="line">	__init = __init + *__first;</span><br><span class="line">      <span class="keyword">return</span> __init;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>测试</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> res = std::<span class="built_in">accumulate</span>(numbers.<span class="built_in">begin</span>(),numbers.<span class="built_in">end</span>(),<span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>自定义操作</p>
+<ul>
+<li><p>源码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  @brief  Accumulate values in a range with operation.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  Accumulates the values in the range [first,last) using the function</span></span><br><span class="line"><span class="comment">   *  object @p __binary_op.  The initial value is @p __init.  The values are</span></span><br><span class="line"><span class="comment">   *  processed in order.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   *  @param  __first  Start of range.</span></span><br><span class="line"><span class="comment">   *  @param  __last  End of range.</span></span><br><span class="line"><span class="comment">   *  @param  __init  Starting value to add other values to.</span></span><br><span class="line"><span class="comment">   *  @param  __binary_op  Function object to accumulate with.</span></span><br><span class="line"><span class="comment">   *  @return  The final sum.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> _InputIterator, <span class="keyword">typename</span> _Tp, <span class="keyword">typename</span> _BinaryOperation&gt;</span></span><br><span class="line"><span class="function">    <span class="keyword">inline</span> _Tp</span></span><br><span class="line"><span class="function">    <span class="title">accumulate</span><span class="params">(_InputIterator __first, _InputIterator __last, _Tp __init,</span></span></span><br><span class="line"><span class="params"><span class="function">	       _BinaryOperation __binary_op)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      <span class="comment">// concept requirements</span></span><br><span class="line">      __glibcxx_function_requires(_InputIteratorConcept&lt;_InputIterator&gt;)</span><br><span class="line">      __glibcxx_requires_valid_range(__first, __last);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (; __first != __last; ++__first)</span><br><span class="line">	__init = __binary_op(__init, *__first);</span><br><span class="line">      <span class="keyword">return</span> __init;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int myfunction (int x, int y) &#123;return x+2*y;&#125;</span><br><span class="line">struct myclass &#123;</span><br><span class="line">	int operator()(int x, int y) &#123;return x+3*y;&#125;</span><br><span class="line">&#125; myobject;</span><br><span class="line">int res = std::accumulate(numbers.begin(),numbers.end(),0,myfunction);</span><br><span class="line">int res = std::accumulate(numbers.begin(),numbers.end(),0,myobject);</span><br><span class="line">// return 减去这些元素</span><br><span class="line">int res = std::accumulate(numbers.begin(),numbers.end(),0,std::minus&lt;int&gt;());</span><br><span class="line">// 匿名函数</span><br><span class="line">string res = std::accumulate(numbers.begin(),numbers.end(),std::string&#123;&quot;str:&quot;&#125;,[](std::string str,int i)&#123;return str+=std::to_string(i);&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 </ul>
 
       

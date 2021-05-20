@@ -354,84 +354,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.jpg">
-      <meta itemprop="name" content="kudo_shini">
-      <meta itemprop="description" content="kudo_shini的学习与分享">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kudo_shini">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">Vue技巧</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：18:19:23" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/h5/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Vue技巧"><a href="#Vue技巧" class="headerlink" title="Vue技巧"></a>Vue技巧</h1><ul>
-<li><h3 id="添加滚动事件"><a href="#添加滚动事件" class="headerlink" title="添加滚动事件"></a>添加滚动事件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mounted&#123;</span><br><span class="line">	this.$refs.boxScroll.addEventListener(&#x27;scroll&#x27;,this.handleScroll) </span><br><span class="line">	// 监听滚动事件，然后用handleScroll这个方法进行相应的处理</span><br><span class="line">&#125;,</span><br><span class="line">beforeDestroy()&#123;</span><br><span class="line">	this.$refs.boxScroll.removeEventListener(&#x27;scroll&#x27;,this.handleScroll) 			// 取消监听滚动事件，需要在beforedestroy</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><h3 id="对象的监听与修改"><a href="#对象的监听与修改" class="headerlink" title="对象的监听与修改"></a>对象的监听与修改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$set(data,key,newValue) //只能用于给复杂数据添加属性触发监测</span><br><span class="line">this.$forceUpdate(); //用于强制刷新</span><br></pre></td></tr></table></figure></li>
-<li><h3 id="面向vue组件的节流函数"><a href="#面向vue组件的节流函数" class="headerlink" title="面向vue组件的节流函数"></a>面向vue组件的节流函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * [throttle js节流公用方法]</span><br><span class="line">     * @param  &#123;[function]&#125; method  [你要执行的方法]</span><br><span class="line">     * @param  &#123;[]&#125; context [上下文语境如window，可忽略]</span><br><span class="line">     */</span><br><span class="line">    throttle(method, context, t,...args) &#123;</span><br><span class="line">        clearTimeout(context.timerId);</span><br><span class="line">        t = t || 200;</span><br><span class="line">        context.timerId = setTimeout(() =&gt; &#123;</span><br><span class="line">            method.apply(context,args);</span><br><span class="line">        &#125;, t);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/h5/vue3+TS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -492,6 +414,84 @@
 <li><h3 id="目前vue-class-component不支持vue3-0组合API写法，不建议使用"><a href="#目前vue-class-component不支持vue3-0组合API写法，不建议使用" class="headerlink" title="目前vue-class-component不支持vue3.0组合API写法，不建议使用"></a><strong>目前vue-class-component不支持vue3.0组合API写法，不建议使用</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*******************************************************************/</span></span><br><span class="line"><span class="comment">// 【3.使用vue-class-component】</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Options <span class="keyword">from</span> <span class="string">&#x27;vue-class-component&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Define the component in class-style</span></span><br><span class="line"><span class="comment">// 最新版Component注解已经改为Options</span></span><br><span class="line">@Options(&#123;</span><br><span class="line">  <span class="attr">computed</span>: mapGetters([</span><br><span class="line">    <span class="string">&#x27;posts&#x27;</span></span><br><span class="line">  ]),</span><br><span class="line"></span><br><span class="line">  <span class="attr">methods</span>: mapActions([</span><br><span class="line">    <span class="string">&#x27;fetchPosts&#x27;</span></span><br><span class="line">  ])</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span><br><span class="line">	<span class="attr">property</span>: number;</span><br><span class="line">	<span class="function"><span class="title">method</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*******************************************************************/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://pgeorge1324.github.io/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.jpg">
+      <meta itemprop="name" content="kudo_shini">
+      <meta itemprop="description" content="kudo_shini的学习与分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kudo_shini">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/13/h5/vue%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">Vue技巧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-13 14:26:52 / 修改时间：18:19:23" itemprop="dateCreated datePublished" datetime="2021-05-13T14:26:52+08:00">2021-05-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/h5/" itemprop="url" rel="index"><span itemprop="name">h5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/h5/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Vue技巧"><a href="#Vue技巧" class="headerlink" title="Vue技巧"></a>Vue技巧</h1><ul>
+<li><h3 id="添加滚动事件"><a href="#添加滚动事件" class="headerlink" title="添加滚动事件"></a>添加滚动事件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mounted&#123;</span><br><span class="line">	this.$refs.boxScroll.addEventListener(&#x27;scroll&#x27;,this.handleScroll) </span><br><span class="line">	// 监听滚动事件，然后用handleScroll这个方法进行相应的处理</span><br><span class="line">&#125;,</span><br><span class="line">beforeDestroy()&#123;</span><br><span class="line">	this.$refs.boxScroll.removeEventListener(&#x27;scroll&#x27;,this.handleScroll) 			// 取消监听滚动事件，需要在beforedestroy</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><h3 id="对象的监听与修改"><a href="#对象的监听与修改" class="headerlink" title="对象的监听与修改"></a>对象的监听与修改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$set(data,key,newValue) //只能用于给复杂数据添加属性触发监测</span><br><span class="line">this.$forceUpdate(); //用于强制刷新</span><br></pre></td></tr></table></figure></li>
+<li><h3 id="面向vue组件的节流函数"><a href="#面向vue组件的节流函数" class="headerlink" title="面向vue组件的节流函数"></a>面向vue组件的节流函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * [throttle js节流公用方法]</span><br><span class="line">     * @param  &#123;[function]&#125; method  [你要执行的方法]</span><br><span class="line">     * @param  &#123;[]&#125; context [上下文语境如window，可忽略]</span><br><span class="line">     */</span><br><span class="line">    throttle(method, context, t,...args) &#123;</span><br><span class="line">        clearTimeout(context.timerId);</span><br><span class="line">        t = t || 200;</span><br><span class="line">        context.timerId = setTimeout(() =&gt; &#123;</span><br><span class="line">            method.apply(context,args);</span><br><span class="line">        &#125;, t);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
